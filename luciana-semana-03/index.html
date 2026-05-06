@@ -1,0 +1,3494 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Evolução Contínua · Semana 03 · Luciana Bonome · Mentoria Karen Montagner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy-900:  #0B1733;
+    --navy-800:  #0F1E3D;
+    --navy-700:  #17294F;
+    --navy-500:  #2A3E6C;
+    --gold-500:  #C9A353;
+    --gold-400:  #D6B873;
+    --gold-100:  #F5EAD0;
+    --terra-500: #B8624A;
+    --terra-400: #CF8064;
+    --ivory:     #FBF8F2;
+    --sand-50:   #FAF5EA;
+    --sand-100:  #F5EEE0;
+    --ink:       #1C1C1C;
+    --muted:     #6C6A66;
+    --line:      #E6DFCF;
+    --creme-txt: #FBF5E4;
+    --green-500: #4A7C59;
+
+    --page-bg:   #FBF8F2;
+    --text-body: #2A2A2A;
+    --text-dim:  #6C6A66;
+    --line-soft: rgba(11,23,51,0.1);
+
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--page-bg);
+    font-family: var(--sans);
+    color: var(--text-body);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ═══════ MASTHEAD ═══════ */
+  .masthead {
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-500) 100%);
+    padding: 56px 64px 52px;
+    border-bottom: 3px solid var(--gold-500);
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -60px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(201,163,83,0.22), transparent 65%);
+    filter: blur(24px);
+  }
+  .masthead::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; left: -80px;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(184,98,74,0.15), transparent 65%);
+    filter: blur(28px);
+  }
+  .mast-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
+  .mast-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  .mast-brand {
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    font-weight: 400;
+  }
+  .mast-brand strong { color: var(--creme-txt); font-weight: 500; margin-left: 2px; }
+  .mast-program {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(251,245,228,0.55);
+    letter-spacing: 0.8px;
+  }
+  .mast-program span { color: var(--gold-400); }
+  .mast-eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .mast-title {
+    font-family: var(--serif);
+    font-size: clamp(46px, 7vw, 80px);
+    font-weight: 500;
+    line-height: 1;
+    color: var(--creme-txt);
+    letter-spacing: -0.6px;
+    margin-bottom: 22px;
+  }
+  .mast-title em { color: var(--gold-400); font-style: italic; font-weight: 400; }
+  .mast-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: rgba(251,245,228,0.78);
+    letter-spacing: 0.3px;
+    max-width: 780px;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+  .mast-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(201,163,83,0.25);
+    border-bottom: 1px solid rgba(201,163,83,0.25);
+    padding: 18px 0;
+  }
+  .mast-meta-item {
+    padding: 0 20px;
+    border-right: 1px solid rgba(201,163,83,0.15);
+  }
+  .mast-meta-item:last-child { border-right: none; }
+  .mast-meta-item:first-child { padding-left: 0; }
+  .mast-meta-label {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(201,163,83,0.6);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .mast-meta-value {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--creme-txt);
+    font-weight: 500;
+  }
+  .mast-meta-value em { font-style: italic; color: var(--gold-400); font-weight: 400; }
+
+  /* ═══════ INTRO STRIP ═══════ */
+  .intro-strip {
+    background: var(--sand-100);
+    color: var(--navy-900);
+    padding: 28px 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .intro-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .intro-strip-inner strong {
+    font-style: normal;
+    color: var(--gold-500);
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* ═══════ DIAGNÓSTICO LISTA ALFA ═══════ */
+  .diagnostico {
+    background: var(--navy-800);
+    padding: 48px 64px;
+    border-bottom: 1px solid var(--gold-500);
+    color: var(--creme-txt);
+  }
+  .diag-inner { max-width: 1280px; margin: 0 auto; }
+  .diag-eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .diag-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--creme-txt);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+  .diag-title em { font-style: italic; color: var(--gold-400); font-weight: 400; }
+  .diag-lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(251,245,228,0.78);
+    max-width: 780px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .diag-lede strong { color: var(--gold-400); font-weight: 500; font-style: normal; }
+  .diag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0;
+    border: 1px solid rgba(201,163,83,0.3);
+  }
+  .diag-card {
+    padding: 22px 24px;
+    border-right: 1px solid rgba(201,163,83,0.18);
+    border-bottom: 1px solid rgba(201,163,83,0.18);
+  }
+  .diag-card:last-child { border-right: none; }
+  .diag-card-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(201,163,83,0.7);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .diag-value {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--gold-400);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .diag-delta {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--green-500);
+    font-weight: 600;
+  }
+  .diag-delta.warn { color: var(--terra-400); }
+  .diag-delta.flat { color: rgba(251,245,228,0.5); }
+
+  /* ═══════ PROGRESS ═══════ */
+  .progress-wrap {
+    background: rgba(251,248,242,0.94);
+    border-bottom: 1px solid var(--line-soft);
+    padding: 20px 64px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+  }
+  .progress-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .progress-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--navy-900);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(11,23,51,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-500), var(--terra-500));
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .progress-pct {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--navy-900);
+    min-width: 64px;
+    text-align: right;
+    letter-spacing: 0.5px;
+  }
+  .actions { display: flex; gap: 10px; }
+  .btn {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 11px 18px;
+    background: transparent;
+    color: var(--navy-900);
+    border: 1px solid rgba(11,23,51,0.3);
+    cursor: pointer;
+    transition: all 0.25s;
+    font-weight: 500;
+  }
+  .btn:hover { background: var(--navy-900); color: var(--creme-txt); border-color: var(--navy-900); }
+  .btn-primary {
+    background: var(--navy-900);
+    color: var(--gold-400);
+    border-color: var(--navy-900);
+    font-weight: 600;
+  }
+  .btn-primary:hover { background: var(--gold-500); color: var(--navy-900); border-color: var(--gold-500); }
+
+  /* ═══════ MAIN ═══════ */
+  main { max-width: 1280px; margin: 0 auto; padding: 80px 64px; }
+  .section { margin-bottom: 96px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .section-num {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    color: var(--gold-500);
+    font-weight: 600;
+  }
+  .section-kicker {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .section-rule {
+    height: 1px;
+    background: var(--line-soft);
+    margin-bottom: 40px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5vw, 56px);
+    font-weight: 500;
+    color: var(--navy-900);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+  }
+  .section-title em { font-style: italic; color: var(--gold-500); font-weight: 400; }
+  .section-intro {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--text-body);
+    max-width: 780px;
+    margin-bottom: 48px;
+    border-left: 2px solid var(--gold-500);
+    padding-left: 22px;
+  }
+  .section-intro strong { color: var(--navy-900); font-weight: 600; }
+  .section-intro em {
+    font-style: italic;
+    color: var(--terra-500);
+    font-family: var(--serif);
+    font-size: 17px;
+  }
+
+  /* ═══════ DESTRAVAR LISTA ALFA ═══════ */
+  .destravar {
+    background: white;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .destravar-row {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .destravar-row:last-child { border-bottom: none; }
+  .destravar-label-cell {
+    background: var(--sand-50);
+    padding: 24px;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .destravar-tag {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-500);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .destravar-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-900);
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .destravar-name em { font-style: italic; color: var(--terra-500); font-weight: 500; }
+  .destravar-meta {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .destravar-content {
+    padding: 24px 28px;
+  }
+  .destravar-list {
+    list-style: none;
+  }
+  .destravar-list li {
+    font-size: 14px;
+    line-height: 1.65;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(11,23,51,0.08);
+    color: var(--text-body);
+  }
+  .destravar-list li:last-child { border-bottom: none; }
+  .destravar-list li strong { color: var(--navy-900); font-weight: 600; }
+  .destravar-list li em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--terra-500);
+    font-size: 15px;
+  }
+  .destravar-script {
+    background: var(--sand-50);
+    border-left: 2px solid var(--gold-500);
+    padding: 14px 18px;
+    margin-top: 12px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .destravar-script .placeholder {
+    background: rgba(201,163,83,0.2);
+    color: #8E6F2E;
+    padding: 1px 6px;
+    font-style: normal;
+    font-weight: 500;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ═══════ NOVOS MOVIMENTOS ═══════ */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    background: white;
+  }
+  .strategy-card {
+    padding: 32px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .strategy-card:nth-child(2n) { border-right: none; }
+  .strategy-card:nth-last-child(-n+2) { border-bottom: none; }
+  .strategy-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 56px;
+    height: 2px;
+    background: var(--gold-500);
+  }
+  .strat-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold-500);
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .strat-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+  .strat-title em { font-style: italic; color: var(--terra-500); font-weight: 500; }
+  .strat-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+  .strat-body strong { color: var(--navy-900); font-weight: 600; }
+  .strat-body em {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--terra-500);
+  }
+
+  /* ═══════ MULTICARE ═══════ */
+  .multicare-block {
+    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    border: 1px solid var(--gold-500);
+    padding: 44px 48px;
+    position: relative;
+    overflow: hidden;
+    color: var(--creme-txt);
+  }
+  .multicare-block::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(201,163,83,0.22), transparent 65%);
+    filter: blur(20px);
+  }
+  .multicare-inner { position: relative; z-index: 2; }
+  .mc-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .mc-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--creme-txt);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .mc-title em { font-style: italic; color: var(--gold-400); font-weight: 400; }
+  .mc-context {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(251,245,228,0.78);
+    line-height: 1.55;
+    margin-bottom: 28px;
+    max-width: 780px;
+  }
+  .mc-context strong { color: var(--gold-400); font-weight: 500; font-style: normal; }
+  .mc-frentes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .mc-frente {
+    border-top: 1px solid rgba(201,163,83,0.3);
+    padding-top: 18px;
+  }
+  .mc-frente-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .mc-frente-title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--creme-txt);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  .mc-frente-title em { font-style: italic; color: var(--gold-400); font-weight: 400; }
+  .mc-frente-text {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(251,245,228,0.88);
+  }
+  .mc-frente-text strong { color: var(--creme-txt); font-weight: 500; }
+  .mc-script-box {
+    background: rgba(251,245,228,0.06);
+    border-left: 2px solid var(--gold-500);
+    padding: 16px 20px;
+    margin-top: 12px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--creme-txt);
+  }
+  .mc-script-box .placeholder {
+    background: rgba(201,163,83,0.25);
+    color: var(--gold-400);
+    padding: 1px 6px;
+    font-style: normal;
+    font-weight: 500;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ═══════ PIPELINE ═══════ */
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    background: white;
+  }
+  .pipeline-card {
+    padding: 26px 22px;
+    border-right: 1px solid var(--line);
+    transition: background 0.3s;
+  }
+  .pipeline-card:last-child { border-right: none; }
+  .pipeline-card:hover { background: var(--sand-50); }
+  .pipeline-priority {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--gold-500);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .pipeline-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--navy-900);
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+  .pipeline-meta {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .pipeline-action {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-body);
+  }
+  .pipeline-action strong { color: var(--navy-900); font-weight: 600; }
+
+  /* ═══════ POSTS ═══════ */
+  .posts-strategy {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .post-card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .post-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 42px;
+    color: rgba(201,163,83,0.25);
+    line-height: 1;
+  }
+  .post-day {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .post-type {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .post-type em { font-style: italic; color: var(--gold-500); font-weight: 500; }
+  .post-purpose {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .post-gancho {
+    background: var(--sand-50);
+    border-left: 2px solid var(--gold-500);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .post-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-body);
+  }
+  .post-desc strong { color: var(--navy-900); font-weight: 600; }
+
+  /* ═══════ DAYS ═══════ */
+  .day {
+    border-top: 1px solid var(--line-soft);
+    padding: 48px 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 56px;
+    page-break-inside: avoid;
+  }
+  .day:last-child { border-bottom: 1px solid var(--line-soft); }
+  .day-header { position: sticky; top: 100px; align-self: start; }
+  .day-date {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-500);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .day-name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--navy-900);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .day-number {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .day-focus {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--terra-500);
+    line-height: 1.4;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .day-progress {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .day-progress .count {
+    font-family: var(--serif);
+    color: var(--gold-500);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  .day-body { display: flex; flex-direction: column; gap: 24px; }
+
+  .block {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold-500);
+  }
+  .block.priority::before { background: var(--terra-500); width: 80px; }
+  .block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .block-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-900);
+    letter-spacing: -0.2px;
+  }
+  .block-title em { font-style: italic; color: var(--gold-500); font-weight: 500; }
+  .block.priority .block-title em { color: var(--terra-500); }
+  .block-time {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    font-weight: 600;
+  }
+
+  /* ═══════ TASKS ═══════ */
+  .task {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(11,23,51,0.1);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .task:last-child { border-bottom: none; }
+  .task.done { opacity: 0.4; }
+  .task.done .task-text {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(11,23,51,0.4);
+  }
+  .checkbox {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--navy-900);
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.25s;
+    margin-top: 2px;
+  }
+  .checkbox:hover { background: rgba(11,23,51,0.05); }
+  .task.done .checkbox {
+    background: var(--navy-900);
+    border-color: var(--navy-900);
+  }
+  .task.done .checkbox::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 1px;
+    width: 6px; height: 11px;
+    border: solid var(--gold-400);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .task-content { flex: 1; }
+  .task-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--text-body);
+    margin-bottom: 6px;
+  }
+  .task-text strong { color: var(--navy-900); font-weight: 600; }
+  .task-text em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--terra-500);
+    font-size: 16px;
+  }
+  .task-meta {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .task-tag {
+    display: inline-block;
+    padding: 3px 9px;
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tag-alfa { background: rgba(201,163,83,0.12); color: #8E6F2E; border: 1px solid rgba(201,163,83,0.35); }
+  .tag-content { background: rgba(11,23,51,0.06); color: var(--navy-900); border: 1px solid rgba(11,23,51,0.2); }
+  .tag-warm { background: rgba(184,98,74,0.1); color: var(--terra-500); border: 1px solid rgba(184,98,74,0.3); }
+  .tag-news { background: rgba(245,234,208,0.5); color: #8E6F2E; border: 1px solid rgba(201,163,83,0.3); }
+  .tag-call { background: rgba(74,124,89,0.12); color: var(--green-500); border: 1px solid rgba(74,124,89,0.4); }
+  .tag-multicare { background: var(--terra-500); color: var(--creme-txt); border: 1px solid var(--terra-500); }
+  .tag-pipe { background: rgba(74,124,89,0.18); color: var(--green-500); border: 1px solid rgba(74,124,89,0.4); }
+  .tag-inmail { background: var(--navy-900); color: var(--gold-400); border: 1px solid var(--navy-900); }
+  .tag-milestone { background: var(--navy-900); color: var(--gold-400); border: 1px solid var(--navy-900); }
+  .tag-destravar { background: rgba(184,98,74,0.18); color: var(--terra-500); border: 1px solid var(--terra-500); }
+
+  /* ═══════ HOWTO ═══════ */
+  .howto {
+    background: var(--sand-50);
+    border-left: 3px solid var(--terra-500);
+    padding: 20px 24px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  .howto-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .howto-body {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .howto-body strong { font-weight: 600; color: var(--navy-900); }
+  .howto-body em { font-style: italic; color: var(--terra-500); }
+
+  /* ═══════ INMAIL ═══════ */
+  .inmail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .inmail-card {
+    background: white;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .inmail-header {
+    background: var(--navy-900);
+    color: var(--creme-txt);
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold-500);
+  }
+  .inmail-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .inmail-title em { font-style: italic; color: var(--gold-400); font-weight: 400; }
+  .inmail-tag {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: var(--gold-400);
+    border: 1px solid var(--gold-500);
+    padding: 5px 12px;
+    font-weight: 600;
+  }
+  .inmail-body {
+    padding: 26px 28px;
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--ink);
+    white-space: pre-wrap;
+  }
+  .inmail-body .placeholder {
+    background: rgba(201,163,83,0.2);
+    color: #8E6F2E;
+    padding: 1px 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ═══════ METRICS ═══════ */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    background: white;
+  }
+  .metric-card {
+    padding: 28px 22px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .metric-card:last-child { border-right: none; }
+  .metric-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-500);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .metric-input {
+    width: 100%;
+    padding: 4px 0;
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--navy-900);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
+    outline: none;
+  }
+  .metric-input:focus { border-bottom-color: var(--gold-500); }
+  .metric-target {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    font-weight: 600;
+  }
+
+  /* ═══════ FOOTER ═══════ */
+  footer {
+    background: var(--navy-900);
+    border-top: 1px solid var(--gold-500);
+    padding: 56px 64px;
+    margin-top: 48px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+  }
+  .footer-brand strong { color: var(--creme-txt); font-weight: 500; }
+  .footer-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--creme-txt);
+    letter-spacing: 0.3px;
+  }
+  .footer-quote em { color: var(--gold-400); }
+  .footer-date {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(201,163,83,0.5);
+  }
+
+  /* ═══════ CALL BRIEFING ═══════ */
+  .call-briefing {
+    background: white;
+    border: 1px solid var(--line);
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .briefing-header {
+    background: var(--navy-900);
+    color: var(--creme-txt);
+    padding: 24px 32px;
+    border-bottom: 2px solid var(--gold-500);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .briefing-info {
+    flex: 1;
+    min-width: 240px;
+  }
+  .briefing-when {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .briefing-name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--creme-txt);
+    line-height: 1.15;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .briefing-name em { font-style: italic; color: var(--gold-400); font-weight: 500; }
+  .briefing-role {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(251,245,228,0.7);
+  }
+  .briefing-status {
+    text-align: right;
+  }
+  .briefing-status-tag {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    border: 1px solid var(--gold-500);
+    padding: 6px 12px;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .briefing-body {
+    padding: 32px;
+  }
+  .briefing-section {
+    margin-bottom: 26px;
+  }
+  .briefing-section:last-child { margin-bottom: 0; }
+  .briefing-section-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .briefing-section-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+  }
+  .briefing-section-title em { font-style: italic; color: var(--terra-500); font-weight: 500; }
+  .briefing-script {
+    background: var(--sand-50);
+    border-left: 2px solid var(--gold-500);
+    padding: 16px 20px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .briefing-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .briefing-list li {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-body);
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(11,23,51,0.08);
+    display: flex;
+    gap: 12px;
+  }
+  .briefing-list li:last-child { border-bottom: none; }
+  .briefing-list li::before {
+    content: '→';
+    color: var(--terra-500);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .briefing-list li strong { color: var(--navy-900); font-weight: 600; }
+  .briefing-list li em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--terra-500);
+    font-size: 16px;
+  }
+  .briefing-questions {
+    counter-reset: question;
+    list-style: none;
+    padding-left: 0;
+  }
+  .briefing-questions li {
+    counter-increment: question;
+    padding: 14px 0 14px 38px;
+    border-bottom: 1px dashed rgba(11,23,51,0.08);
+    position: relative;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .briefing-questions li:last-child { border-bottom: none; }
+  .briefing-questions li::before {
+    content: counter(question);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold-500);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .briefing-questions li strong {
+    display: block;
+    font-style: normal;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .briefing-warning {
+    background: rgba(184,98,74,0.08);
+    border-left: 2px solid var(--terra-500);
+    padding: 14px 18px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-body);
+  }
+  .briefing-warning strong { color: var(--terra-500); font-weight: 600; }
+
+  /* ═══════ CAPTURA PÓS-CALL ═══════ */
+  .captura-block {
+    background: var(--sand-50);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--green-500);
+    padding: 28px 32px;
+    margin-top: 0;
+  }
+  .captura-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green-500);
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .captura-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+  .captura-title em { font-style: italic; color: var(--green-500); font-weight: 500; }
+  .captura-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+  .captura-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 18px;
+  }
+  .captura-field {
+    display: flex;
+    flex-direction: column;
+  }
+  .captura-field-full {
+    grid-column: 1 / -1;
+  }
+  .captura-field-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-500);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .captura-input {
+    font-family: var(--sans);
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    background: white;
+    color: var(--text-body);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .captura-input:focus { border-color: var(--gold-500); }
+  .captura-textarea {
+    font-family: var(--sans);
+    font-size: 14px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    background: white;
+    color: var(--text-body);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+  }
+  .captura-textarea:focus { border-color: var(--gold-500); }
+  .captura-status-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .captura-status-btn {
+    flex: 1;
+    padding: 10px 14px;
+    background: white;
+    border: 1px solid var(--line);
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .captura-status-btn:hover {
+    border-color: var(--green-500);
+    color: var(--navy-900);
+  }
+  .captura-status-btn.active {
+    background: var(--green-500);
+    color: white;
+    border-color: var(--green-500);
+  }
+  .captura-saved {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green-500);
+    font-weight: 600;
+    text-align: right;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .captura-saved.visible { opacity: 1; }
+
+
+    .masthead, .intro-strip, .diagnostico { padding: 36px 28px 32px; }
+    .progress-wrap { padding: 16px 28px; }
+    main { padding: 48px 28px; }
+    footer { padding: 40px 28px; }
+    .mast-meta { grid-template-columns: repeat(2, 1fr); }
+    .mast-meta-item { padding: 12px 14px; border-right: none; border-bottom: 1px solid rgba(201,163,83,0.12); }
+    .day { grid-template-columns: 1fr; gap: 24px; }
+    .day-header { position: static; }
+    .day-name { font-size: 42px; }
+    .strategy-grid { grid-template-columns: 1fr; }
+    .strategy-card:nth-child(2n) { border-right: 1px solid var(--line); }
+    .mc-frentes { grid-template-columns: 1fr; }
+    .destravar-row { grid-template-columns: 1fr; }
+    .destravar-label-cell { border-right: none; border-bottom: 1px solid var(--line); }
+    .captura-grid { grid-template-columns: 1fr; }
+    .captura-status-row { flex-wrap: wrap; }
+    .briefing-header { flex-direction: column; }
+    .briefing-status { text-align: left; }
+    .progress-inner { flex-wrap: wrap; }
+    .actions { width: 100%; }
+    .btn { flex: 1; padding: 11px 8px; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 14mm 12mm; }
+    body { background: white; }
+    .progress-wrap, .actions { display: none !important; }
+    .masthead, .intro-strip, .diagnostico, .multicare-block, footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .masthead { padding: 20px 0; page-break-after: avoid; }
+    .masthead::before, .masthead::after { display: none; }
+    .mast-title { font-size: 30pt; }
+    .mast-inner, .diag-inner { padding: 0; }
+    .intro-strip { padding: 14px 0; page-break-after: avoid; }
+    .diagnostico { padding: 18px 0; page-break-after: avoid; }
+    main { padding: 16px 0 0 0; }
+    footer { padding: 16px 0; }
+    .section { margin-bottom: 32px; }
+    .section-title { font-size: 22pt; page-break-after: avoid; }
+    .day { grid-template-columns: 140px 1fr; gap: 20px; padding: 16px 0; page-break-inside: avoid; }
+    .day-header { position: static; }
+    .day-name { font-size: 26pt; }
+    .block, .strategy-card, .post-card, .pipeline-card, .metric-card, .inmail-card, .destravar, .call-briefing, .captura-block {
+      box-shadow: none;
+      page-break-inside: avoid;
+    }
+    .strategy-grid, .pipeline-grid { grid-template-columns: 1fr 1fr; }
+    .posts-strategy { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .mc-frentes { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .destravar-row { grid-template-columns: 200px 1fr; }
+    .metric-input { font-size: 26pt; }
+  }
+
+  /* ═══════ ACORDEÃO ═══════ */
+  details.section-acc {
+    margin-bottom: 16px;
+    border: 1px solid var(--line);
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  details.section-acc[open] {
+    box-shadow: 0 4px 24px rgba(11,23,51,0.08);
+  }
+  details.section-acc > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 26px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: white;
+    transition: background 0.2s;
+    border-bottom: 1px solid transparent;
+  }
+  details.section-acc > summary::-webkit-details-marker { display: none; }
+  details.section-acc > summary::marker { display: none; }
+  details.section-acc[open] > summary {
+    background: var(--sand-50);
+    border-bottom-color: var(--line);
+  }
+  details.section-acc > summary:hover {
+    background: var(--sand-50);
+  }
+  .acc-num {
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--gold-500);
+    font-weight: 600;
+    flex-shrink: 0;
+    min-width: 32px;
+  }
+  .acc-title {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 600;
+    color: var(--navy-900);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    flex: 1;
+  }
+  .acc-title em { font-style: italic; color: var(--gold-500); font-weight: 500; }
+  .acc-meta {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .acc-icon {
+    width: 28px; height: 28px;
+    border: 1px solid var(--navy-900);
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .acc-icon::before, .acc-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--navy-900);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .acc-icon::before {
+    top: 50%; left: 6px; right: 6px;
+    height: 1.5px;
+    transform: translateY(-50%);
+  }
+  .acc-icon::after {
+    left: 50%; top: 6px; bottom: 6px;
+    width: 1.5px;
+    transform: translateX(-50%);
+  }
+  details.section-acc[open] > summary .acc-icon {
+    background: var(--navy-900);
+    transform: rotate(45deg);
+  }
+  details.section-acc[open] > summary .acc-icon::before,
+  details.section-acc[open] > summary .acc-icon::after {
+    background: var(--gold-400);
+  }
+  .acc-content {
+    padding: 36px 40px;
+  }
+
+  .acc-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    justify-content: flex-end;
+  }
+  .acc-control-btn {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+  }
+  .acc-control-btn:hover {
+    background: var(--navy-900);
+    color: var(--creme-txt);
+    border-color: var(--navy-900);
+  }
+
+  /* ═══════ MODAL COMPARTILHAR ═══════ */
+  .share-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11,23,51,0.7);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .share-overlay.active {
+    display: flex;
+  }
+  .share-modal {
+    background: var(--ivory);
+    max-width: 640px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    border: 1px solid var(--gold-500);
+    box-shadow: 0 12px 48px rgba(11,23,51,0.4);
+    position: relative;
+  }
+  .share-modal-header {
+    background: var(--navy-900);
+    color: var(--creme-txt);
+    padding: 24px 32px;
+    border-bottom: 2px solid var(--gold-500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .share-modal-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+  }
+  .share-modal-title em {
+    font-style: italic;
+    color: var(--gold-400);
+    font-weight: 500;
+  }
+  .share-modal-close {
+    background: transparent;
+    border: 1px solid rgba(201,163,83,0.4);
+    color: var(--gold-400);
+    width: 32px; height: 32px;
+    cursor: pointer;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1;
+    transition: all 0.2s;
+  }
+  .share-modal-close:hover {
+    background: var(--gold-500);
+    color: var(--navy-900);
+    border-color: var(--gold-500);
+  }
+  .share-modal-body {
+    padding: 32px;
+  }
+  .share-step {
+    margin-bottom: 28px;
+  }
+  .share-step:last-child { margin-bottom: 0; }
+  .share-step-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-500);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .share-step-title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+  .share-step-title em { font-style: italic; color: var(--terra-500); font-weight: 500; }
+  .share-step-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-body);
+    margin-bottom: 14px;
+  }
+  .share-step-text strong { color: var(--navy-900); font-weight: 600; }
+  .share-textarea {
+    width: 100%;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 11px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    background: white;
+    color: var(--text-dim);
+    outline: none;
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+  .share-textarea:focus { border-color: var(--gold-500); }
+  .share-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .share-btn {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 11px 18px;
+    background: var(--navy-900);
+    color: var(--gold-400);
+    border: 1px solid var(--navy-900);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+  }
+  .share-btn:hover {
+    background: var(--gold-500);
+    color: var(--navy-900);
+    border-color: var(--gold-500);
+  }
+  .share-btn.secondary {
+    background: transparent;
+    color: var(--navy-900);
+    border-color: rgba(11,23,51,0.3);
+  }
+  .share-btn.secondary:hover {
+    background: var(--navy-900);
+    color: var(--creme-txt);
+  }
+  .share-btn.success {
+    background: var(--green-500);
+    color: white;
+    border-color: var(--green-500);
+  }
+  .share-feedback {
+    font-size: 12px;
+    color: var(--green-500);
+    font-weight: 600;
+    margin-top: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    letter-spacing: 0.5px;
+  }
+  .share-feedback.visible { opacity: 1; }
+  .share-feedback.error { color: var(--terra-500); }
+  .share-divider {
+    height: 1px;
+    background: var(--line);
+    margin: 28px 0;
+  }
+  .share-info {
+    background: var(--sand-50);
+    border-left: 2px solid var(--gold-500);
+    padding: 14px 18px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-top: 14px;
+  }
+  .share-info strong { color: var(--navy-900); font-style: normal; font-weight: 600; }
+  .share-info em { color: var(--terra-500); }
+
+  @media (max-width: 980px) {
+    .share-modal-body { padding: 22px; }
+    .share-modal-header { padding: 18px 22px; }
+    .share-actions { flex-direction: column; }
+    .share-btn { width: 100%; }
+  }
+
+  @media print {
+    .share-overlay { display: none !important; }
+  }
+
+
+  @media (max-width: 980px) {
+    details.section-acc > summary { padding: 20px 22px; gap: 14px; }
+    .acc-content { padding: 24px 22px; }
+    .acc-meta { display: none; }
+  }
+
+  @media print {
+    details.section-acc {
+      border: 1px solid var(--line) !important;
+      box-shadow: none !important;
+      page-break-inside: avoid;
+      margin-bottom: 14px;
+    }
+    details.section-acc > summary {
+      padding: 14px 18px !important;
+      page-break-after: avoid;
+      background: var(--sand-50) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .acc-icon { display: none !important; }
+    .acc-content { padding: 20px !important; }
+    /* Forçar TUDO aberto na impressão */
+    details.section-acc:not([open]) > .acc-content { display: block !important; }
+    .acc-controls { display: none !important; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════ MASTHEAD ═══════ -->
+<header class="masthead">
+  <div class="mast-inner">
+    <div class="mast-top">
+      <div class="mast-brand">Karen <strong>Montagner</strong></div>
+      <div class="mast-program">Programa de <span>Evolução Contínua</span></div>
+    </div>
+
+    <div class="mast-eyebrow">Mentorada · Luciana Bonome · Semana 03</div>
+    <h1 class="mast-title">A semana de <em>aproximação.</em></h1>
+    <p class="mast-sub">A semana 1 construiu autoridade. A semana 2 abriu calls. A semana 3 destrava o que ficou parado e amplia o pipeline para mais empresas — para que a contratação chegue por mais de um caminho. <em>Não por mais barulho, mas por mais direção.</em></p>
+
+    <div class="mast-meta">
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Início</div>
+        <div class="mast-meta-value">Qua · <em>6 maio</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Encerramento</div>
+        <div class="mast-meta-value">Ter · <em>12 maio</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Calls da semana</div>
+        <div class="mast-meta-value">3 · <em>todas Alfa</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Destravar</div>
+        <div class="mast-meta-value">5 + Pricilla + <em>Rodrigo</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Pipeline novo</div>
+        <div class="mast-meta-value">10 · <em>empresas</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">InMails</div>
+        <div class="mast-meta-value">5 · <em>premium</em></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ INTRO STRIP ═══════ -->
+<div class="intro-strip">
+  <div class="intro-strip-inner">
+    <strong>princípio da semana</strong>
+    Antes de plantar novas sementes, regar as que já estão na terra.
+  </div>
+</div>
+
+<!-- ═══════ DIAGNÓSTICO LISTA ALFA ═══════ -->
+<section class="diagnostico">
+  <div class="diag-inner">
+    <div class="diag-eyebrow">Leitura da Lista Alfa · 28 contatos · 5 empresas + Rede Quente</div>
+    <h2 class="diag-title">A Lista Alfa<br>tem <em>padrão.</em></h2>
+    <p class="diag-lede">A análise dos 28 contatos revela três fatos importantes. <strong>3 calls agendadas na semana — todas com MSLs ativos da Lista Alfa</strong> (Thaís Fritsch e Fernando Sá da AstraZeneca, Tatiana Kawauchi da GSK). <strong>5 contatos seguem pendentes sem nenhuma data de contato</strong> — gargalo, não estoque (Danilo da AZ entra como prioridade pós-call). <strong>Pricilla Murador (Rede Quente, Ministério) é a 2ª maior aposta da semana</strong>: assina newsletter, foi contatada em 28/04, ainda sem call. Reativar Rodrigo (esfriou em março) é o terceiro movimento de destravar.</p>
+
+    <div class="diag-grid">
+      <div class="diag-card">
+        <div class="diag-card-label">Contatos totais</div>
+        <div class="diag-value">28</div>
+        <div class="diag-delta flat">5 empresas + rede</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card-label">Calls agendadas</div>
+        <div class="diag-value">3</div>
+        <div class="diag-delta">2 AZ + 1 GSK</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card-label">AstraZeneca</div>
+        <div class="diag-value">2</div>
+        <div class="diag-delta">Thaís hoje · Fernando 12/05</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card-label">Pendentes parados</div>
+        <div class="diag-value">5</div>
+        <div class="diag-delta warn">sem contato · destravar</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card-label">Assinam newsletter</div>
+        <div class="diag-value">2</div>
+        <div class="diag-delta warn">de 28 (7%)</div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card-label">Reativar</div>
+        <div class="diag-value">1</div>
+        <div class="diag-delta warn">Rodrigo · J&amp;J</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PROGRESS ═══════ -->
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-label">Progresso</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-pct" id="progressPct">0%</div>
+    <div class="actions">
+      <button class="btn" id="resetBtn">Resetar</button>
+      <button class="btn" id="shareBtn">Compartilhar status</button>
+      <button class="btn btn-primary" id="exportBtn">Baixar PDF</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <div class="acc-controls">
+    <button class="acc-control-btn" id="expandAllBtn">Expandir tudo</button>
+    <button class="acc-control-btn" id="collapseAllBtn">Fechar tudo</button>
+  </div>
+
+  <!-- ═══════ SEÇÃO 01: DESTRAVAR LISTA ALFA ═══════ -->
+  <details class="section-acc" open>
+    <summary>
+      <span class="acc-num">01</span>
+      <span class="acc-title">Destravar a Lista Alfa</span>
+      <span class="acc-meta">3 movimentos · quarta</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      Antes de mapear empresas novas, antes de InMails Premium, antes de qualquer outra coisa: <strong>destravar o que está parado na Lista Alfa.</strong> Existem 3 ações concretas que precisam acontecer na quarta antes de qualquer outra coisa. Cada uma com nome, dado e movimento específico — não suposição. <em>Quem rega antes de plantar colhe duas vezes.</em>
+    </p>
+
+    <div class="destravar">
+
+      <div class="destravar-row">
+        <div class="destravar-label-cell">
+          <div class="destravar-tag">Movimento 01 · Pendentes</div>
+          <div class="destravar-name">Os <em>6 pendentes</em> sem contato</div>
+          <div class="destravar-meta">Quarta · 6/05 · manhã</div>
+        </div>
+        <div class="destravar-content">
+          <ul class="destravar-list">
+            <li><strong>Danilo Lopes</strong> · Medical Director AstraZeneca · pendente sem data → Script 2 (Manager/Director)</li>
+            <li><strong>Jairo Dutra Fractucello</strong> · MSL GSK · pendente sem data → Script 1 (par MSL)</li>
+            <li><strong>Simone Braggio Forny</strong> · Medical Director J&amp;J · pendente sem data → Script 2 (Manager/Director)</li>
+            <li><strong>Filipe Marques Gonçalves</strong> · Medical Manager J&amp;J · pendente sem data → Script 2 (Manager/Director)</li>
+            <li><strong>Fernando Amador Mos</strong> · Medical Director AbbVie · pendente sem data → Script 2 (Manager/Director)</li>
+            <li><strong>Nilson Ferreira</strong> · MSL AbbVie · pendente sem data → Script 1 (par MSL)</li>
+            <li style="margin-top:8px;color:var(--terra-500);font-style:italic;font-family:var(--serif);font-size:15.5px;">Total: 6 mensagens, 25 min de envio. Nenhuma deveria ter ficado parada.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="destravar-row">
+        <div class="destravar-label-cell">
+          <div class="destravar-tag">Movimento 02 · Conversão</div>
+          <div class="destravar-name">Pricilla Murador <em>vira call</em></div>
+          <div class="destravar-meta">Quarta · 6/05 · meio-dia</div>
+        </div>
+        <div class="destravar-content">
+          <ul class="destravar-list">
+            <li>Pricilla é <strong>Rede Quente, Ministério da Saúde</strong>. Assina a newsletter. Contatada em 28/04. Sem call agendada.</li>
+            <li>É a <strong>2ª maior aposta da semana</strong> depois da Tatiana. Combinação rara: rede quente + leitora ativa + contato recente.</li>
+            <li>Movimento direto: <strong>propor call de 20 minutos</strong> para a próxima semana, slots fechados.</li>
+          </ul>
+          <div class="destravar-script">Pricilla, fiquei pensando em você nos últimos dias — desde nossa última troca. <strong>Vamos marcar 20 minutos para uma conversa?</strong> Ministério é uma perspectiva que me ajuda muito a calibrar o que estou estudando em Medical Affairs. <span class="placeholder">Terça 13/05, 14h</span> ou <span class="placeholder">quarta 14/05, 9h</span>?</div>
+        </div>
+      </div>
+
+      <div class="destravar-row">
+        <div class="destravar-label-cell">
+          <div class="destravar-tag">Movimento 03 · Reativação</div>
+          <div class="destravar-name">Rodrigo Santos Lima <em>de volta</em></div>
+          <div class="destravar-meta">Quarta · 6/05 · tarde</div>
+        </div>
+        <div class="destravar-content">
+          <ul class="destravar-list">
+            <li>Rodrigo é Rede Quente, J&amp;J. Marcado <strong>"Esfriou" desde 02/03</strong> — 9 semanas atrás.</li>
+            <li>Tempo suficiente para uma <strong>reativação respeitosa</strong>. Mensagem totalmente diferente da primeira: agora ele já sabe quem ela é.</li>
+            <li>Sem cobrança. Sem ressentimento. <em>Apenas a notícia de uma evolução real desde a última troca.</em></li>
+          </ul>
+          <div class="destravar-script">Oi Rodrigo, tudo bem? Voltei a você porque <strong>a trajetória mudou de patamar</strong> nas últimas semanas — coordenação do REDONE.br consolidada, primeiras conversas sendo abertas com MSLs em <span class="placeholder">empresas</span>, e uma newsletter que comecei (Medical Insights, hoje com 215+ assinantes). Achei que valia te contar. Se ressoar, fico feliz em retomar. Se não for o momento, sigo aqui no radar mesmo.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </details>
+
+  <!-- ═══════ SEÇÃO 02: BRIEFINGS DAS 3 CALLS ═══════ -->
+  <details class="section-acc" open>
+    <summary>
+      <span class="acc-num">02</span>
+      <span class="acc-title">Briefings das 3 calls</span>
+      <span class="acc-meta">Thaís · Tatiana · Fernando</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      Três conversas com MSLs ativos da Lista Alfa em uma única semana — todas vindas do trabalho da semana 1. Duas com AstraZeneca (5,5% dos visitantes do perfil), uma com GSK. <strong>Cada call merece preparação específica + captura imediata + follow-up de valor em 24h</strong>. Os briefings abaixo trazem perguntas, casos e roteiro. Os blocos de captura ficam salvos automaticamente. <em>Call não é entrevista — é duas pessoas compartilhando leitura de mercado.</em>
+    </p>
+
+    <!-- BRIEFING 1: THAÍS -->
+    <div class="call-briefing">
+      <div class="briefing-header">
+        <div class="briefing-info">
+          <div class="briefing-when">Hoje · Segunda 5/05 · 17h</div>
+          <div class="briefing-name">Thaís Zilles <em>Fritsch</em></div>
+          <div class="briefing-role">MSL · AstraZeneca · contato 24/04</div>
+        </div>
+        <div class="briefing-status">
+          <span class="briefing-status-tag">Call em poucas horas</span>
+        </div>
+      </div>
+      <div class="briefing-body">
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">01 · Abertura · primeiros 90 segundos</div>
+          <div class="briefing-script">Thaís, obrigada pelo tempo. Vou ser objetiva sobre o que me trouxe aqui: venho de PhD em Patologia, coordenei a REDONE.br na ABN, e estou direcionando minha atuação para Medical Affairs. AstraZeneca está no meu radar há semanas — mas vim te ouvir, não me apresentar. Conta de você primeiro.</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">02 · As 3 perguntas em ordem</div>
+          <ol class="briefing-questions">
+            <li>"Como é um dia típico de MSL na AZ — especialmente na sua área?"<strong>Permite ela falar do que conhece, abre conversa</strong></li>
+            <li>"O que mudou no papel de MSL na AstraZeneca nos últimos 2 anos?"<strong>Ouro estratégico: ela vai falar do que a empresa valoriza HOJE</strong></li>
+            <li>"O que distingue um MSL de alta performance dos demais na AZ, na sua leitura?"<strong>Entrega o filtro de quem decide</strong></li>
+          </ol>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">03 · O caso REDONE para o meio da call</div>
+          <div class="briefing-script">Quando coordenei o REDONE.br, vi um padrão que talvez ressoe: KOLs neurologistas com acesso à evidência, mas com um gap de tradução entre o paper e a conduta no consultório — especialmente em condições de baixa prevalência. Como vocês lidam com isso na AZ?</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">04 · Pergunta crítica · últimos 3 minutos</div>
+          <div class="briefing-script">Thaís, se você estivesse no meu lugar agora — PhD em Patologia, vinda da pesquisa clínica, querendo virar MSL na AZ ou em outra grande — por onde você começaria? Tem 1 ou 2 nomes que você acha que valeria eu conhecer?</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">05 · Encerramento de alta conversão</div>
+          <div class="briefing-script">Posso te incluir na próxima edição da Medical Insights? Tem um ponto que se conecta direto com o que conversamos.</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">06 · O que evitar</div>
+          <div class="briefing-warning">
+            Nada de <strong>"estou em transição"</strong> ou "buscando vagas". Nada de pedir que ela passe currículo internamente <strong>(queima)</strong>. Nada de mencionar a Multicare — a conversa é sobre AstraZeneca. Nada de áudio extenso: <strong>ouvir 70% do tempo</strong> é o que separa quem entra como par de quem entra como candidato.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CAPTURA THAÍS -->
+    <div class="captura-block" data-captura="thais">
+      <div class="captura-label">Captura pós-call · Thaís</div>
+      <div class="captura-title">Como foi a <em>conversa?</em></div>
+      <div class="captura-sub">Preencher logo após a call — enquanto está quente. Tudo fica salvo automaticamente.</div>
+
+      <div class="captura-status-row">
+        <button class="captura-status-btn" data-status="thais-status" data-value="excelente">Excelente</button>
+        <button class="captura-status-btn" data-status="thais-status" data-value="boa">Boa</button>
+        <button class="captura-status-btn" data-status="thais-status" data-value="neutra">Neutra</button>
+        <button class="captura-status-btn" data-status="thais-status" data-value="dificil">Difícil</button>
+      </div>
+
+      <div class="captura-grid">
+        <div class="captura-field">
+          <label class="captura-field-label">3 insights aprendidos</label>
+          <textarea class="captura-textarea" data-captura-field="thais-insights" placeholder="O que ela trouxe que mudou tua leitura?"></textarea>
+        </div>
+        <div class="captura-field">
+          <label class="captura-field-label">2 nomes citados (indicações)</label>
+          <textarea class="captura-textarea" data-captura-field="thais-nomes" placeholder="Quem ela mencionou? Quem indicou?"></textarea>
+        </div>
+        <div class="captura-field captura-field-full">
+          <label class="captura-field-label">Próximo passo · ação concreta</label>
+          <input class="captura-input" data-captura-field="thais-proximo" type="text" placeholder="Ex: mandar artigo X em 24h + DM para nome indicado até sexta">
+        </div>
+        <div class="captura-field captura-field-full">
+          <label class="captura-field-label">Como foi (texto livre)</label>
+          <textarea class="captura-textarea" data-captura-field="thais-livre" placeholder="Tom da conversa, surpresas, o que ficou em aberto, o que você sentiu..." style="min-height:120px;"></textarea>
+        </div>
+      </div>
+
+      <div class="captura-saved" id="captura-saved-thais">✓ Salvo automaticamente</div>
+    </div>
+
+    <!-- BRIEFING 2: TATIANA -->
+    <div class="call-briefing" style="margin-top:48px;">
+      <div class="briefing-header">
+        <div class="briefing-info">
+          <div class="briefing-when">Quinta 7/05</div>
+          <div class="briefing-name">Tatiana Satie <em>Kawauchi</em></div>
+          <div class="briefing-role">MSL Pl · GSK · única assinante da newsletter</div>
+        </div>
+        <div class="briefing-status">
+          <span class="briefing-status-tag">Padrão de aderência</span>
+        </div>
+      </div>
+      <div class="briefing-body">
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">Contexto único desta call</div>
+          <div class="briefing-warning">
+            Tatiana é a <strong>única pessoa da Lista Alfa que assina a Medical Insights</strong>. Ela já te conhece pelo conteúdo. <strong>Esse é o tom</strong> — não é apresentação, é continuidade. Pode citar a newsletter no início e usar como ponto de partida.
+          </div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">01 · Abertura · primeiros 90 segundos</div>
+          <div class="briefing-script">Tatiana, obrigada por aceitar. Já te tenho como leitora da Medical Insights, então vou ser direta: vim te ouvir sobre como é Medical Affairs na GSK na prática — especialmente em neuro/respiratório, que conversa com tudo que estou estudando desde a REDONE.br. Conta de você primeiro.</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">02 · As 3 perguntas em ordem</div>
+          <ol class="briefing-questions">
+            <li>"Como é a interface entre MSL e KOL na GSK na prática? O que funciona, o que ainda emperra?"<strong>Pega ela falando do que vive</strong></li>
+            <li>"GSK em neuro tem cultura científica forte — como isso aparece no dia a dia de Medical Affairs?"<strong>Mostra que você já fez lição de casa sobre a empresa</strong></li>
+            <li>"O que você gostaria de saber antes de virar MSL e que ninguém te falou?"<strong>Pergunta que humaniza, gera resposta longa, e te dá leitura sobre os filtros não escritos</strong></li>
+          </ol>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">03 · O caso REDONE para o meio da call</div>
+          <div class="briefing-script">Algo que vi no REDONE.br e que talvez ressoe com sua experiência: o gap entre dado clínico publicado e adoção em consultório, em condições neurológicas raras, costuma estar mais em tradução do que em evidência. Você vê isso na sua interface com KOLs?</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">04 · Pergunta crítica · últimos 3 minutos</div>
+          <div class="briefing-script">Tatiana, uma pergunta direta — se você fosse contratar uma MSL hoje na GSK, com PhD em Patologia e vinda da pesquisa clínica, o que olharia primeiro? E pelo perfil que você viu de mim, tem 1 ou 2 nomes na sua rede que valeria eu conhecer?</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">05 · Encerramento</div>
+          <div class="briefing-script">Próxima edição da newsletter sai sexta — vou pensar em algo a partir do que conversamos. Obrigada de novo, Tatiana.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CAPTURA TATIANA -->
+    <div class="captura-block" data-captura="tatiana">
+      <div class="captura-label">Captura pós-call · Tatiana</div>
+      <div class="captura-title">Como foi a <em>conversa?</em></div>
+      <div class="captura-sub">Preencher logo após a call — enquanto está quente. Tudo fica salvo automaticamente.</div>
+
+      <div class="captura-status-row">
+        <button class="captura-status-btn" data-status="tatiana-status" data-value="excelente">Excelente</button>
+        <button class="captura-status-btn" data-status="tatiana-status" data-value="boa">Boa</button>
+        <button class="captura-status-btn" data-status="tatiana-status" data-value="neutra">Neutra</button>
+        <button class="captura-status-btn" data-status="tatiana-status" data-value="dificil">Difícil</button>
+      </div>
+
+      <div class="captura-grid">
+        <div class="captura-field">
+          <label class="captura-field-label">3 insights aprendidos</label>
+          <textarea class="captura-textarea" data-captura-field="tatiana-insights" placeholder="O que ela trouxe que mudou tua leitura?"></textarea>
+        </div>
+        <div class="captura-field">
+          <label class="captura-field-label">2 nomes citados (indicações)</label>
+          <textarea class="captura-textarea" data-captura-field="tatiana-nomes" placeholder="Quem ela mencionou? Quem indicou?"></textarea>
+        </div>
+        <div class="captura-field captura-field-full">
+          <label class="captura-field-label">Próximo passo · ação concreta</label>
+          <input class="captura-input" data-captura-field="tatiana-proximo" type="text" placeholder="Ex: incluir tema X na newsletter de sexta + DM para nome indicado até segunda">
+        </div>
+        <div class="captura-field captura-field-full">
+          <label class="captura-field-label">Como foi (texto livre)</label>
+          <textarea class="captura-textarea" data-captura-field="tatiana-livre" placeholder="Tom da conversa, surpresas, o que ficou em aberto, o que você sentiu..." style="min-height:120px;"></textarea>
+        </div>
+      </div>
+
+      <div class="captura-saved" id="captura-saved-tatiana">✓ Salvo automaticamente</div>
+    </div>
+
+    <!-- BRIEFING 3: FERNANDO -->
+    <div class="call-briefing" style="margin-top:48px;">
+      <div class="briefing-header">
+        <div class="briefing-info">
+          <div class="briefing-when">Terça 12/05</div>
+          <div class="briefing-name">Fernando <em>Sá</em></div>
+          <div class="briefing-role">MSL · AstraZeneca · contato 28/04 · 2ª call AZ na semana</div>
+        </div>
+        <div class="briefing-status">
+          <span class="briefing-status-tag">Pós-Thaís · contexto AZ ampliado</span>
+        </div>
+      </div>
+      <div class="briefing-body">
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">Contexto único desta call</div>
+          <div class="briefing-warning">
+            <strong>Fernando é a 2ª call AstraZeneca na mesma semana.</strong> Depois da Thaís, você terá visão de dentro do time AZ, e isso muda o tom dessa conversa: ela pode ser mais técnica, com referências internas que a Thaís citou. <strong>Não citar Thaís pelo nome diretamente</strong> (ela não autorizou) — mas usar o aprendizado da call para fazer perguntas mais cirúrgicas. Se eles forem da mesma área terapêutica, pode mencionar que "tenho conversado com outros profissionais da AZ" sem nominar.
+          </div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">01 · Abertura · primeiros 90 segundos</div>
+          <div class="briefing-script">Fernando, obrigada pelo tempo. Vou direto: PhD em Patologia, coordenei a REDONE.br na ABN, e estou direcionando para Medical Affairs. AstraZeneca tem aparecido bastante nas minhas leituras de mercado — vim te ouvir sobre como é por dentro. Conta de você primeiro.</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">02 · As 3 perguntas em ordem</div>
+          <ol class="briefing-questions">
+            <li>"Como você descreveria a cultura de Medical Affairs na AstraZeneca em 2026 — diferente do que era 2-3 anos atrás?"<strong>Pega evolução institucional, ouro pra calibrar candidatura</strong></li>
+            <li>"Qual área terapêutica você acha que tem mais espaço pra crescer na AZ Brasil agora?"<strong>Sinaliza onde focar nas próximas DMs</strong></li>
+            <li>"O que você gostaria de ter sabido antes de virar MSL na AZ — e que poderia poupar tempo de quem está chegando agora?"<strong>Pergunta humana que abre conselho real</strong></li>
+          </ol>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">03 · O caso REDONE para o meio da call</div>
+          <div class="briefing-script">Coordenando a REDONE.br, uma coisa me marcou: a velocidade com que evidência clínica desce até o consultório varia muito por área e por tipo de KOL. Em onco/respiratório (que é forte na AZ), você sente que essa tradução é estruturada, ou ainda depende muito do MSL individualmente?</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">04 · Pergunta crítica · últimos 3 minutos</div>
+          <div class="briefing-script">Fernando, pergunta direta: quando vagas de MSL abrem na AstraZeneca, o que costuma fazer um candidato entrar mesmo sem trajetória prévia em farma? E pelo que você viu até aqui, tem alguém na AZ ou fora que faria sentido eu conhecer?</div>
+        </div>
+
+        <div class="briefing-section">
+          <div class="briefing-section-label">05 · Encerramento de alta conversão</div>
+          <div class="briefing-script">Posso te mandar a próxima edição da Medical Insights? Senti que ressoa com o que conversamos. E obrigada de novo, Fernando — leitura tua sobre AZ me ajudou a calibrar muita coisa.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CAPTURA FERNANDO -->
+    <div class="captura-block" data-captura="fernando">
+      <div class="captura-label">Captura pós-call · Fernando</div>
+      <div class="captura-title">Como foi a <em>conversa?</em></div>
+      <div class="captura-sub">Preencher logo após a call — enquanto está quente. Tudo fica salvo automaticamente.</div>
+
+      <div class="captura-status-row">
+        <button class="captura-status-btn" data-status="fernando-status" data-value="excelente">Excelente</button>
+        <button class="captura-status-btn" data-status="fernando-status" data-value="boa">Boa</button>
+        <button class="captura-status-btn" data-status="fernando-status" data-value="neutra">Neutra</button>
+        <button class="captura-status-btn" data-status="fernando-status" data-value="dificil">Difícil</button>
+      </div>
+
+      <div class="captura-grid">
+        <div class="captura-field">
+          <label class="captura-field-label">3 insights aprendidos</label>
+          <textarea class="captura-textarea" data-captura-field="fernando-insights" placeholder="O que ele trouxe que mudou tua leitura?"></textarea>
+        </div>
+        <div class="captura-field">
+          <label class="captura-field-label">2 nomes citados (indicações)</label>
+          <textarea class="captura-textarea" data-captura-field="fernando-nomes" placeholder="Quem ele mencionou? Quem indicou?"></textarea>
+        </div>
+        <div class="captura-field captura-field-full">
+          <label class="captura-field-label">Próximo passo · ação concreta</label>
+          <input class="captura-input" data-captura-field="fernando-proximo" type="text" placeholder="Ex: mandar paper X em 24h + DM Danilo Lopes (Medical Director AZ) na quarta">
+        </div>
+        <div class="captura-field captura-field-full">
+          <label class="captura-field-label">Como foi (texto livre)</label>
+          <textarea class="captura-textarea" data-captura-field="fernando-livre" placeholder="Tom da conversa, leitura sobre cultura AZ, o que confirma/diverge da Thaís, o que ficou em aberto..." style="min-height:120px;"></textarea>
+        </div>
+      </div>
+
+      <div class="captura-saved" id="captura-saved-fernando">✓ Salvo automaticamente</div>
+    </div>
+
+  </div>
+  </details>
+
+  <!-- ═══════ SEÇÃO 03: NOVOS MOVIMENTOS ═══════ -->
+  <details class="section-acc">
+    <summary>
+      <span class="acc-num">03</span>
+      <span class="acc-title">Os 6 movimentos novos da semana</span>
+      <span class="acc-meta">6 estratégias</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      Nenhum dos seis movimentos abaixo apareceu nas semanas 1 ou 2. Todos entram agora porque os dados pedem outra natureza de ação: <strong>menos volume na mesma frente, mais frentes paralelas com profundidade</strong>. <em>É a leitura que muda a marcha — não a velocidade.</em>
+    </p>
+
+    <div class="strategy-grid">
+
+      <div class="strategy-card">
+        <div class="strat-num">01 · Frentes paralelas Multicare</div>
+        <div class="strat-title">Três caminhos <em>laterais</em> dentro da Multicare</div>
+        <div class="strat-body">
+          A candidatura formal segue seu curso. Em paralelo: <strong>(1)</strong> mapear MSL atual da Multicare e abrir conversa de par; <strong>(2)</strong> mapear alguém de Patient Advocacy do portfólio raras; <strong>(3)</strong> identificar Talent Acquisition da Multicare e estabelecer ponte técnica. <em>Três pontos de entrada distintos ampliam as chances de a candidatura chegar à mesa do Caio por mais de um caminho.</em>
+        </div>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strat-num">02 · Pipeline diversificado</div>
+        <div class="strat-title">10 empresas, <em>processos paralelos</em></div>
+        <div class="strat-body">
+          A Multicare é prioridade, mas é uma entre dez possibilidades reais. Esta semana abre o pipeline para Roche, Pfizer, Bayer, Lilly, Sanofi, Takeda, Novartis, BMS, Merck e Janssen. Para cada empresa, identificar 1 vaga + 1 manager + 1 MSL atual. <em>Pipeline diversificado é o que permite uma posição serena diante de qualquer resposta.</em>
+        </div>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strat-num">03 · InMail Premium ativo</div>
+        <div class="strat-title">5 mensagens diretas para <em>perfis fora da rede</em></div>
+        <div class="strat-body">
+          O Premium libera 5 InMails por mês — recurso que entrega mensagem direta na caixa principal de quem ainda não é conexão. Reservados para Diretores Médicos e Heads que dificilmente aceitariam connection request fria. <strong>Taxa de leitura próxima de 90%.</strong> Cada um é uma oportunidade que merece ser pensada com cuidado, não disparada em série. <em>Cinco aberturas estratégicas, não cinco tentativas.</em>
+        </div>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strat-num">04 · Pedido de indicação</div>
+        <div class="strat-title">Voltar para as <em>2 calls</em> da semana 2</div>
+        <div class="strat-body">
+          As duas pessoas com quem ela conversou na semana passada são fontes naturais de indicação. <strong>Pedir 1 ou 2 nomes que faria sentido conhecer</strong> é movimento legítimo, especialmente após uma conversa de qualidade. Pessoas indicam quando se sentem co-autoras do crescimento de quem admiram. <em>É um gesto que honra a conversa anterior, não que a sobrecarrega.</em>
+        </div>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strat-num">05 · Recruiters de farma</div>
+        <div class="strat-title">Talent Acquisition <em>como aliado</em></div>
+        <div class="strat-body">
+          Recruiter especializado em farma tem 30+ vagas no radar a qualquer momento. <strong>Abrir conversa com 5 recruiters esta semana — não pedindo vaga, mas orientação de mercado</strong>. Eles indicam mais que decisores porque é a função natural deles. Frente que ainda não estava ativa nos planos anteriores. <em>Recruiter satisfeito é fonte recorrente, não pontual.</em>
+        </div>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strat-num">06 · Conteúdo como portfólio</div>
+        <div class="strat-title">Os 3 posts <em>são prova material</em></div>
+        <div class="strat-body">
+          Quem receber DM, InMail ou ver a candidatura dela esta semana vai clicar no perfil. Os 3 posts precisam reforçar uma única tese: MSL pronta, não em transição. Saem formatos de impressão e entram <strong>case study, framework próprio e paper review</strong>. <em>Conteúdo que sustenta a conversa quando ela não está na sala.</em>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </details>
+
+  <!-- ═══════ SEÇÃO 04: MULTICARE ═══════ -->
+  <details class="section-acc">
+    <summary>
+      <span class="acc-num">04</span>
+      <span class="acc-title">Multicare · 4 frentes paralelas</span>
+      <span class="acc-meta">Caso prioritário</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      O CV foi enviado na segunda 4/05. <strong>A candidatura segue seu curso.</strong> Em paralelo, abrem-se três frentes que ampliam o radar dentro da empresa sem comprometer a candidatura formal. Nenhuma das ações é cobrança ou perseguição. Todas são <em>presença qualificada por caminhos legítimos</em>.
+    </p>
+
+    <div class="multicare-block">
+      <div class="multicare-inner">
+        <div class="mc-eyebrow">Multicare Pharma · 4 frentes simultâneas</div>
+        <h2 class="mc-title">Não é uma candidatura.<br>São <em>quatro caminhos</em> elegantes.</h2>
+        <p class="mc-context">
+          Diretor Médico recebe candidatura toda semana. <strong>O que diferencia é quando o nome se faz presente em mais de uma fonte ao longo da mesma semana.</strong> Cada frente abaixo abre um ponto de entrada distinto. Nenhuma delas força contato — todas constroem visibilidade.
+        </p>
+
+        <div class="mc-frentes">
+
+          <div class="mc-frente">
+            <div class="mc-frente-label">Frente 01 · Caio</div>
+            <div class="mc-frente-title">Presença <em>discreta</em></div>
+            <div class="mc-frente-text">
+              Sem mensagem direta nesta semana. <strong>Reagir aos posts dele com comentários técnicos</strong> mantém presença sem virar cobrança. Se ele postar entre quarta e sexta, comentar com profundidade. <em>É lembrança elegante — não solicitação.</em>
+            </div>
+          </div>
+
+          <div class="mc-frente">
+            <div class="mc-frente-label">Frente 02 · MSL atual da Multicare</div>
+            <div class="mc-frente-title">Conversa <em>de par</em></div>
+            <div class="mc-frente-text">
+              Mapear na sexta os 2-3 MSLs ativos da Multicare e abrir conversa técnica sobre doenças raras. <strong>MSL atual é a melhor fonte sobre a cultura interna do time</strong> — e uma boa conversa de par costuma chegar ao Manager com naturalidade.
+            </div>
+            <div class="mc-script-box">Oi <span class="placeholder">Nome</span>, vi que você atua como MSL na Multicare em <span class="placeholder">área terapêutica</span>. Coordenei a REDONE.br na ABN e estou aprofundando minha leitura sobre doenças raras neuromusculares. Trocaria 15 min com você sobre como é a interface com KOLs nesse portfólio? Sem agenda — só aprendizado.</div>
+          </div>
+
+          <div class="mc-frente">
+            <div class="mc-frente-label">Frente 03 · Patient Advocacy</div>
+            <div class="mc-frente-title">Acesso <em>lateral</em> ao mesmo radar</div>
+            <div class="mc-frente-text">
+              Patient Advocacy de doenças raras é uma área pequena e influente. <strong>Quem atua nessa frente conhece as pessoas-chave da indústria, inclusive Diretores Médicos.</strong> Abrir conexão com curiosidade real sobre Duchenne ou PTTa, sem mencionar a candidatura.
+            </div>
+            <div class="mc-script-box"><span class="placeholder">Nome</span>, acompanho seu trabalho com pacientes em <span class="placeholder">condição rara</span>. Venho da pesquisa clínica e estou cada vez mais envolvida com a leitura prática de doenças raras. Posso te perguntar como é a interface entre indústria e advocacy nessa área no Brasil hoje?</div>
+          </div>
+
+          <div class="mc-frente">
+            <div class="mc-frente-label">Frente 04 · Talent Acquisition</div>
+            <div class="mc-frente-title">RH como <em>aliado</em></div>
+            <div class="mc-frente-text">
+              Identificar quem é o(a) Talent Acquisition da Multicare. <strong>Conectar pedindo orientação de carreira em Medical Affairs</strong> — não a vaga em si. Recruiter satisfeito acompanha candidato em mais de uma oportunidade; recruiter pressionado fecha porta.
+            </div>
+            <div class="mc-script-box"><span class="placeholder">Nome</span>, vi que você atua em Talent Acquisition na Multicare. Estou direcionando minha trajetória (PhD Patologia + REDONE.br) para Medical Affairs — já me candidatei à vaga aberta. O motivo de te escrever é diferente: você teria 15 minutos para uma conversa sobre como a Multicare avalia perfis vindos de pesquisa para MSL? É orientação que peço, não retorno sobre a candidatura.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </details>
+
+  <!-- ═══════ SEÇÃO 05: PIPELINE ═══════ -->
+  <details class="section-acc">
+    <summary>
+      <span class="acc-num">05</span>
+      <span class="acc-title">Pipeline · 10 empresas novas</span>
+      <span class="acc-meta">10 empresas</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      A Lista Alfa original tinha 5 empresas (AstraZeneca, GSK, J&amp;J, AbbVie, IQVIA). <strong>Esta semana ela vai a 10.</strong> Cada empresa nova com 1 vaga MSL identificada + 1 Medical Manager + 1 MSL atual. Total: 30 perfis novos para a planilha. <em>Diversificação é o que permite serenidade no processo.</em>
+    </p>
+
+    <div class="pipeline-grid">
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Roche</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Vagas MSL recorrentes</strong> em onco e neuro. Forte presença em RWE no Brasil. Mapear Manager onco-hemato.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Pfizer</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Time MSL grande</strong> (15+ pessoas no Brasil). Áreas de raras e onco. Alta aderência ao perfil.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Bayer</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Foco em radio-onco e cardio.</strong> Time enxuto. Bom para mapear nominalmente em 2 dias. Já tem 1 contato (Rodrigo Silva Cezar).</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Lilly</div>
+        <div class="pipeline-meta">SP · Remoto possível</div>
+        <div class="pipeline-action"><strong>Doenças raras em expansão.</strong> Endo, dermato, neuro. Vagas rotativas.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Sanofi</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Genzyme em raras</strong> (área neuro-metabólica). Match excelente com PhD Patologia.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Takeda</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Hematologia e raras.</strong> Cultura científica forte, valoriza perfil de pesquisa.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Novartis</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Onco e neuro</strong> (Esclerose Múltipla forte). Time MSL bem estruturado.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">BMS</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Foco em onco-imunologia.</strong> Vagas em I-O específicas. Senioridade científica valorizada.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">expandir</div>
+        <div class="pipeline-name">Merck</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>Onco e endocrinologia.</strong> Pequenas e médias vagas em raras periodicamente abertas.</div>
+      </div>
+      <div class="pipeline-card">
+        <div class="pipeline-priority">reforçar</div>
+        <div class="pipeline-name">Janssen / J&amp;J</div>
+        <div class="pipeline-meta">SP · Híbrido</div>
+        <div class="pipeline-action"><strong>5 contatos já mapeados.</strong> Reforçar com 1 MSL pleno + 1 manager pulmão na semana.</div>
+      </div>
+    </div>
+  </div>
+  </details>
+
+  <!-- ═══════ SEÇÃO 06: INMAILS ═══════ -->
+  <details class="section-acc">
+    <summary>
+      <span class="acc-num">06</span>
+      <span class="acc-title">5 InMails Premium</span>
+      <span class="acc-meta">5 mensagens diretas</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      InMail é o melhor recurso do Premium e o mais subutilizado. Chega na caixa principal e gera resposta significativamente acima da média de connection request. Os 5 da semana são reservados para Diretores Médicos, Heads e Talent Acquisition que dificilmente aceitariam contato frio. <em>Cada um merece ser pensado com cuidado individual.</em>
+    </p>
+
+    <div class="inmail-grid">
+
+      <div class="inmail-card">
+        <div class="inmail-header">
+          <div class="inmail-title">InMail 01 · Para <em>Diretor Médico</em> de empresa-alvo</div>
+          <div class="inmail-tag">Mensagem 1</div>
+        </div>
+        <div class="inmail-body"><span class="placeholder">Nome</span>, escrevo de forma direta porque acompanho seu trabalho na <span class="placeholder">empresa</span> há algumas semanas — especificamente <span class="placeholder">tema/post específico</span>.
+
+PhD em Patologia (UNESP), coordenei a REDONE.br na Academia Brasileira de Neurologia. Estou direcionando minha atuação para Medical Affairs, com foco específico em <span class="placeholder">área terapêutica relevante para a empresa dele</span>.
+
+Sem agenda de vaga. Quis colocar este perfil no seu radar antes de ele eventualmente chegar pelo RH — porque o caminho de quem vem de pesquisa clínica e quer atuar como MSL em ambiente regulado raramente fica explícito num CV.
+
+Se fizer sentido conversar 15 minutos algum dia, minha agenda é flexível. Se não, fica registrado.</div>
+      </div>
+
+      <div class="inmail-card">
+        <div class="inmail-header">
+          <div class="inmail-title">InMail 02 · Para <em>Head de Medical Affairs</em></div>
+          <div class="inmail-tag">Mensagem 2</div>
+        </div>
+        <div class="inmail-body"><span class="placeholder">Nome</span>, vejo seu trabalho como Head de Medical Affairs na <span class="placeholder">empresa</span> e gostaria de fazer uma colocação direta.
+
+Coordenei o registro nacional brasileiro de doenças neurológicas (REDONE.br) na ABN. Patologia molecular, scientific exchange com KOLs, ambiente regulado completo (CEP, TCLE, LGPD). Hoje me direciono para Medical Affairs.
+
+Penso que os melhores MSLs vêm de duas origens: representante experiente que estudou ciência de novo, ou cientista que aprendeu a traduzir. Faço parte do segundo grupo — e a tradução é a parte que aprendi mais cedo.
+
+15 minutos para você me dizer o que procura num MSL na sua empresa? Vale tanto para entender o filtro quanto para eu te dizer se faço sentido.</div>
+      </div>
+
+      <div class="inmail-card">
+        <div class="inmail-header">
+          <div class="inmail-title">InMail 03 · Para <em>Talent Acquisition Senior</em> em farma</div>
+          <div class="inmail-tag">Mensagem 3</div>
+        </div>
+        <div class="inmail-body"><span class="placeholder">Nome</span>, contato direto.
+
+Sou PhD em Patologia, vinda da pesquisa clínica acadêmica (REDONE.br/ABN), direcionando minha trajetória para Medical Affairs. <span class="placeholder">Empresa dela</span> tem time MSL forte em <span class="placeholder">área</span>.
+
+Não estou perguntando sobre uma vaga específica. A minha pergunta é: na sua leitura, qual é o ponto principal que vocês olham quando recebem candidatura de cientista querendo virar MSL? Sei o que está no meu CV — gostaria de saber o que falta no filtro de quem decide.
+
+Conversa de 15 min, qualquer dia da semana.</div>
+      </div>
+
+      <div class="inmail-card">
+        <div class="inmail-header">
+          <div class="inmail-title">InMail 04 · Para <em>MSL sênior referência</em> (rede de pares)</div>
+          <div class="inmail-tag">Mensagem 4</div>
+        </div>
+        <div class="inmail-body"><span class="placeholder">Nome</span>, sigo seu trabalho como MSL na <span class="placeholder">empresa</span> e seus posts sobre <span class="placeholder">tema</span> aparecem no meu feed com frequência — leio sempre.
+
+Estou no movimento de pesquisa clínica para Medical Affairs e queria te ouvir 15 minutos sobre 1 coisa específica: quando você fez essa transição (se fez), qual foi o ponto que você só entendeu DEPOIS de já estar no campo? Isso me ajuda a calibrar o que estou estudando.
+
+Sem agenda de vaga, sem CV anexo. Só conversa de par.
+
+Inclusive, escrevo a Medical Insights (newsletter de Medical Affairs, 215 assinantes) — se ressoar, posso te incluir.</div>
+      </div>
+
+      <div class="inmail-card">
+        <div class="inmail-header">
+          <div class="inmail-title">InMail 05 · Para <em>Diretor Médico curinga</em> (empresa de oportunidade)</div>
+          <div class="inmail-tag">Mensagem 5</div>
+        </div>
+        <div class="inmail-body"><span class="placeholder">Nome</span>, contato direto.
+
+Vi <span class="placeholder">algo recente da empresa — lançamento, congresso, ampliação de área</span>. Esse movimento abre demanda por scientific exchange qualificado, e quis que meu perfil entrasse no seu radar antes de a vaga eventualmente abrir.
+
+PhD em Patologia, coordenação do REDONE.br (registro nacional de doenças neurológicas, ABN), scientific exchange com KOLs em referências como Albert Einstein, Fleury e Moinhos de Vento.
+
+Se em algum momento fizer sentido conversar — sobre MSL, sobre o time que você está formando, ou sobre interface entre pesquisa e prática — minha agenda é flexível.
+
+Caso não seja o momento, obrigada pela leitura.</div>
+      </div>
+
+    </div>
+  </div>
+  </details>
+
+  <!-- ═══════ SEÇÃO 07: 3 POSTS ═══════ -->
+  <details class="section-acc">
+    <summary>
+      <span class="acc-num">07</span>
+      <span class="acc-title">3 posts da semana</span>
+      <span class="acc-meta">Conteúdo · prova de repertório</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      Quem receber DM ou InMail dela esta semana vai clicar no perfil. <strong>Os 3 posts precisam reforçar a tese de "MSL pronta", não em transição.</strong> Esta semana entram formatos de demonstração técnica: case study, framework próprio e paper review com ângulo. <em>Cada post sustenta a conversa quando ela não está na sala.</em>
+    </p>
+
+    <div class="posts-strategy">
+      <article class="post-card" data-num="01">
+        <div class="post-day">Quinta · 7/05 · 9h</div>
+        <div class="post-type">Case <em>study REDONE.br</em></div>
+        <div class="post-purpose">Demonstração · 200 palavras</div>
+        <div class="post-gancho">"O que aprendi coordenando o maior registro brasileiro de doenças neurológicas — e que ninguém te conta sobre RWE no Brasil."</div>
+        <div class="post-desc">Case real do REDONE.br: um obstáculo concreto, uma solução implementada, um aprendizado generalizável. <strong>Formato que prova vivência sem soar como CV.</strong> Carrossel ou texto + imagem. Encerrar com: "Aprofundo isso na próxima Medical Insights."</div>
+      </article>
+
+      <article class="post-card" data-num="02">
+        <div class="post-day">Sábado · 9/05 · 10h</div>
+        <div class="post-type">Framework <em>próprio</em></div>
+        <div class="post-purpose">Autoridade · carrossel 6 slides</div>
+        <div class="post-gancho">"Os 4 momentos de tradução: como evidência científica vira decisão clínica (e onde ela mais se perde)."</div>
+        <div class="post-desc">Framework batizado pela Luciana, com 4 fases. <strong>Frameworks viralizam mais que insights soltos</strong> porque dão linguagem reutilizável. Cada fase = 1 slide. Slide final pergunta qual fase é a mais difícil — gera comentário qualificado de Manager e MSL.</div>
+      </article>
+
+      <article class="post-card" data-num="03">
+        <div class="post-day">Terça · 12/05 · 18h</div>
+        <div class="post-type">Paper <em>review com ângulo</em></div>
+        <div class="post-purpose">Profundidade · thread 5 partes</div>
+        <div class="post-gancho">"Esse paper de Duchenne saiu semana passada. Tem 1 ponto metodológico que muda como pensamos terapia gênica em doenças raras. 🧵"</div>
+        <div class="post-desc">Thread brasileira (post + 4 comentários sequenciais). <strong>Conecta deliberadamente com Duchenne</strong> — Multicare radar. Cada comentário pega 1 ponto técnico. Marcar 2 MSLs de raras e 1 referência KOL no comentário 4. <em>Post que faz Caio reabrir o radar com naturalidade.</em></div>
+      </article>
+    </div>
+  </div>
+  </details>
+
+  <!-- ═══════ SEÇÃO 08: 7 DIAS ═══════ -->
+  <details class="section-acc">
+    <summary>
+      <span class="acc-num">08</span>
+      <span class="acc-title">Os 7 dias · execução</span>
+      <span class="acc-meta">Quarta a terça</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      A semana abre na <strong>segunda 5/05 com a call da Thaís Fritsch (AZ) às 17h</strong> — primeira aposta da semana. Quarta destrava a Lista Alfa e faz follow-up Thaís 24h. Quinta é a call com Tatiana (GSK). Terça 12/05 é a 2ª call AZ com Fernando. Sábado é leve. <em>Domingo é descanso inegociável.</em>
+    </p>
+
+    <!-- SEGUNDA 5/05 (HOJE) -->
+    <article class="day" id="day-seg-5">
+      <div class="day-header">
+        <div class="day-date">5 maio · SEG</div>
+        <div class="day-name">Segunda.</div>
+        <div class="day-number">Dia 01 · Call Thaís 17h</div>
+        <div class="day-focus">Preparação cirúrgica para a call da Thaís (AstraZeneca).</div>
+        <div class="day-progress"><span class="count" data-count-for="day-seg-5">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Bloco call Thaís</em></div>
+            <div class="block-time">90 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Estrutura completa da call</div>
+            <div class="howto-body"><strong>30 min antes (16h30):</strong> reler perfil completo da Thaís, anotar 1 detalhe pessoal/técnico para citar nos primeiros 90s, ter o caso REDONE.br pronto na ponta da língua, testar áudio e câmera. <strong>Durante (17h-17h20):</strong> seguir briefing da Seção 02 — abertura, 3 perguntas em ordem, caso no meio, pergunta crítica nos últimos 3 min, encerramento com newsletter. <em>Ouvir 70% do tempo.</em> <strong>20 min depois:</strong> preencher bloco de captura da Seção 02 imediatamente.</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">16h30 · Preparação 30 min antes da call (perfil + caso + áudio).</div><div class="task-meta"><span class="task-tag tag-call">prep</span>thaís</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">17h · <strong>Conduzir a call com Thaís Fritsch (AZ).</strong> Seguir briefing da Seção 02.</div><div class="task-meta"><span class="task-tag tag-milestone">milestone</span>call 1</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">17h20-17h40 · <strong>Captura imediata pós-call</strong> no bloco da Seção 02. Insights + nomes + próximo passo + texto livre.</div><div class="task-meta"><span class="task-tag tag-call">captura</span>quente</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Atualizar Lista Alfa: status Thaís de "Pendente" para "Call realizada 5/05" + próximo passo.</div><div class="task-meta">tracking</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- QUARTA 6/05 -->
+    <article class="day" id="day-qua">
+      <div class="day-header">
+        <div class="day-date">6 maio · QUA</div>
+        <div class="day-name">Quarta.</div>
+        <div class="day-number">Dia 02 · Pós-call Thaís + destravar</div>
+        <div class="day-focus">Follow-up Thaís 24h. Ativar 5 pendentes + Pricilla + Rodrigo. Preparar Tatiana.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-qua">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Follow-up Thaís</em></div>
+            <div class="block-time">20 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Reler captura pós-call da Thaís (texto livre + insights). Identificar 1 link relevante para mandar como follow-up.</div><div class="task-meta"><span class="task-tag tag-call">prep</span>follow-up</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Mandar mensagem de 24h para Thaís:</strong> link relevante + 1 linha conectando ao que ela falou. <em>Não "obrigada pela conversa".</em></div><div class="task-meta"><span class="task-tag tag-call">milestone</span>thais 24h</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Se Thaís indicou nome: <strong>mandar DM hoje pra essa pessoa</strong>, citando ela como referência.</div><div class="task-meta"><span class="task-tag tag-call">indicação</span>amplificação</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Os 5 pendentes</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Sobre Danilo Lopes (Medical Director AZ)</div>
+            <div class="howto-body">Danilo está pendente desde o início, mas <strong>agora você tem visão de dentro do time AZ pela call com Thaís</strong>. Aguardar até quinta para escrever pra ele com leitura mais qualificada — citar o que aprendeu sobre cultura AZ sem nominar Thaís. Os 5 pendentes abaixo são os que NÃO dependem da call.</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar mensagem para <strong>Jairo Dutra Fractucello</strong> (MSL GSK) · Script 1 (par).</div><div class="task-meta"><span class="task-tag tag-destravar">destravar</span>gsk</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar mensagem para <strong>Simone Braggio Forny</strong> (Medical Director J&amp;J) · Script 2.</div><div class="task-meta"><span class="task-tag tag-destravar">destravar</span>jnj</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar mensagem para <strong>Filipe Marques Gonçalves</strong> (Medical Manager J&amp;J) · Script 2.</div><div class="task-meta"><span class="task-tag tag-destravar">destravar</span>jnj</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar mensagem para <strong>Fernando Amador Mos</strong> (Medical Director AbbVie) · Script 2.</div><div class="task-meta"><span class="task-tag tag-destravar">destravar</span>abv</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar mensagem para <strong>Nilson Ferreira</strong> (MSL AbbVie) · Script 1.</div><div class="task-meta"><span class="task-tag tag-destravar">destravar</span>abv</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Atualizar Lista Alfa: marcar todos os 5 com data 6/05/26 e alterar status para "Aberto".</div><div class="task-meta">tracking</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Meio-dia · <em>Pricilla → call</em></div>
+            <div class="block-time">10 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar mensagem para <strong>Pricilla Murador</strong> propondo call de 20 min para semana 4. Script da Seção 01.</div><div class="task-meta"><span class="task-tag tag-call">conversão</span>rede quente</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Rodrigo · reativação</em></div>
+            <div class="block-time">15 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar mensagem de reativação para <strong>Rodrigo Santos Lima</strong> (Rede Quente · J&amp;J · esfriou em 02/03). Script da Seção 01.</div><div class="task-meta"><span class="task-tag tag-warm">reativar</span>9 semanas</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Atualizar Lista Alfa: status Rodrigo de "Esfriou" para "Reativado em 6/05".</div><div class="task-meta">tracking</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Newsletter para os 26</em></div>
+            <div class="block-time">25 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Por que esse movimento agora</div>
+            <div class="howto-body">Tatiana (GSK) é a única que assinou a newsletter — e foi a única que virou call cedo. <strong>É o padrão estatístico mais forte da Lista Alfa.</strong> Antes da próxima edição, convidar os outros contatos da Lista Alfa a assinar a Medical Insights. <em>Mensagem curta, sem pedido. Apenas convite.</em></div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Compor mensagem padrão de convite à newsletter (1 linha + link).</div><div class="task-meta"><span class="task-tag tag-news">setup</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar para os <strong>conectados que ainda não assinam</strong> (excluindo Tatiana e Pricilla).</div><div class="task-meta"><span class="task-tag tag-news">15 envios</span>conectados</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Algoritmo + Caio</em></div>
+            <div class="block-time">15 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Comentar 3 posts da Lista Alfa.</div><div class="task-meta"><span class="task-tag tag-content">3 com</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Verificar se Caio postou hoje. Se sim: comentar com profundidade técnica.</div><div class="task-meta"><span class="task-tag tag-multicare">caio</span>presença</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- QUINTA 7/05 -->
+    <article class="day" id="day-qui">
+      <div class="day-header">
+        <div class="day-date">7 maio · QUI</div>
+        <div class="day-name">Quinta.</div>
+        <div class="day-number">Dia 03 · Call Tatiana + Post 1 + Danilo</div>
+        <div class="day-focus">Call com Tatiana (GSK) + publicar Case REDONE + abordar Danilo (Medical Director AZ) com leitura pós-call.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-qui">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Aquecer e publicar</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Sequência de aquecimento (curtir 10 + comentar 3 + visitar 5 perfis Alfa).</div><div class="task-meta"><span class="task-tag tag-content">aquecimento</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Publicar Post 1 (Case Study REDONE.br)</strong> às 9h. Carrossel ou texto + imagem.</div><div class="task-meta"><span class="task-tag tag-content">post 1</span>case</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Janela algorítmica: responder em até 5 min por 30 min após publicação.</div><div class="task-meta">janela dourada</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Bloco call Tatiana · <em>preparar · conduzir · capturar</em></div>
+            <div class="block-time">90 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Estrutura completa</div>
+            <div class="howto-body"><strong>30 min antes:</strong> reler briefing da Seção 02, lembrar que Tatiana é a única assinante da newsletter (já te conhece pelo conteúdo). <strong>Durante (15-20 min):</strong> seguir briefing — abertura reconhecendo que ela já lê, 3 perguntas, caso REDONE no meio, pergunta crítica nos últimos 3 min, encerramento com edição de sexta. <strong>20 min depois:</strong> preencher captura na Seção 02.</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Preparação 30 min antes (briefing Seção 02).</div><div class="task-meta"><span class="task-tag tag-call">prep</span>tatiana</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Conduzir a call com Tatiana (GSK).</strong> Seguir briefing.</div><div class="task-meta"><span class="task-tag tag-milestone">milestone</span>call 2</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Captura imediata pós-call (20 min) no bloco da Seção 02.</div><div class="task-meta"><span class="task-tag tag-call">captura</span></div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Danilo Lopes · pós-Thaís</em></div>
+            <div class="block-time">15 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Por que escrever para Danilo só agora</div>
+            <div class="howto-body">Danilo é Medical Director AstraZeneca — pendente desde o início. <strong>Depois da call com Thaís</strong> (segunda) e do Post 1 sobre REDONE (hoje cedo), você tem leitura interna de cultura AZ + conteúdo público novo. <em>Citar leitura sobre cultura AZ sem nominar Thaís</em>, e linkar o post como referência técnica recente.</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Compor mensagem para <strong>Danilo Lopes</strong> citando leitura sobre cultura AZ + linkando Post 1 como referência. Script 2 (Director) adaptado.</div><div class="task-meta"><span class="task-tag tag-destravar">destravar</span>az director</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Pedido de indicação</em></div>
+            <div class="block-time">10 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Voltar para a 1ª pessoa que fez call com você na semana 2 (anterior). Pedido sereno de indicação.</div><div class="task-meta"><span class="task-tag tag-call">indicação</span>call sem 2</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mesma mensagem para a 2ª pessoa.</div><div class="task-meta"><span class="task-tag tag-call">indicação</span>call sem 2</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEXTA 8/05 -->
+    <article class="day" id="day-sex">
+      <div class="day-header">
+        <div class="day-date">8 maio · SEX</div>
+        <div class="day-name">Sexta.</div>
+        <div class="day-number">Dia 04 · Newsletter + InMails 1, 2 + Multicare</div>
+        <div class="day-focus">Edição da Medical Insights. 2 InMails. Abrir as 3 frentes paralelas Multicare.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-sex">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Newsletter</em></div>
+            <div class="block-time">35 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Enviar edição da Medical Insights:</strong> tema "RWE no Brasil — onde a evidência real encontra a decisão clínica" (consolidando o Post 1).</div><div class="task-meta"><span class="task-tag tag-news">edição</span>news</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Postar a edição como reflexão curta no LinkedIn (não republicar inteiro).</div><div class="task-meta"><span class="task-tag tag-news">cross</span></div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Meio-dia · <em>Frentes Multicare</em></div>
+            <div class="block-time">35 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Frente 02 · MSL atual Multicare</strong>: identificar 2 MSLs ativos da Multicare. Enviar mensagem para 1.</div><div class="task-meta"><span class="task-tag tag-multicare">frente 2</span>par</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Frente 03 · Patient Advocacy</strong>: identificar 1 pessoa de Patient Advocacy do portfólio raras. Enviar mensagem.</div><div class="task-meta"><span class="task-tag tag-multicare">frente 3</span>advocacy</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Frente 04 · Talent Acquisition</strong>: identificar 1 TA da Multicare. Enviar mensagem.</div><div class="task-meta"><span class="task-tag tag-multicare">frente 4</span>rh</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>InMails 1 e 2</em></div>
+            <div class="block-time">25 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Selecionar Diretor Médico de empresa-alvo (Roche ou Pfizer). Enviar <strong>InMail 01</strong>.</div><div class="task-meta"><span class="task-tag tag-inmail">inmail 1</span>diretor</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Selecionar Head de Medical Affairs (Sanofi ou Novartis). Enviar <strong>InMail 02</strong>.</div><div class="task-meta"><span class="task-tag tag-inmail">inmail 2</span>head</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Newsletter para Caio</em></div>
+            <div class="block-time">5 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar a edição da Medical Insights de hoje <strong>diretamente</strong> ao Caio. 1 linha: <em>"Caio, escrevi essa edição com base em uma reflexão dos últimos dias — pensei que pudesse ressoar."</em></div><div class="task-meta"><span class="task-tag tag-multicare">caio</span>ponte</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- SÁBADO 9/05 -->
+    <article class="day" id="day-sab">
+      <div class="day-header">
+        <div class="day-date">9 maio · SÁB</div>
+        <div class="day-name">Sábado.</div>
+        <div class="day-number">Dia 05 · Post 2 (framework) + DMs Manager</div>
+        <div class="day-focus">Publicar framework próprio. 4 DMs para Medical Managers.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-sab">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Aquecer e publicar</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Sequência de aquecimento (curtir 10 + comentar 3).</div><div class="task-meta"><span class="task-tag tag-content">aquecimento</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Publicar Post 2 (Framework próprio)</strong> às 10h. Carrossel 6 slides. Slide final pergunta qual fase é a mais difícil.</div><div class="task-meta"><span class="task-tag tag-content">post 2</span>framework</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Janela algorítmica: responder comentários em até 5 min por 30 min.</div><div class="task-meta">janela dourada</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>DMs para Managers (4)</em></div>
+            <div class="block-time">25 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 2 (valor)</strong> para 1 Medical Manager da Sanofi/Genzyme.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 1</span>sanofi</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 2</strong> para 1 Medical Manager da Takeda.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 2</span>takeda</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 2</strong> para 1 Medical Manager da Bayer.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 3</span>bayer</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 2</strong> para 1 Medical Manager da BMS.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 4</span>bms</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Follow-ups Lista Alfa</em></div>
+            <div class="block-time">15 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Verificar quem dos 6 destravados na quarta respondeu. Para cada resposta: dar continuidade com pergunta de aprofundamento.</div><div class="task-meta">não esfriar</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Verificar Pricilla e Rodrigo. Atualizar status na Lista Alfa.</div><div class="task-meta">tracking</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- DOMINGO 10/05 -->
+    <article class="day" id="day-dom">
+      <div class="day-header">
+        <div class="day-date">10 maio · DOM</div>
+        <div class="day-name">Domingo.</div>
+        <div class="day-number">Dia 06 · Pausa</div>
+        <div class="day-focus">Descanso real. Sem LinkedIn. Inegociável.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-dom">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Sem tarefa · <em>Repouso</em></div>
+            <div class="block-time">0 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Nada de LinkedIn. <em>A energia da terça começa preservada hoje.</em></div><div class="task-meta">pausa</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEGUNDA 11/05 -->
+    <article class="day" id="day-seg">
+      <div class="day-header">
+        <div class="day-date">11 maio · SEG</div>
+        <div class="day-name">Segunda.</div>
+        <div class="day-number">Dia 07 · Mapeamento expandido + InMails 3, 4</div>
+        <div class="day-focus">Mapear as 10 empresas novas (30 perfis). 2 InMails de elite.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-seg">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Mapeamento expandido</em></div>
+            <div class="block-time">75 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Como mapear cada empresa nova</div>
+            <div class="howto-body">7 minutos por empresa. <strong>1 vaga MSL ativa</strong> + <strong>1 Medical Manager</strong> + <strong>1 MSL atual sênior</strong>. Registrar na mesma planilha da Lista Alfa, em cor diferente. <em>Sem perfeccionismo: o objetivo é volume cirúrgico.</em></div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Roche</strong>: 1 vaga + 1 manager + 1 MSL.</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>roche</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Pfizer</strong>: 1 vaga + 1 manager + 1 MSL.</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>pfizer</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Bayer</strong>: 1 vaga + 1 manager + 1 MSL.</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>bayer</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Lilly</strong>: 1 vaga + 1 manager + 1 MSL.</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>lilly</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Sanofi/Genzyme</strong>: 1 vaga + 1 manager + 1 MSL (área neuro-metabólica).</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>sanofi</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Takeda</strong>: 1 vaga + 1 manager + 1 MSL.</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>takeda</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Novartis</strong>: 1 vaga + 1 manager + 1 MSL (esclerose múltipla).</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>novartis</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>BMS</strong>: 1 vaga + 1 manager + 1 MSL (foco I-O).</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>bms</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Mapear <strong>Merck</strong>: 1 vaga + 1 manager + 1 MSL.</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>merck</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Reforçar <strong>Janssen/J&amp;J</strong>: adicionar 1 MSL pleno e 1 manager pulmão.</div><div class="task-meta"><span class="task-tag tag-pipe">pipeline</span>jnj</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>InMails 3 e 4</em></div>
+            <div class="block-time">25 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Selecionar Talent Acquisition Senior (priorizar empresa do mapeamento). Enviar <strong>InMail 03</strong>.</div><div class="task-meta"><span class="task-tag tag-inmail">inmail 3</span>ta senior</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Selecionar MSL sênior referência (alta visibilidade pública). Enviar <strong>InMail 04</strong>.</div><div class="task-meta"><span class="task-tag tag-inmail">inmail 4</span>msl referência</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>3 DMs cirúrgicas</em></div>
+            <div class="block-time">15 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 1 (par)</strong> para 1 MSL da Roche.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 5</span>roche</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 1</strong> para 1 MSL da Pfizer.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 6</span>pfizer</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 1</strong> para 1 MSL da Lilly.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 7</span>lilly</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- TERÇA 12/05 -->
+    <article class="day" id="day-ter">
+      <div class="day-header">
+        <div class="day-date">12 maio · TER</div>
+        <div class="day-name">Terça.</div>
+        <div class="day-number">Dia 08 · Call Fernando + Recruiters + Post 3 + push</div>
+        <div class="day-focus">Call com Fernando Sá (AZ · 2ª call AstraZeneca da semana). Recruiters. Paper review. Push para semana 4.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-ter">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Bloco call Fernando · <em>preparar · conduzir · capturar</em></div>
+            <div class="block-time">90 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Estrutura completa · 2ª call AZ</div>
+            <div class="howto-body"><strong>30 min antes:</strong> reler briefing da Seção 02 (Fernando), reler captura da call com Thaís de segunda, identificar 1-2 pontos da call dela que podem virar pergunta cirúrgica para Fernando. <strong>Durante (15-20 min):</strong> seguir briefing — abertura sem citar Thaís diretamente, 3 perguntas sobre cultura AZ 2026, caso REDONE no meio, pergunta crítica nos últimos 3 min, encerramento com newsletter. <strong>20 min depois:</strong> preencher captura na Seção 02 — anotar especificamente o que confirma ou diverge da Thaís.</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Preparação 30 min antes (briefing Seção 02 + captura Thaís).</div><div class="task-meta"><span class="task-tag tag-call">prep</span>fernando</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Conduzir a call com Fernando Sá (AZ).</strong> Seguir briefing.</div><div class="task-meta"><span class="task-tag tag-milestone">milestone</span>call 3</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Captura imediata pós-call (20 min) no bloco da Seção 02.</div><div class="task-meta"><span class="task-tag tag-call">captura</span></div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Meio-dia · <em>Frente recruiters</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Como abrir conversa com recruiter de farma</div>
+            <div class="howto-body">Buscar no LinkedIn: <em>"Talent Acquisition Pharma"</em> ou <em>"Recruiter Medical Affairs Brazil"</em>. Filtrar por pessoas em farma há 2+ anos. <strong>Mensagem focada em orientação, não em vaga:</strong> "X, vi que você atua com Talent na [empresa]. Estou direcionando minha trajetória para Medical Affairs e queria fazer uma pergunta de orientação: na sua leitura, qual o ponto principal que vocês buscam quando recebem candidatura de cientista para MSL? Conversa de 15 min, qualquer dia."</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Identificar e enviar mensagem para <strong>5 recruiters de farma</strong> (de empresas diferentes).</div><div class="task-meta"><span class="task-tag tag-pipe">recruiters</span>5 dms</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>InMail 5 + Post 3</em></div>
+            <div class="block-time">40 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Identificar Diretor Médico de empresa que recente fez algum movimento público (lançamento, congresso, ampliação). Enviar <strong>InMail 05</strong> (curinga).</div><div class="task-meta"><span class="task-tag tag-inmail">inmail 5</span>curinga</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Sequência de aquecimento (curtir 10 + comentar 3).</div><div class="task-meta"><span class="task-tag tag-content">aquecimento</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Publicar Post 3 (Paper review · Duchenne)</strong> às 18h. Thread brasileira: post + 4 comentários. Marcar 2 MSLs raras + 1 KOL.</div><div class="task-meta"><span class="task-tag tag-content">post 3</span>thread</div></div></label>
+        </div>
+
+        <div class="block priority">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Push para call · semana 4</em></div>
+            <div class="block-time">25 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Listar todas as DMs com 3+ trocas dessa semana (incluindo destravados, novas DMs, InMails respondidos). Para cada uma: <strong>propor call de 15 min</strong> com 2 slots na semana 4.</div><div class="task-meta"><span class="task-tag tag-call">conversão</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Conversas mais quentes: <strong>voice note de 40s</strong> propondo a call.</div><div class="task-meta"><span class="task-tag tag-call">voice</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Meta da terça:</strong> sair com mínimo de 5 calls confirmadas para semana 4.</div><div class="task-meta"><span class="task-tag tag-milestone">milestone</span></div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Revisão semanal</em></div>
+            <div class="block-time">15 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Atualizar planilha com status de <strong>todos os contatos</strong> da semana — destravados, Pricilla, Rodrigo, novos pipelines, InMails, 3 calls.</div><div class="task-meta">tracking</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Status Multicare: 4 frentes ativas. Anotar próximo passo de cada.</div><div class="task-meta"><span class="task-tag tag-multicare">multicare</span></div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Em 1 linha: <em>"o que funcionou essa semana foi ___"</em>. Padrão da semana 4.</div><div class="task-meta">aprendizado</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Baixar PDF da semana 3 antes de fechar.</strong> Arquivo do programa.</div><div class="task-meta"><span class="task-tag tag-milestone">arquivo</span></div></div></label>
+        </div>
+      </div>
+    </article>
+
+  </div>
+  </details>
+
+  <!-- ═══════ MÉTRICAS ═══════ -->
+  <details class="section-acc">
+    <summary>
+      <span class="acc-num">09</span>
+      <span class="acc-title">Métricas da semana</span>
+      <span class="acc-meta">10 métricas</span>
+      <span class="acc-icon"></span>
+    </summary>
+    <div class="acc-content">
+
+    <p class="section-intro">
+      Metas que pulam de patamar em relação à semana 2. <strong>Se não bater 80% das metas, ajustar a abordagem antes de aumentar volume na semana seguinte.</strong> Volume sem conversão é cansaço caro.
+    </p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Pendentes destravados</div>
+        <input type="number" class="metric-input" id="m1" min="0" value="0">
+        <div class="metric-target">meta · 6 / 6</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">DMs novas</div>
+        <input type="number" class="metric-input" id="m2" min="0" value="0">
+        <div class="metric-target">meta · 14</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">InMails enviados</div>
+        <input type="number" class="metric-input" id="m3" min="0" value="0">
+        <div class="metric-target">meta · 5 (premium)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Conversas reais</div>
+        <input type="number" class="metric-input" id="m4" min="0" value="0">
+        <div class="metric-target">meta · 12</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Calls realizadas</div>
+        <input type="number" class="metric-input" id="m5" min="0" value="0">
+        <div class="metric-target">Thaís + Tatiana + Fernando · 3</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Calls semana 4</div>
+        <input type="number" class="metric-input" id="m6" min="0" value="0">
+        <div class="metric-target">meta · 5</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Recruiters conectados</div>
+        <input type="number" class="metric-input" id="m7" min="0" value="0">
+        <div class="metric-target">meta · 5</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Indicações recebidas</div>
+        <input type="number" class="metric-input" id="m8" min="0" value="0">
+        <div class="metric-target">meta · 4</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Frentes Multicare ativas</div>
+        <input type="number" class="metric-input" id="m9" min="0" value="0">
+        <div class="metric-target">meta · 4 / 4</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Empresas no pipeline</div>
+        <input type="number" class="metric-input" id="m10" min="0" value="0">
+        <div class="metric-target">meta · 10 mapeadas</div>
+      </div>
+    </div>
+  </div>
+  </details>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Karen <strong>Montagner</strong> · Programa de Evolução Contínua · Semana 03</div>
+    <div class="footer-quote"><em>aproximação</em> é o que precede o sim.</div>
+    <div class="footer-date" id="foot-date">—</div>
+  </div>
+</footer>
+
+<!-- ═══════ MODAL COMPARTILHAR STATUS ═══════ -->
+<div class="share-overlay" id="shareOverlay">
+  <div class="share-modal">
+    <div class="share-modal-header">
+      <div class="share-modal-title">Compartilhar <em>status</em></div>
+      <button class="share-modal-close" id="shareClose" aria-label="Fechar">×</button>
+    </div>
+    <div class="share-modal-body">
+
+      <!-- EXPORTAR -->
+      <div class="share-step">
+        <div class="share-step-label">01 · Exportar seu progresso</div>
+        <div class="share-step-title">Gerar <em>código</em> para compartilhar</div>
+        <div class="share-step-text">
+          Clica em <strong>Gerar código</strong> abaixo. Vai aparecer um texto. <strong>Copia e manda</strong> pra quem precisa ver seu progresso (Karen, mentora, time). Tudo o que está marcado, métricas e capturas das calls vai junto.
+        </div>
+        <div class="share-actions">
+          <button class="share-btn" id="generateCodeBtn">Gerar código</button>
+          <button class="share-btn secondary" id="copyCodeBtn" style="display:none;">Copiar</button>
+        </div>
+        <textarea class="share-textarea" id="exportArea" placeholder="O código aparece aqui depois de clicar em Gerar..." readonly style="margin-top:14px;display:none;"></textarea>
+        <div class="share-feedback" id="exportFeedback"></div>
+      </div>
+
+      <div class="share-divider"></div>
+
+      <!-- IMPORTAR -->
+      <div class="share-step">
+        <div class="share-step-label">02 · Importar progresso de outra pessoa</div>
+        <div class="share-step-title">Ver o que <em>ela</em> marcou</div>
+        <div class="share-step-text">
+          Recebeu um código de outra pessoa? <strong>Cola aqui embaixo</strong> e clica em <strong>Importar</strong>. Vai sobrescrever o que você tem agora — então é bom usar essa opção como visualização, não como edição.
+        </div>
+        <textarea class="share-textarea" id="importArea" placeholder="Cole aqui o código que você recebeu..."></textarea>
+        <div class="share-actions">
+          <button class="share-btn" id="importCodeBtn">Importar</button>
+        </div>
+        <div class="share-feedback" id="importFeedback"></div>
+      </div>
+
+      <div class="share-info">
+        <strong>Como funciona:</strong> esse mecanismo não usa nenhum servidor — o código é só uma <em>fotografia compactada</em> do seu navegador, e só aparece pra quem você manda. Funciona offline. Para sincronização contínua entre dispositivos, seria necessário outro tipo de configuração.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'luciana_plano_v_semana03_v2';
+  const METRICS_KEY = 'luciana_metricas_semana03_v2';
+  const CAPTURA_KEY = 'luciana_captura_calls_v1';
+  const ACC_KEY = 'luciana_acordeao_state_v1';
+
+  // ═══════ COMPARTILHAR STATUS ═══════
+  const shareOverlay = document.getElementById('shareOverlay');
+  const shareBtn = document.getElementById('shareBtn');
+  const shareClose = document.getElementById('shareClose');
+  const generateCodeBtn = document.getElementById('generateCodeBtn');
+  const copyCodeBtn = document.getElementById('copyCodeBtn');
+  const exportArea = document.getElementById('exportArea');
+  const exportFeedback = document.getElementById('exportFeedback');
+  const importArea = document.getElementById('importArea');
+  const importCodeBtn = document.getElementById('importCodeBtn');
+  const importFeedback = document.getElementById('importFeedback');
+
+  function showFeedback(el, msg, isError = false) {
+    el.textContent = msg;
+    el.classList.toggle('error', isError);
+    el.classList.add('visible');
+    clearTimeout(el._timer);
+    el._timer = setTimeout(() => el.classList.remove('visible'), 3500);
+  }
+
+  // Codifica string em base64 seguro pra unicode (PT-BR)
+  function encodeStatus(obj) {
+    const json = JSON.stringify(obj);
+    // Compressão simples + base64 (suporta unicode)
+    return btoa(unescape(encodeURIComponent(json)));
+  }
+
+  function decodeStatus(encoded) {
+    try {
+      const json = decodeURIComponent(escape(atob(encoded.trim())));
+      return JSON.parse(json);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function captureFullState() {
+    const state = {
+      v: 'sem03-v1',  // versão do formato
+      ts: new Date().toISOString(),
+      tasks: JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'),
+      metrics: JSON.parse(localStorage.getItem(METRICS_KEY) || '{}'),
+      captura: JSON.parse(localStorage.getItem(CAPTURA_KEY) || '{}'),
+      acc: JSON.parse(localStorage.getItem(ACC_KEY) || '{}')
+    };
+    return state;
+  }
+
+  function applyFullState(state) {
+    if (!state || state.v !== 'sem03-v1') {
+      return { ok: false, msg: 'Código inválido ou de outra semana.' };
+    }
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.tasks || {}));
+      localStorage.setItem(METRICS_KEY, JSON.stringify(state.metrics || {}));
+      localStorage.setItem(CAPTURA_KEY, JSON.stringify(state.captura || {}));
+      localStorage.setItem(ACC_KEY, JSON.stringify(state.acc || {}));
+      return { ok: true };
+    } catch (e) {
+      return { ok: false, msg: 'Erro ao salvar localmente: ' + e.message };
+    }
+  }
+
+  // Abrir modal
+  shareBtn.addEventListener('click', () => {
+    shareOverlay.classList.add('active');
+    // Reseta UI ao abrir
+    exportArea.style.display = 'none';
+    exportArea.value = '';
+    copyCodeBtn.style.display = 'none';
+    importArea.value = '';
+  });
+
+  // Fechar modal
+  shareClose.addEventListener('click', () => {
+    shareOverlay.classList.remove('active');
+  });
+  shareOverlay.addEventListener('click', (e) => {
+    if (e.target === shareOverlay) shareOverlay.classList.remove('active');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && shareOverlay.classList.contains('active')) {
+      shareOverlay.classList.remove('active');
+    }
+  });
+
+  // Gerar código
+  generateCodeBtn.addEventListener('click', () => {
+    const state = captureFullState();
+    const encoded = encodeStatus(state);
+    exportArea.value = encoded;
+    exportArea.style.display = 'block';
+    copyCodeBtn.style.display = 'inline-block';
+    showFeedback(exportFeedback, '✓ Código gerado. Copia e compartilha.');
+  });
+
+  // Copiar pra clipboard
+  copyCodeBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(exportArea.value);
+      showFeedback(exportFeedback, '✓ Copiado! Agora cola onde quer mandar.');
+    } catch (e) {
+      // Fallback: seleciona o texto pra copiar manualmente
+      exportArea.select();
+      document.execCommand('copy');
+      showFeedback(exportFeedback, '✓ Texto selecionado — Ctrl+C / Cmd+C para copiar.');
+    }
+  });
+
+  // Importar código
+  importCodeBtn.addEventListener('click', () => {
+    const code = importArea.value.trim();
+    if (!code) {
+      showFeedback(importFeedback, 'Cole um código primeiro.', true);
+      return;
+    }
+    const decoded = decodeStatus(code);
+    if (!decoded) {
+      showFeedback(importFeedback, 'Código inválido. Confere se copiou inteiro.', true);
+      return;
+    }
+    const confirma = confirm(
+      'Importar vai sobrescrever todo o seu progresso atual. Continuar?\n\n' +
+      'Snapshot original gerado em: ' +
+      (decoded.ts ? new Date(decoded.ts).toLocaleString('pt-BR') : 'desconhecido')
+    );
+    if (!confirma) return;
+
+    const result = applyFullState(decoded);
+    if (result.ok) {
+      showFeedback(importFeedback, '✓ Importado! Recarregando para mostrar...');
+      setTimeout(() => location.reload(), 1200);
+    } else {
+      showFeedback(importFeedback, '✗ ' + result.msg, true);
+    }
+  });
+
+  // ═══════ CONTROLES DO ACORDEÃO ═══════
+  const accordions = document.querySelectorAll('details.section-acc');
+
+  // Restaurar estado salvo
+  try {
+    const saved = JSON.parse(localStorage.getItem(ACC_KEY) || '{}');
+    accordions.forEach((acc, idx) => {
+      const key = 'acc-' + idx;
+      if (saved[key] === true) acc.open = true;
+      else if (saved[key] === false) acc.open = false;
+    });
+  } catch (e) {}
+
+  // Salvar estado a cada toggle
+  accordions.forEach((acc, idx) => {
+    acc.addEventListener('toggle', () => {
+      try {
+        const state = JSON.parse(localStorage.getItem(ACC_KEY) || '{}');
+        state['acc-' + idx] = acc.open;
+        localStorage.setItem(ACC_KEY, JSON.stringify(state));
+      } catch (e) {}
+    });
+  });
+
+  document.getElementById('expandAllBtn').addEventListener('click', () => {
+    accordions.forEach(a => a.open = true);
+  });
+  document.getElementById('collapseAllBtn').addEventListener('click', () => {
+    accordions.forEach(a => a.open = false);
+  });
+
+  (function setDates() {
+    const opts = { day: '2-digit', month: 'long', year: 'numeric' };
+    const now = new Date();
+    const str = now.toLocaleDateString('pt-BR', opts).toUpperCase();
+    document.getElementById('foot-date').textContent = 'Semana 03 · ' + str;
+  })();
+
+  const tasks = document.querySelectorAll('.task');
+  const progressFill = document.getElementById('progressFill');
+  const progressPct = document.getElementById('progressPct');
+
+  tasks.forEach((task, idx) => {
+    const dayEl = task.closest('.day');
+    const dayId = dayEl ? dayEl.id : 'noday';
+    task.dataset.taskId = dayId + '-t' + idx;
+  });
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      tasks.forEach(task => {
+        if (saved[task.dataset.taskId]) {
+          task.classList.add('done');
+          task.querySelector('input').checked = true;
+        }
+      });
+    } catch (e) {}
+  }
+
+  function saveState() {
+    const state = {};
+    tasks.forEach(task => {
+      if (task.classList.contains('done')) state[task.dataset.taskId] = true;
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function updateProgress() {
+    const total = tasks.length;
+    const done = document.querySelectorAll('.task.done').length;
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    progressFill.style.width = pct + '%';
+    progressPct.textContent = pct + '%';
+
+    document.querySelectorAll('.day').forEach(day => {
+      const dayTasks = day.querySelectorAll('.task');
+      const dayDone = day.querySelectorAll('.task.done').length;
+      const counter = day.querySelector('[data-count-for]');
+      if (counter) counter.textContent = dayDone + '/' + dayTasks.length;
+    });
+  }
+
+  tasks.forEach(task => {
+    task.addEventListener('click', (e) => {
+      e.preventDefault();
+      task.classList.toggle('done');
+      task.querySelector('input').checked = task.classList.contains('done');
+      saveState();
+      updateProgress();
+    });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (confirm('Apagar todo o progresso da semana 3? Isso não pode ser desfeito.')) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(METRICS_KEY);
+      localStorage.removeItem(CAPTURA_KEY);
+      localStorage.removeItem(ACC_KEY);
+      tasks.forEach(t => {
+        t.classList.remove('done');
+        t.querySelector('input').checked = false;
+      });
+      document.querySelectorAll('.metric-input').forEach(i => i.value = 0);
+      document.querySelectorAll('[data-captura-field]').forEach(el => el.value = '');
+      document.querySelectorAll('[data-status]').forEach(b => b.classList.remove('active'));
+      updateProgress();
+    }
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    // Abrir todos os acordeões antes de imprimir
+    const previousState = [];
+    accordions.forEach((acc, idx) => {
+      previousState[idx] = acc.open;
+      acc.open = true;
+    });
+    // Pequeno delay pro layout reflowar
+    setTimeout(() => {
+      window.print();
+      // Restaurar estado depois (alguns browsers já fizeram a impressão)
+      setTimeout(() => {
+        accordions.forEach((acc, idx) => acc.open = previousState[idx]);
+      }, 500);
+    }, 100);
+  });
+
+  function loadMetrics() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(METRICS_KEY) || '{}');
+      Object.keys(saved).forEach(k => {
+        const el = document.getElementById(k);
+        if (el) el.value = saved[k];
+      });
+    } catch (e) {}
+  }
+
+  function saveMetrics() {
+    const state = {};
+    document.querySelectorAll('.metric-input').forEach(input => { state[input.id] = input.value; });
+    localStorage.setItem(METRICS_KEY, JSON.stringify(state));
+  }
+
+  document.querySelectorAll('.metric-input').forEach(input => {
+    input.addEventListener('input', saveMetrics);
+  });
+
+  // ═══════ CAPTURA PÓS-CALL ═══════
+  function loadCaptura() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CAPTURA_KEY) || '{}');
+      // Restaurar inputs/textareas
+      document.querySelectorAll('[data-captura-field]').forEach(el => {
+        const key = el.dataset.capturaField;
+        if (saved[key]) el.value = saved[key];
+      });
+      // Restaurar status
+      document.querySelectorAll('[data-status]').forEach(btn => {
+        const key = btn.dataset.status;
+        if (saved[key] === btn.dataset.value) {
+          btn.classList.add('active');
+        }
+      });
+    } catch (e) {}
+  }
+
+  function saveCaptura() {
+    const state = {};
+    document.querySelectorAll('[data-captura-field]').forEach(el => {
+      state[el.dataset.capturaField] = el.value;
+    });
+    document.querySelectorAll('[data-status].active').forEach(btn => {
+      state[btn.dataset.status] = btn.dataset.value;
+    });
+    localStorage.setItem(CAPTURA_KEY, JSON.stringify(state));
+  }
+
+  function showSavedFeedback(capturaName) {
+    const el = document.getElementById('captura-saved-' + capturaName);
+    if (!el) return;
+    el.classList.add('visible');
+    clearTimeout(el._timer);
+    el._timer = setTimeout(() => el.classList.remove('visible'), 1500);
+  }
+
+  // Inputs/textareas
+  document.querySelectorAll('[data-captura-field]').forEach(el => {
+    el.addEventListener('input', () => {
+      saveCaptura();
+      const captura = el.closest('[data-captura]');
+      if (captura) showSavedFeedback(captura.dataset.captura);
+    });
+  });
+
+  // Status buttons
+  document.querySelectorAll('[data-status]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.status;
+      // Limpa active dos irmãos
+      document.querySelectorAll(`[data-status="${key}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      saveCaptura();
+      const captura = btn.closest('[data-captura]');
+      if (captura) showSavedFeedback(captura.dataset.captura);
+    });
+  });
+
+  loadCaptura();
+
+  loadState();
+  loadMetrics();
+  updateProgress();
+</script>
+
+</body>
+</html>
