@@ -1,0 +1,1952 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Evolução Contínua · Luciana Bonome · Mentoria Karen Montagner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* Paleta Montagner Oficial */
+    --navy-900:  #0B1733;
+    --navy-800:  #0F1E3D;
+    --navy-700:  #17294F;
+    --navy-500:  #2A3E6C;
+    --gold-500:  #C9A353;
+    --gold-400:  #D6B873;
+    --gold-100:  #F5EAD0;
+    --terra-500: #B8624A;
+    --terra-400: #CF8064;
+    --ivory:     #FBF8F2;
+    --sand-50:   #FAF5EA;
+    --sand-100:  #F5EEE0;
+    --ink:       #1C1C1C;
+    --muted:     #6C6A66;
+    --line:      #E6DFCF;
+    --creme-txt: #FBF5E4;
+
+    --page-bg:   #FBF8F2;
+    --text-body: #2A2A2A;
+    --text-dim:  #6C6A66;
+    --line-soft: rgba(11,23,51,0.1);
+
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--page-bg);
+    font-family: var(--sans);
+    color: var(--text-body);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ═══════ MASTHEAD ═══════ */
+  .masthead {
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-500) 100%);
+    padding: 52px 64px 48px;
+    border-bottom: 3px solid var(--gold-500);
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -60px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(201,163,83,0.22), transparent 65%);
+    filter: blur(24px);
+  }
+  .masthead::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; left: -80px;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(184,98,74,0.15), transparent 65%);
+    filter: blur(28px);
+  }
+  .mast-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .mast-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  .mast-brand {
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    font-weight: 400;
+  }
+  .mast-brand strong {
+    color: var(--creme-txt);
+    font-weight: 500;
+    margin-left: 2px;
+  }
+  .mast-program {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(251,245,228,0.55);
+    letter-spacing: 0.8px;
+  }
+  .mast-program span { color: var(--gold-400); }
+  .mast-eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .mast-title {
+    font-family: var(--serif);
+    font-size: clamp(42px, 6.5vw, 76px);
+    font-weight: 500;
+    line-height: 1.02;
+    color: var(--creme-txt);
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+  .mast-title em {
+    color: var(--gold-400);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .mast-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(251,245,228,0.72);
+    letter-spacing: 0.3px;
+    max-width: 720px;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+  .mast-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(201,163,83,0.25);
+    border-bottom: 1px solid rgba(201,163,83,0.25);
+    padding: 18px 0;
+    margin-top: 20px;
+  }
+  .mast-meta-item {
+    padding: 0 20px;
+    border-right: 1px solid rgba(201,163,83,0.15);
+  }
+  .mast-meta-item:last-child { border-right: none; }
+  .mast-meta-item:first-child { padding-left: 0; }
+  .mast-meta-label {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(201,163,83,0.6);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .mast-meta-value {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--creme-txt);
+    font-weight: 500;
+  }
+  .mast-meta-value em {
+    font-style: italic;
+    color: var(--gold-400);
+    font-weight: 400;
+  }
+
+  /* ═══════ PROGRESS BAR ═══════ */
+  .progress-wrap {
+    background: rgba(251,248,242,0.92);
+    border-bottom: 1px solid var(--line-soft);
+    padding: 20px 64px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+  }
+  .progress-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .progress-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--navy-900);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(11,23,51,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-500), var(--terra-500));
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .progress-pct {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--navy-900);
+    min-width: 64px;
+    text-align: right;
+    letter-spacing: 0.5px;
+  }
+  .actions { display: flex; gap: 10px; }
+  .btn {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 11px 18px;
+    background: transparent;
+    color: var(--navy-900);
+    border: 1px solid rgba(11,23,51,0.3);
+    cursor: pointer;
+    transition: all 0.25s;
+    font-weight: 500;
+  }
+  .btn:hover {
+    background: var(--navy-900);
+    color: var(--creme-txt);
+    border-color: var(--navy-900);
+  }
+  .btn-primary {
+    background: var(--navy-900);
+    color: var(--gold-400);
+    border-color: var(--navy-900);
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    background: var(--gold-500);
+    color: var(--navy-900);
+    border-color: var(--gold-500);
+  }
+
+  /* ═══════ MAIN ═══════ */
+  main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 64px;
+  }
+
+  .section { margin-bottom: 96px; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .section-num {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    color: var(--gold-500);
+    font-weight: 600;
+  }
+  .section-kicker {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .section-rule {
+    height: 1px;
+    background: var(--line-soft);
+    margin-bottom: 40px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 500;
+    color: var(--navy-900);
+    line-height: 1.02;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-500);
+    font-weight: 400;
+  }
+  .section-intro {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-body);
+    max-width: 760px;
+    margin-bottom: 48px;
+    border-left: 2px solid var(--gold-500);
+    padding-left: 22px;
+  }
+  .section-intro strong { color: var(--navy-900); font-weight: 600; }
+  .section-intro em {
+    font-style: italic;
+    color: var(--terra-500);
+    font-family: var(--serif);
+    font-size: 17px;
+  }
+
+  /* ═══════ ESCLARECIMENTOS ═══════ */
+  .clar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .clar-card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .clar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold-500);
+  }
+  .clar-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold-500);
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .clar-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+  }
+  .clar-title em {
+    font-style: italic;
+    color: var(--terra-500);
+    font-weight: 500;
+  }
+  .clar-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+  .clar-body strong { color: var(--navy-900); font-weight: 600; }
+  .clar-body em {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--terra-500);
+  }
+
+  /* ═══════ LISTA ALFA ═══════ */
+  .alfa-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    background: white;
+  }
+  .alfa-card {
+    padding: 28px 22px;
+    border-right: 1px solid var(--line);
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background 0.3s;
+  }
+  .alfa-card:last-child { border-right: none; }
+  .alfa-card:hover { background: var(--sand-50); }
+  .alfa-rank {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--gold-500);
+    margin-bottom: 12px;
+  }
+  .alfa-company {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--navy-900);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+  .alfa-pct {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .alfa-just {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-dim);
+  }
+
+  /* ═══════ DAY CARDS ═══════ */
+  .day {
+    border-top: 1px solid var(--line-soft);
+    padding: 48px 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 56px;
+    page-break-inside: avoid;
+  }
+  .day:last-child { border-bottom: 1px solid var(--line-soft); }
+  .day-header {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+  .day-date {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-500);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .day-name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--navy-900);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .day-number {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .day-focus {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--terra-500);
+    line-height: 1.4;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .day-progress {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .day-progress .count {
+    font-family: var(--serif);
+    color: var(--gold-500);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .day-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .block {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold-500);
+  }
+  .block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .block-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-900);
+    letter-spacing: -0.2px;
+  }
+  .block-title em {
+    font-style: italic;
+    color: var(--gold-500);
+    font-weight: 500;
+  }
+  .block-time {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    font-weight: 600;
+  }
+
+  /* ═══════ TASKS ═══════ */
+  .task {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(11,23,51,0.1);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .task:last-child { border-bottom: none; }
+  .task.done { opacity: 0.4; }
+  .task.done .task-text {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(11,23,51,0.4);
+  }
+  .checkbox {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--navy-900);
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.25s;
+    margin-top: 2px;
+  }
+  .checkbox:hover { background: rgba(11,23,51,0.05); }
+  .task.done .checkbox {
+    background: var(--navy-900);
+    border-color: var(--navy-900);
+  }
+  .task.done .checkbox::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 11px;
+    border: solid var(--gold-400);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .task-content { flex: 1; }
+  .task-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--text-body);
+    margin-bottom: 6px;
+  }
+  .task-text strong { color: var(--navy-900); font-weight: 600; }
+  .task-text em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--terra-500);
+    font-size: 16px;
+  }
+  .task-meta {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .task-tag {
+    display: inline-block;
+    padding: 3px 9px;
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tag-alfa {
+    background: rgba(201,163,83,0.12);
+    color: #8E6F2E;
+    border: 1px solid rgba(201,163,83,0.35);
+  }
+  .tag-content {
+    background: rgba(11,23,51,0.06);
+    color: var(--navy-900);
+    border: 1px solid rgba(11,23,51,0.2);
+  }
+  .tag-warm {
+    background: rgba(184,98,74,0.1);
+    color: var(--terra-500);
+    border: 1px solid rgba(184,98,74,0.3);
+  }
+  .tag-news {
+    background: rgba(245,234,208,0.5);
+    color: #8E6F2E;
+    border: 1px solid rgba(201,163,83,0.3);
+  }
+  .tag-milestone {
+    background: var(--terra-500);
+    color: var(--creme-txt);
+    border: 1px solid var(--terra-500);
+  }
+
+  /* ═══════ HOW-TO BLOCK ═══════ */
+  .howto {
+    background: var(--sand-50);
+    border-left: 3px solid var(--terra-500);
+    padding: 20px 24px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  .howto-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .howto-body {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .howto-body strong { font-weight: 600; color: var(--navy-900); }
+  .howto-body em { font-style: italic; color: var(--terra-500); }
+
+  /* ═══════ POSTS STRATEGY ═══════ */
+  .posts-strategy {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .post-card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .post-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 42px;
+    color: rgba(201,163,83,0.25);
+    line-height: 1;
+  }
+  .post-day {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .post-type {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .post-type em {
+    font-style: italic;
+    color: var(--gold-500);
+    font-weight: 500;
+  }
+  .post-purpose {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .post-gancho {
+    background: var(--sand-50);
+    border-left: 2px solid var(--gold-500);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .post-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-body);
+  }
+  .post-desc strong { color: var(--navy-900); font-weight: 600; }
+
+  /* ═══════ NEWSLETTER ═══════ */
+  .newsletter-block {
+    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    border: 1px solid var(--gold-500);
+    padding: 44px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .newsletter-block::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(201,163,83,0.25), transparent 65%);
+    filter: blur(20px);
+  }
+  .news-inner { position: relative; z-index: 2; }
+  .news-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .news-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--creme-txt);
+    letter-spacing: -0.3px;
+  }
+  .news-title em { font-style: italic; color: var(--gold-400); font-weight: 400; }
+  .news-stat {
+    font-family: var(--serif);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gold-400);
+    letter-spacing: 0.5px;
+  }
+  .news-stat strong {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--creme-txt);
+    margin-right: 6px;
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .news-item {
+    border-top: 1px solid rgba(201,163,83,0.28);
+    padding-top: 18px;
+  }
+  .news-item-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .news-item-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(251,245,228,0.88);
+  }
+  .news-item-text strong { color: var(--creme-txt); font-weight: 500; }
+  .news-item-text em { font-style: italic; color: var(--gold-400); font-family: var(--serif); font-size: 15px; }
+
+  /* ═══════ CALL GUIDE ═══════ */
+  .call-guide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .call-phase {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 36px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .call-phase::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 48px; height: 2px;
+    background: var(--terra-500);
+  }
+  .call-phase-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+  .call-phase-title em {
+    font-style: italic;
+    color: var(--terra-500);
+    font-weight: 500;
+  }
+  .call-phase-sub {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 22px;
+    font-weight: 600;
+  }
+  .call-list { list-style: none; }
+  .call-list li {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-body);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(11,23,51,0.08);
+    display: flex;
+    gap: 12px;
+  }
+  .call-list li:last-child { border-bottom: none; }
+  .call-list li::before {
+    content: '→';
+    color: var(--terra-500);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .call-list li strong { font-weight: 600; color: var(--navy-900); }
+  .call-list li em {
+    font-style: italic;
+    color: var(--terra-500);
+    font-family: var(--serif);
+    font-size: 16px;
+  }
+
+  /* ═══════ SCRIPTS ═══════ */
+  .script {
+    background: white;
+    border: 1px solid var(--line);
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,23,51,0.04);
+  }
+  .script-header {
+    padding: 20px 30px;
+    background: var(--navy-900);
+    color: var(--creme-txt);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold-500);
+  }
+  .script-title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 500;
+  }
+  .script-title em {
+    font-style: italic;
+    color: var(--gold-400);
+    font-weight: 400;
+  }
+  .script-copy {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--gold-400);
+    border: 1px solid var(--gold-500);
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+    font-family: var(--sans);
+  }
+  .script-copy:hover {
+    background: var(--gold-500);
+    color: var(--navy-900);
+  }
+  .script-copy.copied {
+    background: var(--terra-500);
+    color: var(--creme-txt);
+    border-color: var(--terra-500);
+  }
+  .script-body {
+    padding: 30px;
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .script-body .placeholder {
+    background: rgba(201,163,83,0.2);
+    color: #8E6F2E;
+    padding: 1px 7px;
+    font-style: normal;
+    font-weight: 600;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    border-radius: 2px;
+  }
+
+  /* ═══════ METRICS ═══════ */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    background: white;
+  }
+  .metric-card {
+    padding: 28px 22px;
+    border-right: 1px solid var(--line);
+  }
+  .metric-card:last-child { border-right: none; }
+  .metric-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-500);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .metric-input {
+    width: 100%;
+    padding: 4px 0;
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--navy-900);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
+    text-align: left;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .metric-input:focus { border-bottom-color: var(--gold-500); }
+  .metric-target {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+    font-weight: 600;
+  }
+
+  /* ═══════ FOOTER ═══════ */
+  footer {
+    background: var(--navy-900);
+    border-top: 1px solid var(--gold-500);
+    padding: 56px 64px;
+    margin-top: 48px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-400);
+  }
+  .footer-brand strong { color: var(--creme-txt); font-weight: 500; }
+  .footer-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--creme-txt);
+    letter-spacing: 0.3px;
+  }
+  .footer-quote em { color: var(--gold-400); }
+  .footer-date {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(201,163,83,0.5);
+  }
+
+  /* ═══════ RESPONSIVE ═══════ */
+  @media (max-width: 980px) {
+    .masthead { padding: 36px 28px 32px; }
+    .progress-wrap { padding: 16px 28px; }
+    main { padding: 48px 28px; }
+    footer { padding: 40px 28px; }
+    .mast-meta { grid-template-columns: repeat(2, 1fr); }
+    .mast-meta-item {
+      padding: 12px 14px;
+      border-right: none;
+      border-bottom: 1px solid rgba(201,163,83,0.12);
+    }
+    .day { grid-template-columns: 1fr; gap: 24px; }
+    .day-header { position: static; }
+    .day-name { font-size: 42px; }
+    .alfa-grid { grid-template-columns: repeat(2, 1fr); }
+    .alfa-card { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .clar-grid { grid-template-columns: 1fr; }
+    .call-guide { grid-template-columns: 1fr; }
+    .news-grid { grid-template-columns: 1fr; }
+    .progress-inner { flex-wrap: wrap; }
+    .actions { width: 100%; }
+    .btn { flex: 1; padding: 11px 8px; }
+  }
+
+  /* ═══════ PRINT / PDF ═══════ */
+  @media print {
+    @page { size: A4; margin: 14mm 12mm; }
+    body { background: white; color: var(--ink); }
+    .progress-wrap, .actions, .script-copy { display: none !important; }
+    .masthead {
+      background: var(--navy-900) !important;
+      padding: 20px 0;
+      page-break-after: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .masthead::before, .masthead::after { display: none; }
+    .mast-title { font-size: 30pt; }
+    .mast-inner { padding: 0; }
+    main { padding: 16px 0 0 0; max-width: 100%; }
+    footer {
+      background: var(--navy-900) !important;
+      padding: 16px 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section { margin-bottom: 32px; }
+    .section-title { font-size: 22pt; page-break-after: avoid; }
+    .day {
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      padding: 16px 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .day-header { position: static; }
+    .day-name { font-size: 26pt; }
+    .block {
+      padding: 14px;
+      background: white !important;
+      border: 1px solid var(--line);
+      page-break-inside: avoid;
+      box-shadow: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .alfa-grid { grid-template-columns: repeat(5, 1fr); }
+    .alfa-card {
+      min-height: auto;
+      padding: 14px 10px;
+      background: white !important;
+      page-break-inside: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .alfa-rank { font-size: 32pt; }
+    .alfa-company { font-size: 14pt; }
+    .task { padding: 6px 0; page-break-inside: avoid; }
+    .checkbox { width: 14px; height: 14px; }
+    .task.done .checkbox::after { left: 3px; top: 0; width: 5px; height: 8px; }
+    .script { page-break-inside: avoid; margin-bottom: 14px; box-shadow: none; }
+    .script-header {
+      background: var(--navy-900) !important;
+      color: var(--creme-txt) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .script-body { font-size: 11pt; line-height: 1.55; }
+    .howto {
+      background: var(--sand-50) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .clar-card, .post-card, .call-phase, .metric-card {
+      background: white !important;
+      border: 1px solid var(--line);
+      page-break-inside: avoid;
+      box-shadow: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .newsletter-block {
+      background: var(--navy-900) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .clar-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .posts-strategy { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .metric-input { font-size: 26pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ MASTHEAD ═══════ -->
+<header class="masthead">
+  <div class="mast-inner">
+    <div class="mast-top">
+      <div class="mast-brand">Karen <strong>Montagner</strong></div>
+      <div class="mast-program">Programa de <span>Evolução Contínua</span></div>
+    </div>
+
+    <div class="mast-eyebrow">Mentorada · Luciana Bonome · Medical Affairs / MSL</div>
+    <h1 class="mast-title">A <em>semana</em> que<br>transforma <em>visibilidade</em> em <em>conversa.</em></h1>
+    <p class="mast-sub">Sete dias de execução sniper. Menos volume, mais direção. O objetivo não é gerar impressões — é transformar visita de perfil em conversa real com as cinco empresas que já olham o seu radar.</p>
+
+    <div class="mast-meta">
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Início</div>
+        <div class="mast-meta-value">Qui · <em>23 abril</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Encerramento</div>
+        <div class="mast-meta-value">Qua · <em>30 abril</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Lista Alfa</div>
+        <div class="mast-meta-value">20 <em>pessoas</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Meta calls</div>
+        <div class="mast-meta-value">2 <em>agendadas</em></div>
+      </div>
+      <div class="mast-meta-item">
+        <div class="mast-meta-label">Tempo/dia</div>
+        <div class="mast-meta-value">45–60 <em>min</em></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ PROGRESS ═══════ -->
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-label">Progresso</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-pct" id="progressPct">0%</div>
+    <div class="actions">
+      <button class="btn" id="resetBtn" title="Apagar todo o progresso">Resetar</button>
+      <button class="btn btn-primary" id="exportBtn" title="Baixar como PDF">Baixar PDF</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ═══════ SEÇÃO 01: ESCLARECIMENTOS ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-kicker">Como ler este plano</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">Antes de <em>executar,</em><br>entender.</h2>
+    <p class="section-intro">
+      Quatro esclarecimentos que definem como todo o plano funciona. Lidos primeiro, evitam retrabalho e mantêm cada ação conectada ao objetivo. <em>Execução sem entendimento vira movimento — e movimento não é progresso.</em>
+    </p>
+
+    <div class="clar-grid">
+      <div class="clar-card">
+        <div class="clar-num">01 · Sobre a Lista Alfa</div>
+        <div class="clar-title">Para que servem os <em>contatos mapeados</em> na quinta</div>
+        <div class="clar-body">
+          A quinta é dia de <strong>inteligência</strong>, não de abordagem. Ao final do dia, a planilha tem 20 nomes divididos por empresa. Esses nomes se tornam o <strong>universo de caça da semana</strong>: de sexta em diante, cada DM enviada e cada comentário estratégico vai direcionado a alguém dessa lista. Nunca abordar na quinta — ainda não se viu o conteúdo recente das pessoas. <em>Quem aborda sem ler, queima o contato.</em> A planilha também registra status (aberto, respondeu, agendou, esfriou) — é o que permite medir na quarta se a semana funcionou.
+        </div>
+      </div>
+
+      <div class="clar-card">
+        <div class="clar-num">02 · Sobre os comentários</div>
+        <div class="clar-title">Por que eles aparecem <em>em quase todos</em> os dias</div>
+        <div class="clar-body">
+          Comentários estratégicos são ação diária — acontecem de <strong>sexta a quarta, com 3 por dia</strong>, totalizando 18 comentários na semana. Não aparecem na quinta porque é dia de mapeamento puro, e no sábado/domingo o volume é intencionalmente baixo para preservar energia. <em>Consistência não é diária — é confiável.</em> Melhor 3 comentários com insight real do que 10 que cumprem tabela.
+        </div>
+      </div>
+
+      <div class="clar-card">
+        <div class="clar-num">03 · Sobre o post de autoridade</div>
+        <div class="clar-title">Como funciona a <em>autoridade lateral</em></div>
+        <div class="clar-body">
+          "Autoridade lateral" é o movimento de <strong>falar do que já se viveu de um jeito que posicione no lugar onde se quer chegar</strong>. Não precisa ser MSL para falar como MSL — basta trazer uma experiência real (REDONE.br, coordenação na ABN, patologia) e conectá-la a uma discussão atual de Medical Affairs (RWE, evidência mundo real, diálogo com KOL, gap ciência-prática). Estrutura dos 150 palavras: gancho provocativo de 1 linha · contexto curto da vivência em 3-4 linhas · insight que conecta vivência ao tema atual · pergunta aberta no fim. <em>Não é pedir espaço. É ocupar.</em>
+        </div>
+      </div>
+
+      <div class="clar-card">
+        <div class="clar-num">04 · Sobre a publicação</div>
+        <div class="clar-title">Como <em>aquecer o algoritmo</em> antes de postar</div>
+        <div class="clar-body">
+          O LinkedIn entrega mais conteúdo de quem já está ativo no momento da publicação. Aquecer é <strong>gerar sinais de atividade nos 30 minutos antes do post</strong>. Sequência que funciona: 1) feed por 5 min sem curtir · 2) curtir 8 a 10 posts de MSLs, Managers, KOLs · 3) comentar 3 a 5 com observação técnica curta · 4) visitar 5 perfis da Lista Alfa · 5) publicar. Depois do post, nos primeiros 30 minutos, responder qualquer comentário em até 5 min — <em>essa é a janela dourada do algoritmo.</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SEÇÃO 02: LISTA ALFA ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-kicker">Inteligência</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">A <em>Lista Alfa.</em></h2>
+    <p class="section-intro">
+      Ordem de prioridade baseada nos dados reais do LinkedIn (08–21/04). Essas empresas já visitaram seu perfil. Para cada uma, mapear nominalmente <strong>4 perfis</strong>: 1 Medical Director, 1 Medical Manager (área mais próxima de patologia — neuro, onco, imuno), 2 MSLs (1 sênior, 1 pleno). Total: 20 pessoas. <em>Esse é o universo de caça da semana.</em>
+    </p>
+
+    <div class="alfa-grid">
+      <div class="alfa-card">
+        <div>
+          <div class="alfa-rank">01</div>
+          <div class="alfa-company">AstraZeneca</div>
+          <div class="alfa-pct">5% dos visitantes</div>
+        </div>
+        <div class="alfa-just">Interesse mais forte já existente. Priorizar onco e respiratório.</div>
+      </div>
+      <div class="alfa-card">
+        <div>
+          <div class="alfa-rank">02</div>
+          <div class="alfa-company">GSK</div>
+          <div class="alfa-pct">3% dos visitantes</div>
+        </div>
+        <div class="alfa-just">Forte em neuro e respiratório — aderente ao PhD em Patologia.</div>
+      </div>
+      <div class="alfa-card">
+        <div>
+          <div class="alfa-rank">03</div>
+          <div class="alfa-company">J&amp;J</div>
+          <div class="alfa-pct">2% dos visitantes</div>
+        </div>
+        <div class="alfa-just">Janssen tem áreas neuro e imuno com abertura a perfis de pesquisa.</div>
+      </div>
+      <div class="alfa-card">
+        <div>
+          <div class="alfa-rank">04</div>
+          <div class="alfa-company">AbbVie</div>
+          <div class="alfa-pct">2% dos visitantes</div>
+        </div>
+        <div class="alfa-just">Área neuro consolidada. Times enxutos, fácil mapear nominalmente.</div>
+      </div>
+      <div class="alfa-card">
+        <div>
+          <div class="alfa-rank">05</div>
+          <div class="alfa-company">IQVIA</div>
+          <div class="alfa-pct">2% dos visitantes</div>
+        </div>
+        <div class="alfa-just">Ponte CRO → indústria. Transição natural vinda de pesquisa clínica.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SEÇÃO 03: NEWSLETTER ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-kicker">Ativo subutilizado</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">Medical Insights:<br>o <em>ativo dormente.</em></h2>
+    <p class="section-intro">
+      215 assinantes é número grande para uma newsletter nichada — e pequeno demais para ela estar sendo usada apenas como publicação mensal. <strong>A newsletter é o seu canal mais próximo de KOLs e profissionais de indústria</strong>, e precisa entrar na rotina estratégica da semana. Quatro movimentos abaixo.
+    </p>
+
+    <div class="newsletter-block">
+      <div class="news-inner">
+        <div class="news-head">
+          <div>
+            <div class="news-title"><em>Medical Insights</em></div>
+            <div style="font-size:13px;font-style:italic;color:rgba(251,245,228,0.55);margin-top:6px;">Ciência, estratégia e impacto em saúde.</div>
+          </div>
+          <div class="news-stat"><strong>215</strong>assinantes ativos</div>
+        </div>
+
+        <div class="news-grid">
+          <div class="news-item">
+            <div class="news-item-label">01 · Publicar na sexta (25/04)</div>
+            <div class="news-item-text">Edição da semana com tema <strong>"RWE no Brasil: onde a evidência real encontra a decisão clínica"</strong>. Conecta diretamente com o post 2 da semana. Quem ler a newsletter e depois vir o post no feed entra em camada dupla de autoridade.</div>
+          </div>
+          <div class="news-item">
+            <div class="news-item-label">02 · Usar na assinatura das DMs</div>
+            <div class="news-item-text">Adicionar no fim de toda DM da semana: <em>"Inclusive, escrevo a newsletter Medical Insights — se fizer sentido, seria uma honra te ter por lá."</em> Ancoragem suave que converte.</div>
+          </div>
+          <div class="news-item">
+            <div class="news-item-label">03 · Mapear quem já assina da Lista Alfa</div>
+            <div class="news-item-text">Rodar os 20 nomes na base de assinantes. <strong>Os que já assinam são prioridade 1 de abordagem</strong> — já conhecem o conteúdo sem saber que conhecem. Taxa de resposta esperada: acima de 55%.</div>
+          </div>
+          <div class="news-item">
+            <div class="news-item-label">04 · Call to action no feed</div>
+            <div class="news-item-text">No post da quinta (provocação técnica), fechar com: <em>"Aprofundo esse ponto na próxima edição da Medical Insights — link no perfil."</em> Converte engajamento em assinante.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SEÇÃO 04: POSTS DA SEMANA ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-kicker">Conteúdo estratégico</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">Os <em>4 posts</em> da semana.</h2>
+    <p class="section-intro">
+      Cada post tem função específica e espaçamento que respeita o algoritmo (nunca dois posts seguidos do mesmo tipo). <strong>Publicar sempre entre 9h–11h ou 17h–19h.</strong> Essas duas janelas concentram o consumo de conteúdo técnico no Brasil.
+    </p>
+
+    <div class="posts-strategy">
+      <article class="post-card" data-num="01">
+        <div class="post-day">Sexta · 25/04 · 10h</div>
+        <div class="post-type">Autoridade <em>lateral</em></div>
+        <div class="post-purpose">Posicionamento · 150 palavras</div>
+        <div class="post-gancho">"Quando coordenei o registro nacional de doenças neurológicas, uma lacuna me marcou — e hoje vejo ela ressurgir nas discussões de Medical Affairs."</div>
+        <div class="post-desc">Conecta experiência REDONE.br a discussão atual (RWE, gap ciência-prática). <strong>Sinaliza para algoritmo e recrutadores que já se pensa como MSL.</strong> Fecha com pergunta aberta. Anunciar a edição da newsletter no comentário fixado.</div>
+      </article>
+
+      <article class="post-card" data-num="02">
+        <div class="post-day">Segunda · 28/04 · 9h</div>
+        <div class="post-type">Leitura <em>aplicada</em></div>
+        <div class="post-purpose">Técnico · 180 palavras</div>
+        <div class="post-gancho">"Li esse estudo esse fim de semana e tem um detalhe metodológico que muda o que ele diz na prática — e ninguém está comentando."</div>
+        <div class="post-desc">Pegar 1 paper recente de alto impacto na área, fazer leitura crítica curta, conectar ao dia a dia do campo. <strong>Formato mais consumido por Medical Managers.</strong> Este é o post que mais converte visitas de perfil.</div>
+      </article>
+
+      <article class="post-card" data-num="03">
+        <div class="post-day">Terça · 29/04 · 18h</div>
+        <div class="post-type">Provocação <em>técnica</em></div>
+        <div class="post-purpose">Engajamento · 120 palavras</div>
+        <div class="post-gancho">"Pergunta honesta para quem está no campo: RWE virou argumento real em discussão com KOL no Brasil, ou ainda é retórica de congresso?"</div>
+        <div class="post-desc">Pergunta aberta com microcontexto. <strong>Força comentário de MSL e Manager</strong> porque é provocação qualificada, não debate vazio. Marcar 2 MSLs da Lista Alfa no primeiro comentário para ampliar entrega.</div>
+      </article>
+
+      <article class="post-card" data-num="04">
+        <div class="post-day">Quarta · 30/04 · 11h</div>
+        <div class="post-type">Statement <em>curto</em></div>
+        <div class="post-purpose">Frase-síntese · 40 palavras</div>
+        <div class="post-gancho">"A distância entre o laboratório e o consultório não é científica. É de tradução. E quem aprende a traduzir muda tanto a evidência quanto a prática."</div>
+        <div class="post-desc">Post solo, sem imagem, frase-síntese. <strong>Aparece como pausa no feed e converte muito bem em seguidores.</strong> Raro por natureza (1 a cada 6-8 posts). Fecha a semana com assinatura de tese.</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════ SEÇÃO 05: EXECUÇÃO DIA A DIA ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-kicker">Execução</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">Os <em>7 dias.</em></h2>
+    <p class="section-intro">
+      Cada dia tem blocos de tempo: <strong>manhã (algoritmo)</strong>, <strong>meio-dia (outbound)</strong>, <strong>fim de tarde (follow-up)</strong>. Marcar ao completar — o progresso fica salvo automaticamente no navegador. <em>Na quarta, baixar o PDF antes de resetar.</em>
+    </p>
+
+    <!-- QUINTA 23/04 -->
+    <article class="day" id="day-qui">
+      <div class="day-header">
+        <div class="day-date">23 abril · QUI</div>
+        <div class="day-name">Quinta.</div>
+        <div class="day-number">Dia 01 · Inteligência</div>
+        <div class="day-focus">Montar a Lista Alfa. Zero abordagem. Só mapeamento.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-qui">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Bloco único · <em>Inteligência</em></div>
+            <div class="block-time">90 min</div>
+          </div>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Abrir planilha (Google Sheets) com 7 colunas: <strong>Empresa · Nome · Cargo · Link · Assina Newsletter? · Contato (data) · Status</strong>.</div><div class="task-meta"><span class="task-tag tag-milestone">setup</span>base da semana</div></div></label>
+
+          <div class="howto">
+            <div class="howto-label">Como mapear cada empresa</div>
+            <div class="howto-body">Na busca do LinkedIn, digite o cargo entre aspas + empresa. Ex: <em>"Medical Science Liaison" AstraZeneca</em>. Filtre por pessoas localizadas no Brasil. Abra o perfil, veja "Atividade recente" para entender do que a pessoa fala. Registre o link.</div>
+          </div>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>AstraZeneca:</strong> mapear 1 Medical Director + 1 Medical Manager (onco/respiratório) + 2 MSLs (1 sênior, 1 pleno). 4 nomes.</div><div class="task-meta"><span class="task-tag tag-alfa">alfa 01</span>astrazeneca</div></div></label>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>GSK:</strong> mesmo mapeamento. 4 nomes.</div><div class="task-meta"><span class="task-tag tag-alfa">alfa 02</span>gsk</div></div></label>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>J&amp;J / Janssen:</strong> mesmo mapeamento. 4 nomes.</div><div class="task-meta"><span class="task-tag tag-alfa">alfa 03</span>janssen</div></div></label>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>AbbVie:</strong> mesmo mapeamento. 4 nomes.</div><div class="task-meta"><span class="task-tag tag-alfa">alfa 04</span>abbvie</div></div></label>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>IQVIA:</strong> mesmo mapeamento. 4 nomes.</div><div class="task-meta"><span class="task-tag tag-alfa">alfa 05</span>iqvia</div></div></label>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Varrer base de <strong>assinantes da newsletter</strong> e marcar "SIM" na coluna de quem da Lista Alfa já assina a Medical Insights.</div><div class="task-meta"><span class="task-tag tag-news">newsletter</span>prioridade alta</div></div></label>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Varrer seguidores/conexões antigas da academia. Identificar <strong>5 pessoas que hoje estão na indústria</strong>. Taguear como "rede quente".</div><div class="task-meta"><span class="task-tag tag-warm">rede dormente</span>alta conversão</div></div></label>
+
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Fim da quinta: planilha com <strong>20 nomes Alfa + 5 rede quente = 25 leads</strong>. Esse é o universo de caça até quarta.</div><div class="task-meta"><span class="task-tag tag-milestone">fechar dia</span>milestone</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEXTA 25 -->
+    <article class="day" id="day-sex">
+      <div class="day-header">
+        <div class="day-date">25 abril · SEX</div>
+        <div class="day-name">Sexta.</div>
+        <div class="day-number">Dia 02 · Ativação</div>
+        <div class="day-focus">Primeiro disparo na Lista Alfa. Post 1 e edição da newsletter.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-sex">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Algoritmo</em></div>
+            <div class="block-time">20 min</div>
+          </div>
+          <div class="howto">
+            <div class="howto-label">Como aquecer o algoritmo antes do post</div>
+            <div class="howto-body">Feed por 5 min sem curtir. Depois: <strong>curtir 8–10 posts</strong> de MSLs, Managers, KOLs. <strong>Comentar 3–5</strong> com observação técnica curta. <strong>Visitar 5 perfis</strong> da Lista Alfa. Só então publicar. <em>Nos primeiros 30 minutos após publicar, responder comentários em até 5 minutos — a janela dourada.</em></div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Executar a sequência de aquecimento (curtir 10 + comentar 3 + visitar 5 perfis).</div><div class="task-meta"><span class="task-tag tag-content">aquecimento</span>pré-post</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Comentar em <strong>1 post de MSL, 1 de Manager e 1 de Director</strong> da Lista Alfa. Insight técnico + pergunta específica. Nada de "excelente ponto".</div><div class="task-meta"><span class="task-tag tag-content">3 comentários</span>semeadura</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Meio-dia · <em>Publicação dupla</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Publicar Post 1 (Autoridade Lateral)</strong> às 10h. REDONE.br + discussão atual de Medical Affairs, 150 palavras. Seguir estrutura: gancho · vivência · insight · pergunta.</div><div class="task-meta"><span class="task-tag tag-content">post 1</span>publicação</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Comentário fixado no próprio post: <em>"Aprofundo esse ponto na edição de hoje da newsletter Medical Insights — link aqui."</em> Converte engajamento em assinante.</div><div class="task-meta"><span class="task-tag tag-news">cross</span>newsletter</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Enviar edição da Medical Insights</strong>: RWE no Brasil. Mesma temática do post, aprofundada.</div><div class="task-meta"><span class="task-tag tag-news">edição</span>medical insights</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Outbound sniper</em></div>
+            <div class="block-time">20 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 1 (par)</strong> para 1 MSL da AstraZeneca. Personalizar citando comentário ou post recente da pessoa.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 1</span>astrazeneca</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 1</strong> para 1 MSL da GSK.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 2</span>gsk</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Responder todo comentário no Post 1 em até 5 min (janela algorítmica). Depois disso, atualizar planilha com quem curtiu/comentou.</div><div class="task-meta"><span class="task-tag tag-content">janela</span>crítico</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- SÁBADO 26 -->
+    <article class="day" id="day-sab">
+      <div class="day-header">
+        <div class="day-date">26 abril · SÁB</div>
+        <div class="day-name">Sábado.</div>
+        <div class="day-number">Dia 03 · Preparação</div>
+        <div class="day-focus">Leve. Escrever posts da semana. 30 minutos.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-sab">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Descanso ativo · <em>Escrever</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Escrever <strong>rascunho do Post 2 (Leitura Aplicada)</strong> para segunda. Escolher 1 paper recente da área, extrair 1 detalhe metodológico que muda a aplicação prática.</div><div class="task-meta"><span class="task-tag tag-content">rascunho</span>post 2</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Escrever <strong>rascunho do Post 3 (Provocação Técnica)</strong> para terça. Pergunta aberta + microcontexto.</div><div class="task-meta"><span class="task-tag tag-content">rascunho</span>post 3</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Conferir respostas ao Post 1 e DMs da sexta. Responder o que ficou aberto.</div><div class="task-meta">follow-up leve</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- DOMINGO 27 -->
+    <article class="day" id="day-dom">
+      <div class="day-header">
+        <div class="day-date">27 abril · DOM</div>
+        <div class="day-name">Domingo.</div>
+        <div class="day-number">Dia 04 · Pausa estratégica</div>
+        <div class="day-focus">Descanso. Leitura. Zero LinkedIn. Isso também é parte do plano.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-dom">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Sem tarefa · <em>Repouso</em></div>
+            <div class="block-time">0 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Nada. <em>Quem publica em todos os dias queima. Quem pausa, posiciona.</em></div><div class="task-meta">pausa intencional</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEGUNDA 28 -->
+    <article class="day" id="day-seg">
+      <div class="day-header">
+        <div class="day-date">28 abril · SEG</div>
+        <div class="day-name">Segunda.</div>
+        <div class="day-number">Dia 05 · Aprofundamento</div>
+        <div class="day-focus">Post 2 (leitura aplicada) + abordagem de Managers e rede quente.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-seg">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Aquecer e publicar</em></div>
+            <div class="block-time">25 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Sequência de aquecimento: curtir 10 · comentar 3 · visitar 5 perfis Alfa.</div><div class="task-meta"><span class="task-tag tag-content">aquecimento</span>pré-post</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Publicar Post 2 (Leitura Aplicada)</strong> às 9h. Paper recente + leitura crítica curta + conexão com campo.</div><div class="task-meta"><span class="task-tag tag-content">post 2</span>publicação</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Janela algorítmica: responder todo comentário em até 5 minutos por 30 min após publicação.</div><div class="task-meta">janela dourada</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Meio-dia · <em>Outbound sniper</em></div>
+            <div class="block-time">20 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 2 (valor)</strong> para 1 Medical Manager da J&amp;J. Incluir insight real do REDONE.br.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 3</span>janssen</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 2</strong> para 1 Medical Manager da AbbVie.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 4</span>abbvie</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 4 (rede quente)</strong> para 2 contatos da academia que hoje estão na indústria.</div><div class="task-meta"><span class="task-tag tag-warm">2 dms</span>rede quente</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Follow-up</em></div>
+            <div class="block-time">10 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Responder em até 4h quem respondeu DM ou comentário desde sexta. Puxar para pergunta de aprofundamento.</div><div class="task-meta">não esfriar</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Atualizar planilha com status de cada lead.</div><div class="task-meta">tracking</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- TERÇA 29 -->
+    <article class="day" id="day-ter">
+      <div class="day-header">
+        <div class="day-date">29 abril · TER</div>
+        <div class="day-name">Terça.</div>
+        <div class="day-number">Dia 06 · Provocação</div>
+        <div class="day-focus">Post 3 (provocação) + outbound de visitantes do perfil.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-ter">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Algoritmo</em></div>
+            <div class="block-time">20 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">3 comentários em posts de pessoas da Lista Alfa diferentes dos de sexta. Ampliar radar.</div><div class="task-meta"><span class="task-tag tag-content">3 comentários</span>alfa diferentes</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Revisitar Post 2: responder comentários tardios, fazer pergunta aberta para esticar a conversa.</div><div class="task-meta">conversão</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Provocação + visitantes</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Sequência de aquecimento antes do post (curtir 10 · comentar 3).</div><div class="task-meta"><span class="task-tag tag-content">aquecimento</span>pré-post</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Publicar Post 3 (Provocação Técnica)</strong> às 18h. Pergunta aberta RWE + microcontexto. Marcar 2 MSLs da Lista Alfa no primeiro comentário.</div><div class="task-meta"><span class="task-tag tag-content">post 3</span>publicação</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Abrir "Quem visitou meu perfil". Identificar 3 pessoas de empresas da Lista Alfa (janela 48h).</div><div class="task-meta"><span class="task-tag tag-alfa">visitantes</span>janela quente</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 3 (visitante)</strong> para cada um dos 3.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 5, 6, 7</span>visitantes</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 4 (rede quente)</strong> para mais 2 contatos da academia na indústria.</div><div class="task-meta"><span class="task-tag tag-warm">2 dms</span>bloco 2</div></div></label>
+        </div>
+      </div>
+    </article>
+
+    <!-- QUARTA 30 -->
+    <article class="day" id="day-qua">
+      <div class="day-header">
+        <div class="day-date">30 abril · QUA</div>
+        <div class="day-name">Quarta.</div>
+        <div class="day-number">Dia 07 · Conversão</div>
+        <div class="day-focus">Transformar DMs em calls marcadas. Post 4 (statement). Revisão.</div>
+        <div class="day-progress"><span class="count" data-count-for="day-qua">0/0</span> concluído</div>
+      </div>
+      <div class="day-body">
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Manhã · <em>Push para call</em></div>
+            <div class="block-time">25 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Puxar lista de DMs abertas com <strong>3+ trocas</strong>. Para cada uma: propor call de 15 min com 2 slots sugeridos.</div><div class="task-meta"><span class="task-tag tag-milestone">conversão</span>objetivo principal</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Para conversas mais quentes (áudio, troca longa): <strong>voice note de 40s</strong> propondo a call. Diferencia absurdamente.</div><div class="task-meta"><span class="task-tag tag-alfa">voice note</span>hack</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Enviar <strong>Script 2</strong> para 1 Medical Manager da IQVIA.</div><div class="task-meta"><span class="task-tag tag-alfa">dm 8</span>iqvia</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Meio-dia · <em>Post 4 e fechamento</em></div>
+            <div class="block-time">20 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Publicar Post 4 (Statement)</strong> às 11h. Frase-síntese curta, sem imagem, sem gancho longo. Fecha a semana.</div><div class="task-meta"><span class="task-tag tag-content">post 4</span>statement</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Buscar LinkedIn Live / webinars de Medical Affairs na próxima semana (ABRAMED, PharmaPrime). Registrar 2 na agenda.</div><div class="task-meta"><span class="task-tag tag-warm">eventos</span>semana 2</div></div></label>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <div class="block-title">Tarde · <em>Revisão semanal</em></div>
+            <div class="block-time">30 min</div>
+          </div>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">DMs enviadas × respondidas. Calcular taxa. <strong>&lt; 25%: ajustar mensagem. &gt; 40%: escalar.</strong></div><div class="task-meta">métrica</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Contar conversas reais (3+ trocas). Meta era 5.</div><div class="task-meta">métrica</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Contar calls marcadas para semana 2. Meta era 2.</div><div class="task-meta">métrica</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text">Escrever em 1 linha: <em>"o que funcionou essa semana foi ___"</em>. Padrão da semana 2.</div><div class="task-meta">aprendizado</div></div></label>
+          <label class="task"><input type="checkbox" hidden><span class="checkbox"></span><div class="task-content"><div class="task-text"><strong>Baixar PDF da semana antes de resetar.</strong> Arquivar como registro do Programa.</div><div class="task-meta"><span class="task-tag tag-milestone">arquivo</span>disciplina</div></div></label>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ═══════ SEÇÃO 06: CALL GUIDE ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-kicker">Como agendar e conduzir as calls</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">Da <em>DM</em> à <em>call.</em></h2>
+    <p class="section-intro">
+      A maior parte das transições para MSL acontece aqui — <strong>nos 20 minutos de uma conversa informal onde se prova, sem pedir, que já se pensa como MSL</strong>. Abaixo, o que faz uma call ser marcada e, depois, o que faz ela render. <em>Call não é entrevista. É duas pessoas compartilhando leitura de mercado.</em>
+    </p>
+
+    <div class="call-guide">
+
+      <div class="call-phase">
+        <div class="call-phase-title">Agendar a <em>call</em></div>
+        <div class="call-phase-sub">da DM ao aceite — 6 movimentos</div>
+        <ul class="call-list">
+          <li><strong>Esperar 3+ trocas antes de propor.</strong> Propor call na primeira mensagem parece transacional. A partir da terceira resposta, a porta está aberta.</li>
+          <li><strong>Nunca pedir "conversa sobre oportunidade".</strong> Pedir <em>"15 minutos para entender como é a rotina de MSL em [empresa] na prática"</em>. Autoridade não pede, aprende.</li>
+          <li><strong>Oferecer 2 slots específicos.</strong> Ex: "Terça 14h ou quinta 9h funcionam pra você?" — nunca "quando for melhor". Dar alternativas triplica a taxa de aceite.</li>
+          <li><strong>Sugerir 15 minutos, aceitar 20.</strong> O número pequeno tira a resistência. Se a pessoa topar, já ganhou. Call boa sempre passa do tempo.</li>
+          <li><strong>Mandar o link do Google Meet no aceite, não depois.</strong> Evita "me manda depois" que vira esquecimento. Enviar: <em>"Fechado! Link: [meet] · reservei teu slot."</em></li>
+          <li><strong>Confirmar 2h antes com 1 linha.</strong> <em>"Oi [Nome], confirmando nossa conversa de 14h. Até já!"</em> Reduz no-show em 70%.</li>
+        </ul>
+      </div>
+
+      <div class="call-phase">
+        <div class="call-phase-title">Conduzir a <em>call</em></div>
+        <div class="call-phase-sub">estrutura dos 15–20 minutos</div>
+        <ul class="call-list">
+          <li><strong>Primeiros 90 segundos:</strong> gratidão breve + 1 linha que posicione (não que explique). <em>"Venho de patologia, coordenei o REDONE.br, e estou direcionando minha atuação para Medical Affairs. Vim pra te ouvir."</em></li>
+          <li><strong>Fazer 3 perguntas abertas, nessa ordem:</strong> 1) como é o dia típico · 2) o que mudou no papel de MSL nos últimos 2 anos · 3) o que distingue MSL de alta performance dos demais.</li>
+          <li><strong>Ouvir 70% do tempo.</strong> Quem fala demais na call sai como candidato. Quem faz a pessoa falar sai como par.</li>
+          <li><strong>Trazer 1 insight do próprio repertório no meio.</strong> Ex: <em>"Interessante — no REDONE.br vi um padrão parecido quando..."</em> Prova que não se é só observador.</li>
+          <li><strong>Nos últimos 3 min, pergunta crítica:</strong> <em>"Se você estivesse no meu lugar, com esse background, por onde começaria?"</em> 80% das pessoas respondem com indicação de nome.</li>
+          <li><strong>Encerramento de alta conversão:</strong> <em>"Posso te mandar a próxima edição da Medical Insights? Tem um ponto que se conecta com o que conversamos."</em> Amarra a relação sem pedir nada.</li>
+          <li><strong>24h depois:</strong> mensagem de agradecimento + 1 link útil relacionado ao que conversaram. <em>Follow-up com valor, não lembrete.</em></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════ SEÇÃO 07: SCRIPTS ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <span class="section-kicker">Comunicação</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">Os <em>scripts.</em></h2>
+    <p class="section-intro">
+      Quatro scripts prontos. Substituir o que está em <span style="background:rgba(201,163,83,0.2);color:#8E6F2E;padding:1px 7px;font-weight:600;font-size:13px;letter-spacing:0.3px;">destaque dourado</span> por informação específica e verdadeira. <em>Nunca enviar sem personalizar — mensagem padronizada é detectável em 2 segundos.</em>
+    </p>
+
+    <div class="script">
+      <div class="script-header">
+        <div class="script-title">Script 1 · Para MSLs <em>(abordagem par)</em></div>
+        <button class="script-copy" data-copy="1">Copiar</button>
+      </div>
+      <div class="script-body" id="script-1">Oi <span class="placeholder">Nome</span>, vi seu comentário no post do <span class="placeholder">Nome do Manager</span> sobre <span class="placeholder">tema específico</span> — especificamente o ponto sobre <span class="placeholder">detalhe concreto</span>. Venho da pesquisa clínica (coordenei a REDONE.br na ABN, PhD em Patologia) e estou direcionando minha atuação para Medical Affairs.
+
+Você teria 15 minutos nas próximas duas semanas pra eu te ouvir sobre como é a rotina de MSL na <span class="placeholder">empresa</span> na prática? Não é conversa de vaga — é aprendizado. Posso me adaptar ao seu horário.
+
+Inclusive, escrevo a newsletter Medical Insights — se fizer sentido, seria uma honra te ter por lá.</div>
+    </div>
+
+    <div class="script">
+      <div class="script-header">
+        <div class="script-title">Script 2 · Para Medical Managers <em>(abordagem de valor)</em></div>
+        <button class="script-copy" data-copy="2">Copiar</button>
+      </div>
+      <div class="script-body" id="script-2"><span class="placeholder">Nome</span>, acompanho seu trabalho na <span class="placeholder">empresa</span> há algumas semanas — o post sobre <span class="placeholder">tema</span> me fez pensar em algo que vi na coordenação do REDONE.br: <span class="placeholder">insight de 2 linhas, concreto, ligado ao tema</span>.
+
+Venho de patologia e pesquisa clínica, direcionando pra Medical Affairs. Sem agenda de vaga: gostaria de trocar 20 minutos se fizer sentido pra você. Se não, fica registrado o trabalho — sigo acompanhando.
+
+Se quiser, também pode acompanhar pela Medical Insights, newsletter que escrevo.</div>
+    </div>
+
+    <div class="script">
+      <div class="script-header">
+        <div class="script-title">Script 3 · Para quem <em>visitou o perfil</em> (janela 48h)</div>
+        <button class="script-copy" data-copy="3">Copiar</button>
+      </div>
+      <div class="script-body" id="script-3"><span class="placeholder">Nome</span>, vi que você passou pelo meu perfil — obrigada pelo interesse. Estou direcionando minha trajetória (PhD Patologia + coordenação do REDONE.br) para Medical Affairs na indústria, com foco em <span class="placeholder">área terapêutica</span>.
+
+Se fizer sentido trocar uma ideia rápida sobre <span class="placeholder">empresa</span> ou sobre o papel de MSL na sua área, minha agenda é flexível. Caso não seja o momento, obrigada pela visita.</div>
+    </div>
+
+    <div class="script">
+      <div class="script-header">
+        <div class="script-title">Script 4 · Rede <em>quente</em> (academia → indústria)</div>
+        <button class="script-copy" data-copy="4">Copiar</button>
+      </div>
+      <div class="script-body" id="script-4">Oi <span class="placeholder">Nome</span>, faz um tempo. Vi que você está na <span class="placeholder">empresa</span> — genuinamente curiosa sobre como foi a transição da academia pra indústria.
+
+Estou fazendo o mesmo movimento agora (Medical Affairs, foco em MSL) e adoraria te ouvir 15 min se você puder. Conta mais?</div>
+    </div>
+  </section>
+
+  <!-- ═══════ SEÇÃO 08: MÉTRICAS ═══════ -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <span class="section-kicker">Medição</span>
+    </div>
+    <div class="section-rule"></div>
+    <h2 class="section-title">As <em>métricas</em> da semana.</h2>
+    <p class="section-intro">
+      Esquecer impressão e engajamento como métrica principal. Para recolocação, importa o que está abaixo. <em>Atualizar ao longo da semana — fica salvo automaticamente.</em>
+    </p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">DMs enviadas</div>
+        <input type="number" class="metric-input" id="m1" min="0" value="0">
+        <div class="metric-target">meta · 10 / semana</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">DMs respondidas</div>
+        <input type="number" class="metric-input" id="m2" min="0" value="0">
+        <div class="metric-target">alvo · ≥ 40%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Conversas reais</div>
+        <input type="number" class="metric-input" id="m3" min="0" value="0">
+        <div class="metric-target">meta · 5 / semana</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Calls marcadas</div>
+        <input type="number" class="metric-input" id="m4" min="0" value="0">
+        <div class="metric-target">meta · 2 / semana</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Lista Alfa contactada</div>
+        <input type="number" class="metric-input" id="m5" min="0" value="0">
+        <div class="metric-target">meta · 10 de 20</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Novos assinantes Newsletter</div>
+        <input type="number" class="metric-input" id="m6" min="0" value="0">
+        <div class="metric-target">meta · +15 / semana</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Karen <strong>Montagner</strong> · Programa de Evolução Contínua</div>
+    <div class="footer-quote"><em>execução sniper,</em> não métrica de vaidade.</div>
+    <div class="footer-date" id="foot-date">—</div>
+  </div>
+</footer>
+
+<script>
+  const STORAGE_KEY = 'luciana_plano_v3_evolucao_continua';
+  const METRICS_KEY = 'luciana_metricas_v3';
+
+  (function setDates() {
+    const opts = { day: '2-digit', month: 'long', year: 'numeric' };
+    const now = new Date();
+    const str = now.toLocaleDateString('pt-BR', opts).toUpperCase();
+    document.getElementById('foot-date').textContent = 'Semana 01 · ' + str;
+  })();
+
+  const tasks = document.querySelectorAll('.task');
+  const progressFill = document.getElementById('progressFill');
+  const progressPct = document.getElementById('progressPct');
+
+  tasks.forEach((task, idx) => {
+    const dayEl = task.closest('.day');
+    const dayId = dayEl ? dayEl.id : 'noday';
+    task.dataset.taskId = dayId + '-t' + idx;
+  });
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      tasks.forEach(task => {
+        if (saved[task.dataset.taskId]) {
+          task.classList.add('done');
+          task.querySelector('input').checked = true;
+        }
+      });
+    } catch (e) {}
+  }
+
+  function saveState() {
+    const state = {};
+    tasks.forEach(task => {
+      if (task.classList.contains('done')) state[task.dataset.taskId] = true;
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function updateProgress() {
+    const total = tasks.length;
+    const done = document.querySelectorAll('.task.done').length;
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    progressFill.style.width = pct + '%';
+    progressPct.textContent = pct + '%';
+
+    document.querySelectorAll('.day').forEach(day => {
+      const dayTasks = day.querySelectorAll('.task');
+      const dayDone = day.querySelectorAll('.task.done').length;
+      const counter = day.querySelector('[data-count-for]');
+      if (counter) counter.textContent = dayDone + '/' + dayTasks.length;
+    });
+  }
+
+  tasks.forEach(task => {
+    task.addEventListener('click', (e) => {
+      e.preventDefault();
+      task.classList.toggle('done');
+      task.querySelector('input').checked = task.classList.contains('done');
+      saveState();
+      updateProgress();
+    });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (confirm('Apagar todo o progresso desta semana? Isso não pode ser desfeito.')) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(METRICS_KEY);
+      tasks.forEach(t => {
+        t.classList.remove('done');
+        t.querySelector('input').checked = false;
+      });
+      document.querySelectorAll('.metric-input').forEach(i => i.value = 0);
+      updateProgress();
+    }
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', () => { window.print(); });
+
+  document.querySelectorAll('.script-copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = btn.dataset.copy;
+      const body = document.getElementById('script-' + id);
+      const text = body.innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = 'Copiado ✓';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+      } catch (e) {
+        const range = document.createRange();
+        range.selectNode(body);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        btn.textContent = 'Copiado ✓';
+        setTimeout(() => btn.textContent = 'Copiar', 2000);
+      }
+    });
+  });
+
+  function loadMetrics() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(METRICS_KEY) || '{}');
+      Object.keys(saved).forEach(k => {
+        const el = document.getElementById(k);
+        if (el) el.value = saved[k];
+      });
+    } catch (e) {}
+  }
+
+  function saveMetrics() {
+    const state = {};
+    document.querySelectorAll('.metric-input').forEach(input => { state[input.id] = input.value; });
+    localStorage.setItem(METRICS_KEY, JSON.stringify(state));
+  }
+
+  document.querySelectorAll('.metric-input').forEach(input => {
+    input.addEventListener('input', saveMetrics);
+  });
+
+  loadState();
+  loadMetrics();
+  updateProgress();
+</script>
+
+</body>
+</html>
+TwinMind
+TwinMind
+
+Ask TwinMind
+Page icon
+Summarize
+Disable for this site
+Disable for all sites
