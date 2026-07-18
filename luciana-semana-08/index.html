@@ -1,1 +1,920 @@
-placeholder
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 08 + Kit de Abordagem · Luciana Bonome · Mentoria Karen Montagner</title>
+<style>
+:root{--ink:#1b2230;--ink2:#3a4456;--muted:#6b7686;--line:#e7e3da;--paper:#faf8f4;--card:#fff;
+    --navy:#1F3559;--blue:#2E6FB0;--gold:#B08328;--green:#2E7D46;--amber:#B7791F;--red:#B0402A;--sky:#eef3fa;--cream:#f3efe6;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;}
+#tab-plano .serif{font-family:Georgia,"Times New Roman",serif;}
+#tab-plano .wrap{max-width:940px;margin:0 auto;padding:0 22px 80px;}
+#tab-plano em{font-style:italic;}
+#tab-plano a{color:var(--blue);}
+#tab-plano .brand{display:flex;justify-content:space-between;align-items:center;padding:20px 0 14px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:6px;}
+#tab-plano .brand .k{font-family:Georgia,serif;font-size:15px;color:var(--navy);}
+#tab-plano .brand .k b{font-weight:700;}
+#tab-plano .brand .tag{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;}
+#tab-plano .hero{padding:40px 0 10px;}
+#tab-plano .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+#tab-plano h1.display{font-family:Georgia,serif;font-weight:700;font-size:44px;line-height:1.08;color:var(--navy);margin:0 0 18px;}
+#tab-plano h1.display em{color:var(--gold);}
+#tab-plano .lead{font-size:17px;color:var(--ink2);max-width:780px;}
+#tab-plano .meta{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 8px;}
+#tab-plano .meta .m{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+#tab-plano .meta .m .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+#tab-plano .meta .m .v{font-family:Georgia,serif;font-size:19px;color:var(--navy);margin-top:3px;}
+#tab-plano .meta .m .v em{color:var(--gold);}
+#tab-plano .principle{background:var(--navy);color:#fff;border-radius:12px;padding:16px 20px;margin:22px 0 6px;font-size:15px;}
+#tab-plano .principle b{color:#f0d79a;}
+#tab-plano section{margin-top:44px;}
+#tab-plano .snum{font-family:Georgia,serif;font-size:13px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;}
+#tab-plano h2{font-family:Georgia,serif;font-size:27px;color:var(--navy);margin:6px 0 6px;line-height:1.15;}
+#tab-plano h2 em{color:var(--gold);}
+#tab-plano h3{font-size:16px;color:var(--blue);margin:20px 0 8px;}
+#tab-plano p{margin:10px 0;}
+#tab-plano .cards{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0;}
+#tab-plano .c{flex:1 1 210px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+#tab-plano .c .ico{font-size:20px;}
+#tab-plano .c .t{font-weight:700;color:var(--navy);margin:6px 0 2px;font-size:15px;}
+#tab-plano .c .s{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+#tab-plano .c .d{font-size:13.5px;color:var(--ink2);}
+#tab-plano .c b{color:var(--ink);}
+#tab-plano .stat{flex:1 1 130px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+#tab-plano .stat .n{font-family:Georgia,serif;font-size:26px;color:var(--navy);}
+#tab-plano .stat .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+#tab-plano .stat .d{font-size:12px;color:var(--ink2);margin-top:3px;}
+#tab-plano .up{color:var(--green);}
+#tab-plano .callout{border-radius:12px;padding:16px 18px;margin:16px 0;font-size:14.5px;}
+#tab-plano .callout.good{background:#eaf5ee;border-left:4px solid var(--green);}
+#tab-plano .callout.info{background:var(--sky);border-left:4px solid var(--blue);}
+#tab-plano .callout.warn{background:#fbf1e3;border-left:4px solid var(--amber);}
+#tab-plano .callout.hot{background:#fbeae6;border-left:4px solid var(--red);}
+#tab-plano .chart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;}
+#tab-plano .bar-row{display:grid;grid-template-columns:120px 1fr 120px;align-items:center;gap:10px;margin:8px 0;font-size:13px;}
+#tab-plano .bar-track{background:#eee7da;border-radius:5px;height:16px;overflow:hidden;}
+#tab-plano .bar-fill{height:100%;background:linear-gradient(90deg,#2E6FB0,#7fb0e0);border-radius:5px;}
+#tab-plano .bar-val{color:var(--muted);font-size:12px;text-align:right;}
+#tab-plano .pill{display:inline-block;font-size:12px;background:var(--sky);color:var(--navy);border-radius:20px;padding:3px 11px;margin:2px 4px 2px 0;}
+#tab-plano .pill.hot{background:#fbeae6;color:var(--red);}
+#tab-plano ul{margin:8px 0;padding-left:20px;}
+#tab-plano li{margin:6px 0;}
+#tab-plano .postbox{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;margin:12px 0;}
+#tab-plano .postbox .tag{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+#tab-plano .postbox p{margin:8px 0;font-size:14.5px;color:var(--ink2);}
+#tab-plano .postbox .q{color:var(--navy);font-weight:600;}
+#tab-plano .barwrap{position:sticky;top:0;background:var(--paper);padding:9px 0;border-bottom:1px solid var(--line);z-index:6;margin-bottom:6px;}
+#tab-plano .barwrap .row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:5px;gap:8px;flex-wrap:wrap;}
+#tab-plano .track{background:#eee7da;height:10px;border-radius:6px;overflow:hidden;}
+#tab-plano .fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#d9b25e);transition:width .3s;}
+#tab-plano .btn{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:20px;padding:4px 12px;cursor:pointer;color:var(--ink2);}
+#tab-plano .btn:hover{background:var(--cream);}
+#tab-plano .day-item{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;}
+#tab-plano .day-item input{margin-top:4px;width:17px;height:17px;accent-color:var(--gold);cursor:pointer;flex:0 0 auto;}
+#tab-plano .day-item .dd{font-weight:700;color:var(--navy);}
+#tab-plano .day-item.done{opacity:.55;}
+#tab-plano .day-item.done .body{text-decoration:line-through;}
+#tab-plano .day-item.nl{border-left:4px solid var(--gold);}
+#tab-plano .chips span{display:inline-block;font-size:11px;background:var(--cream);color:var(--ink2);border-radius:4px;padding:1px 7px;margin:4px 4px 0 0;}
+#tab-plano .check{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin:7px 0;}
+#tab-plano .check input{margin-top:3px;width:17px;height:17px;accent-color:var(--gold);cursor:pointer;flex:0 0 auto;}
+#tab-plano .check.done{opacity:.5;}
+#tab-plano .check.done .body{text-decoration:line-through;}
+#tab-plano .foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;}
+#tab-plano .foot .k{font-family:Georgia,serif;color:var(--navy);font-size:15px;}
+#tab-plano .foot em{color:var(--gold);}
+#tab-kit .serif{font-family:Georgia,"Times New Roman",serif;}
+#tab-kit .wrap{max-width:940px;margin:0 auto;padding:0 22px 80px;}
+#tab-kit em{font-style:italic;}
+#tab-kit a{color:var(--blue);}
+#tab-kit .brand{display:flex;justify-content:space-between;align-items:center;padding:20px 0 14px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:6px;}
+#tab-kit .brand .k{font-family:Georgia,serif;font-size:15px;color:var(--navy);}
+#tab-kit .brand .k b{font-weight:700;}
+#tab-kit .brand .tag{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;}
+#tab-kit .hero{padding:36px 0 6px;}
+#tab-kit .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+#tab-kit h1{font-family:Georgia,serif;font-size:40px;line-height:1.1;color:var(--navy);margin:0 0 14px;}
+#tab-kit h1 em{color:var(--gold);}
+#tab-kit .lead{font-size:17px;color:var(--ink2);max-width:770px;}
+#tab-kit .principle{background:var(--navy);color:#fff;border-radius:12px;padding:16px 20px;margin:22px 0 6px;font-size:15px;}
+#tab-kit .principle b{color:#f0d79a;}
+#tab-kit section{margin-top:42px;}
+#tab-kit .snum{font-family:Georgia,serif;font-size:13px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;}
+#tab-kit h2{font-family:Georgia,serif;font-size:26px;color:var(--navy);margin:6px 0 8px;line-height:1.15;}
+#tab-kit h2 em{color:var(--gold);}
+#tab-kit p{margin:9px 0;}
+#tab-kit .callout{border-radius:12px;padding:15px 17px;margin:14px 0;font-size:14.5px;}
+#tab-kit .callout.good{background:#eaf5ee;border-left:4px solid var(--green);}
+#tab-kit .callout.info{background:var(--sky);border-left:4px solid var(--blue);}
+#tab-kit .callout.warn{background:#fbf1e3;border-left:4px solid var(--amber);}
+#tab-kit .person{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:11px 0;position:relative;}
+#tab-kit .person.done{opacity:.55;border-color:var(--green);}
+#tab-kit .person.done .nm{text-decoration:line-through;}
+#tab-kit .phead{display:flex;gap:11px;align-items:flex-start;}
+#tab-kit .phead input{margin-top:4px;width:18px;height:18px;accent-color:var(--green);cursor:pointer;flex:0 0 auto;}
+#tab-kit .pbody{flex:1;}
+#tab-kit .barwrap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin:12px 0 16px;}
+#tab-kit .barwrap .row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:6px;gap:8px;flex-wrap:wrap;}
+#tab-kit .barwrap .row b{color:var(--navy);font-size:14px;}
+#tab-kit .track{background:#eee7da;height:10px;border-radius:6px;overflow:hidden;}
+#tab-kit .fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#6fbf8a);transition:width .3s;}
+#tab-kit .btn{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:20px;padding:4px 12px;cursor:pointer;color:var(--ink2);}
+#tab-kit .btn:hover{background:var(--cream);}
+#tab-kit .gbar{background:var(--navy);color:#fff;border-radius:12px;padding:14px 18px;margin:16px 0;position:sticky;top:0;z-index:6;}
+#tab-kit .gbar .row{display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:10px;flex-wrap:wrap;}
+#tab-kit .gbar b{color:#f0d79a;font-size:15px;}
+#tab-kit .gbar .track{background:rgba(255,255,255,.2);margin-top:7px;}
+#tab-kit .gbar .fill{background:linear-gradient(90deg,var(--gold),#f0d79a);}
+#tab-kit .person .nm{font-weight:700;color:var(--navy);font-size:15.5px;}
+#tab-kit .person .rl{font-size:13px;color:var(--muted);margin:2px 0 4px;}
+#tab-kit .person a.lk{font-size:12.5px;text-decoration:none;font-weight:600;}
+#tab-kit .person .why{font-size:13px;color:var(--ink2);margin:8px 0 6px;font-style:italic;}
+#tab-kit .msg{background:#fbf9f4;border:1px dashed var(--line);border-radius:9px;padding:12px 14px;margin-top:8px;font-size:14px;color:var(--ink);}
+#tab-kit .msg:before{content:"MENSAGEM";display:block;font-size:10px;letter-spacing:.12em;color:var(--gold);margin-bottom:6px;}
+#tab-kit .msg p{margin:7px 0;}
+#tab-kit ul{margin:8px 0;padding-left:20px;}
+#tab-kit li{margin:6px 0;}
+#tab-kit .foot{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;}
+#tab-kit .foot .k{font-family:Georgia,serif;color:var(--navy);}
+#tab-kit .foot em{color:var(--gold);}
+
+/* ---- abas ---- */
+.tabs{position:sticky;top:0;z-index:20;background:var(--paper);padding:12px 0 10px;border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap;}
+.tab{font-family:Georgia,serif;font-size:14.5px;border:1px solid var(--line);background:#fff;color:var(--ink2);border-radius:24px;padding:8px 18px;cursor:pointer;transition:all .2s;}
+.tab:hover{background:var(--cream);}
+.tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.panel{display:none;} .panel.active{display:block;}
+#tab-plano .barwrap{top:58px;} #tab-kit .gbar{top:58px;}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="k">Karen <b>Montagner</b> · Programa de Evolução Contínua</div>
+    <div class="tag">Mentorada · Luciana Bonome · 20 jul → 03 ago</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-t="plano">Plano · Semana 08</button>
+    <button class="tab" data-t="kit">Kit de Abordagem · 32 contatos</button>
+  </div>
+
+  <div class="panel active" id="tab-plano">
+<div class="hero">
+    <div class="eyebrow">Semana 08 · 20 jul → 03 ago</div>
+    <h1 class="display serif">Ler o mercado — e virar <em>referência.</em></h1>
+    <p class="lead">O ciclo passado provou o que faltava provar: <b>o seu conteúdo viralizou</b>. O seu post sobre o futuro do MSL bateu 5.219 impressões e o mês fechou em 20.542 — quase o dobro do ciclo anterior. Agora o jogo sobe de nível. Nesta quinzena, <b>você deixa de "falar sobre a área" e passa a ler os movimentos do mercado em tempo real, apontando para onde o Medical Affairs está indo</b>. É o que separa quem procura emprego de quem o mercado procura. Conteúdo todos os dias, newsletter densa três vezes por semana, e cada publicação amplificada com método.</p>
+    <div class="meta">
+      <div class="m"><div class="l">Início</div><div class="v serif">Seg · <em>20 julho</em></div></div>
+      <div class="m"><div class="l">Encerramento</div><div class="v serif">Dom · <em>03 agosto</em></div></div>
+      <div class="m"><div class="l">Cadência</div><div class="v serif">diária · <em>news seg/qua/qui</em></div></div>
+      <div class="m"><div class="l">Foco central</div><div class="v serif">Autoridade → <em>oferta</em></div></div>
+    </div>
+    <div class="principle"><b>Princípio do ciclo.</b> Quem lê o movimento antes dos outros vira referência — e referência não se candidata, é procurada.</div>
+  </div>
+
+  <!-- ONDE ESTAMOS -->
+  <section>
+    <div class="snum">Onde você está · ponto de partida</div>
+    <h2 class="serif">O seu motor <em>destravou.</em></h2>
+    <p>A sua autoridade saiu do campo da promessa. Cada quadro abaixo é a base sobre a qual esta quinzena acelera.</p>
+    <div class="cards">
+      <div class="c"><div class="ico">🚀</div><div class="t">Seu primeiro post viral</div><div class="s">5.219 impressões</div><div class="d">"O futuro do MSL não será definido pela quantidade..." — <b>opinião + trajetória é a sua veia mais forte</b>. É o que vamos explorar de propósito.</div></div>
+      <div class="c"><div class="ico">📈</div><div class="t">Seu alcance quase dobrou</div><div class="s">20.542 no mês</div><div class="d">De ~11,4 mil para <b>20.542 impressões</b> e 8.444 pessoas alcançadas. A sua consistência virou tração.</div></div>
+      <div class="c"><div class="ico">🎯</div><div class="t">Sua audiência é qualificada</div><div class="s">os decisores te olham</div><div class="d"><b>51% sênior, 13% MSL, 29% farma.</b> As grandes farmacêuticas no topo de quem te vê.</div></div>
+      <div class="c"><div class="ico">🎤</div><div class="t">Seus processos vivos</div><div class="s">2 em andamento</div><div class="d">Uma entrevista concluída (aguardando retorno) e outra em dinâmica de grupo. <b>A sua conversão já começou.</b></div></div>
+      <div class="c"><div class="ico">🧠</div><div class="t">3 Planos de Valor prontos</div><div class="s">o raciocínio vira post</div><div class="d">O ouro dos seus VVPs é o <b>raciocínio</b> — que agora vira combustível de conteúdo, não material para enviar.</div></div>
+      <div class="c"><div class="ico">🤝</div><div class="t">Sua rede quente</div><div class="s">gestores te olhando</div><div class="d">Vários líderes de Medical Affairs (vacinas, oncologia, raras) já no seu radar.</div></div>
+    </div>
+  </section>
+
+  <!-- DADOS -->
+  <section>
+    <div class="snum">Leitura dos seus dados · LinkedIn · 19/06 a 16/07 (28 dias)</div>
+    <h2 class="serif">Os seus números <em>do mês.</em></h2>
+    <p>A sua audiência segue certa e estável — 51% sênior ou acima, 13% de MSLs, as grandes farmacêuticas à frente, 37% em São Paulo. E a curva mostra o efeito da constância: a última semana disparou, puxada pelo seu post viral.</p>
+    <div class="cards">
+      <div class="stat"><div class="l">Impressões · 28 dias</div><div class="n">20.542</div><div class="d">8.444 pessoas alcançadas</div></div>
+      <div class="stat"><div class="l">Seu melhor post</div><div class="n">5.219</div><div class="d">futuro do MSL · viral</div></div>
+      <div class="stat"><div class="l">Seguidores</div><div class="n">1.597</div><div class="d"><span class="up">+~100</span> no mês</div></div>
+      <div class="stat"><div class="l">Público sênior+</div><div class="n">51%</div><div class="d">13% MSL · decisores</div></div>
+    </div>
+    <div class="chart">
+      <h3 style="margin-top:0">Suas impressões por semana</h3>
+      <div class="bar-row"><span>19–25/06</span><div class="bar-track"><div class="bar-fill" style="width:77%"></div></div><span class="bar-val">5.574</span></div>
+      <div class="bar-row"><span>26/06–02/07</span><div class="bar-track"><div class="bar-fill" style="width:57%"></div></div><span class="bar-val">4.143</span></div>
+      <div class="bar-row"><span>03–09/07</span><div class="bar-track"><div class="bar-fill" style="width:49%"></div></div><span class="bar-val">3.573</span></div>
+      <div class="bar-row"><span>10–16/07</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">7.252 🔥</span></div>
+    </div>
+    <div class="callout good"><b>Leitura:</b> a semana que mais rendeu (7.252) foi a do seu post viral. A lição é clara — quando você abre com gancho de opinião/trajetória e amplifica, o alcance salta. É esse padrão que vamos repetir de propósito, agora com a leitura de mercado por cima.</div>
+  </section>
+
+  <!-- 01 VIRADA -->
+  <section>
+    <div class="snum">01 · A virada estratégica desta quinzena</div>
+    <h2 class="serif">De candidata a <em>referência.</em></h2>
+    <p>Até aqui, você falou sobre Medical Affairs. A partir de agora, <b>você lê os movimentos reais do mercado e mostra o que eles significam</b> — antes dos outros. Isso te coloca noutro patamar: não é quem quer entrar, é quem já entende para onde a área caminha. O mercado passa a te seguir.</p>
+    <div class="callout hot"><b>O insight que muda o seu jogo.</b> Os Planos de Valor (VVP) que montamos não precisam ser enviados a ninguém. O ouro deles é o <b>raciocínio</b> — e esse raciocínio vira post. Cada "gancho" que você percebe no mercado é um conteúdo esperando para nascer.</div>
+    <h3>Como funciona, na prática</h3>
+    <ul>
+      <li><b>Perceber o gancho:</b> uma vaga que revela um novo modelo (um MSL integrado à P&amp;D desde a pesquisa), um movimento de portfólio (biespecíficos e CAR-T em mieloma), uma pauta de saúde pública (VSR em gestantes, pneumococo), uma onda tecnológica (ADCs, biossimilares, IA na oncologia).</li>
+      <li><b>Ler o significado:</b> o que aquilo diz sobre o futuro do Medical Affairs e do MSL — a parte que só quem tem repertório enxerga.</li>
+      <li><b>Publicar como referência:</b> um post que traz a sua leitura, com opinião própria, e fecha com pergunta. <b>Sem citar empresas</b> — você fala do movimento, não da marca.</li>
+    </ul>
+    <div class="callout info"><b>Por que isso acelera a sua recolocação:</b> a sua audiência já é formada pelas grandes farmacêuticas. Quando você comenta os movimentos da indústria com propriedade, são os próprios gestores dessas empresas te lendo — e associando o seu nome a "essa pessoa entende do assunto". É o VVP funcionando em escala, no seu feed.</div>
+  </section>
+
+  <!-- 02 EXEMPLOS -->
+  <section>
+    <div class="snum">02 · Como usar o VVP no feed · exemplos prontos</div>
+    <h2 class="serif">O tema quente da indústria — pela <em>sua lente.</em></h2>
+    <p>A regra de cada post: <b>parta de um fato ou movimento real</b> (uma tendência, uma aprovação, uma nova classe de terapia), traga a <b>sua leitura como quem estuda em voz alta</b> — nunca como quem "resolve" o assunto — e <b>conecte sempre à sua origem</b> (biologia molecular, pesquisa clínica, doenças infecciosas, neurologia). Feche com pergunta. E <b>nunca cite o nome de uma empresa</b>: fale do movimento, não da marca.</p>
+
+    <div class="postbox">
+      <div class="tag">Exemplo 1 · leitura de mercado · o futuro do field medical</div>
+      <p>Uma vaga me fez parar para pensar esta semana.</p>
+      <p>Uma grande farmacêutica criou uma posição de "Pipeline MSL" — um MSL colado à P&amp;D, ao lado dos times de pesquisa clínica, antes mesmo do produto chegar ao mercado.</p>
+      <p>Estudando esse movimento, li um sinal claro: o Medical Affairs está deixando de ser "pós-lançamento" para entrar na ciência desde o início.</p>
+      <p>Como cientista que veio da bancada e passou pela coordenação de ensaios clínicos, isso me interessa demais — é onde a minha origem e o campo se encontram.</p>
+      <p>Não tenho a resposta fechada; tenho uma pergunta.</p>
+      <p class="q">O MSL do futuro nasce dentro da pesquisa clínica? Você também está vendo a fronteira entre pesquisa e campo desaparecer?</p>
+    </div>
+
+    <div class="postbox">
+      <div class="tag">Exemplo 2 · leitura de mercado · a nova onda da oncologia</div>
+      <p>Passei parte da semana estudando os ADCs — anticorpos conjugados a fármacos — e não consigo parar de pensar no que muda para quem faz Medical Affairs.</p>
+      <p>Em uma frase: eles entregam o quimioterápico direto na célula tumoral. Isso muda a toxicidade, o sequenciamento das terapias e a própria conversa com o oncologista.</p>
+      <p>Minha leitura, vindo da biologia molecular: a próxima geração de terapias vai exigir um MSL que entenda o mecanismo no nível da molécula, não só o desfecho do estudo.</p>
+      <p>Compartilho aqui como quem está estudando em voz alta, não como quem tem a palavra final.</p>
+      <p class="q">Onde você acha que o MSL precisa se aprofundar primeiro: no mecanismo, no dado de vida real ou na jornada do paciente?</p>
+    </div>
+
+    <div class="postbox">
+      <div class="tag">Exemplo 3 · leitura de mercado · vacinas ao longo da vida</div>
+      <p>Uma pauta de saúde pública me chamou atenção: a chegada da vacina de VSR para gestantes e das novas vacinas pneumocócicas para as crianças.</p>
+      <p>Estudando o tema, o que me salta aos olhos é que a vacina virou uma conversa "ao longo da vida" — e isso redesenha o papel do Medical Affairs em imunização.</p>
+      <p>Como pesquisadora que veio das doenças infecciosas, vejo aqui um campo científico riquíssimo e ainda pouco explorado no debate de MSL.</p>
+      <p>Não é sobre defender um produto; é sobre entender o movimento antes que ele vire óbvio.</p>
+      <p class="q">Você também está vendo a imunização do adulto e da gestante ganhar esse espaço?</p>
+    </div>
+
+    <div class="postbox">
+      <div class="tag">Exemplo 4 · pergunta à comunidade · para quem está em transição</div>
+      <p>Uma pergunta sincera para quem já passou por isso.</p>
+      <p>Saí da bancada depois de anos de pesquisa e escolhi migrar para o Medical Affairs. Tem sido a decisão mais desafiadora — e mais empolgante — da minha carreira.</p>
+      <p>Se você também fez (ou está fazendo) essa transição da academia para a indústria: o que você gostaria de ter ouvido no começo? O que te ajudou de verdade?</p>
+      <p>Pergunto porque acredito que a gente aprende junto — e a sua resposta pode ajudar muita gente que está exatamente nesse ponto agora.</p>
+      <p class="q">Conta aqui nos comentários — vou responder cada um. 💬</p>
+    </div>
+
+    <div class="callout warn"><b>O que NÃO fazer:</b> não dar veredito ("o certo é X"), não parecer que está resolvendo o problema da indústria e <b>nunca citar o nome de uma empresa</b>. Você é a cientista que lê, estuda e provoca a boa pergunta — esse é o seu lugar.</div>
+  </section>
+
+  <!-- 03 CALENDARIO + CHECKLIST -->
+  <section>
+    <div class="snum">03 · Calendário editorial · marque conforme publica</div>
+    <h2 class="serif">Conteúdo todo dia, newsletter <em>densa 3x na semana.</em></h2>
+    <p>Um post por dia útil, sempre entre <b>09h30 e 13h</b>. A newsletter <b>Medical Insights</b> sai às <b>segundas, quartas e quintas</b> — sempre <b>conteúdo denso e rico</b>, não resumo curto. Os posts dos outros dias saem de dentro dela: escreve fundo uma vez, distribui em vários dias. Marque cada dia ao concluir — o progresso fica salvo neste navegador.</p>
+    <p><span class="pill hot">D · Leitura de mercado</span><span class="pill">A · Trajetória/opinião</span><span class="pill">B · Oncologia &amp; biomarcadores</span><span class="pill">C · RWE</span><span class="pill">E · Pergunta</span></p>
+    <div class="barwrap">
+      <div class="row"><span id="dtxt">0 de 15 dias · 0%</span><button class="btn" onclick="resetD()">Resetar</button></div>
+      <div class="track"><div class="fill" id="dfill"></div></div>
+    </div>
+    <h3>Semana 1 · 20 a 26/07</h3>
+    <div class="day-item nl"><input type="checkbox" data-d="d20"><div class="body"><span class="dd">Seg 20 · 10h — Newsletter ed. 23 (densa):</span> Biomarcadores e a nova geração de terapias + post de lançamento.<div class="chips"><span>newsletter</span><span>amplificar</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d21"><div class="body"><span class="dd">Ter 21 · 9h30 — Post D:</span> o "Pipeline MSL" e o futuro do field medical (Exemplo 1).<div class="chips"><span>leitura de mercado</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d22"><div class="body"><span class="dd">Qua 22 · 11h — Newsletter ed. 24 (densa):</span> ADCs, a nova onda da oncologia + post.<div class="chips"><span>newsletter</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d23"><div class="body"><span class="dd">Qui 23 · 12h — Newsletter ed. 25 (densa):</span> RWE, de diferencial a requisito + post.<div class="chips"><span>newsletter</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d24"><div class="body"><span class="dd">Sex 24 · 10h — Post A:</span> o papel do MSL / a sua trajetória (storytelling).<div class="chips"><span>trajetória</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d25"><div class="body"><span class="dd">Sáb 25 · 11h — Post E:</span> pergunta à comunidade de transição (Exemplo 4).<div class="chips"><span>pergunta</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d26"><div class="body"><span class="dd">Dom 26:</span> descanso real. Sem LinkedIn.<div class="chips"><span>pausa</span></div></div></div>
+    <h3>Semana 2 · 27/07 a 03/08</h3>
+    <div class="day-item nl"><input type="checkbox" data-d="d27"><div class="body"><span class="dd">Seg 27 · 10h — Newsletter ed. 26 (densa):</span> biespecíficos e CAR-T em mieloma + post.<div class="chips"><span>newsletter</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d28"><div class="body"><span class="dd">Ter 28 · 9h30 — Post D:</span> vacinas ao longo da vida (Exemplo 3).<div class="chips"><span>leitura de mercado</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d29"><div class="body"><span class="dd">Qua 29 · 11h — Newsletter ed. 27 (densa):</span> biossimilares e a confiança científica + post.<div class="chips"><span>newsletter</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d30"><div class="body"><span class="dd">Qui 30 · 12h — Newsletter ed. 28 (densa):</span> IA e oncologia de precisão + post.<div class="chips"><span>newsletter</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d31"><div class="body"><span class="dd">Sex 31 · 10h — Post A:</span> bastidor — o que aprendi lendo o mercado.<div class="chips"><span>trajetória</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d01"><div class="body"><span class="dd">Sáb 01/08 · 11h — Post B:</span> oncologia de precisão (carrossel).<div class="chips"><span>carrossel</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d02"><div class="body"><span class="dd">Dom 02/08:</span> descanso real. Segunda 03/08 fecha o ciclo (revisar métricas + status).<div class="chips"><span>fechamento</span></div></div></div>
+    <div class="callout good"><b>A newsletter densa, por dentro:</b> abertura com gancho forte · contexto do movimento · o que a evidência mostra · a sua leitura do que muda para o Medical Affairs · fechamento com pergunta · fontes. Profundidade é o que fideliza a base qualificada — e cada edição rende 1–2 posts de feed.</div>
+  </section>
+
+  <!-- 04 AMPLIFICACAO -->
+  <section>
+    <div class="snum">04 · A rotina que não pode faltar</div>
+    <h2 class="serif">Amplifique — compartilhe o link, <em>sempre.</em></h2>
+    <p>Publicar é metade. A outra metade é fazer o link circular na primeira hora, quando o algoritmo decide a distribuição. Rode este checklist em <b>toda</b> publicação — depois é só zerar para o próximo post.</p>
+    <div class="barwrap">
+      <div class="row"><span id="atxt">0 de 7 · 0%</span><button class="btn" onclick="resetA()">Zerar para o próximo post</button></div>
+      <div class="track"><div class="fill" id="afill"></div></div>
+    </div>
+    <div class="check"><input type="checkbox" data-a="a1"><div class="body"><b>Postar entre 09h30 e 13h</b> e responder qualquer comentário nos primeiros 5 min.</div></div>
+    <div class="check"><input type="checkbox" data-a="a2"><div class="body"><b>Compartilhar o link em 3 grupos</b> (MSL, Medical Affairs e a área do post: onco, neuro, vacinas).</div></div>
+    <div class="check"><input type="checkbox" data-a="a3"><div class="body"><b>Enviar por DM/WhatsApp a 3–5 contatos quentes</b>, com uma linha pessoal — casando o tema com a pessoa.</div></div>
+    <div class="check"><input type="checkbox" data-a="a4"><div class="body"><b>Pedir a 2–3 pessoas de confiança que comentem</b> (não só curtam) nos primeiros 30 min.</div></div>
+    <div class="check"><input type="checkbox" data-a="a5"><div class="body"><b>Marcar 1–2 pessoas/páginas relevantes</b> só quando fizer sentido de verdade.</div></div>
+    <div class="check"><input type="checkbox" data-a="a6"><div class="body"><b>Responder todos os comentários</b> na primeira meia hora e de novo no fim do dia.</div></div>
+    <div class="check"><input type="checkbox" data-a="a7"><div class="body"><b>Registrar</b> quem respondeu e comentou — vira contato para nutrir depois.</div></div>
+    <div class="callout warn"><b>O cuidado:</b> não mande o mesmo post para todo mundo toda vez. Case o tema com a pessoa e vá alternando os nomes — contato quente se cuida com parcimônia.</div>
+  </section>
+
+  <!-- 05 METAS -->
+  <section>
+    <div class="snum">05 · Suas metas · mais hard</div>
+    <h2 class="serif">Alvos <em>ambiciosos.</em></h2>
+    <div class="cards">
+      <div class="stat"><div class="l">Impressões/quinzena</div><div class="n">≥25k</div><div class="d">superar o mês</div></div>
+      <div class="stat"><div class="l">Engajamento</div><div class="n">3%+</div><div class="d">média</div></div>
+      <div class="stat"><div class="l">Seguidores</div><div class="n">+120</div><div class="d">→ ~1.720</div></div>
+      <div class="stat"><div class="l">Conteúdos</div><div class="n">12 + 6</div><div class="d">posts + newsletters</div></div>
+      <div class="stat"><div class="l">Leitura de mercado</div><div class="n">≥4</div><div class="d">posts do pilar D</div></div>
+      <div class="stat"><div class="l">Novas conexões</div><div class="n">30+</div><div class="d">Kit de Abordagem</div></div>
+      <div class="stat"><div class="l">Conversas → indicação</div><div class="n">4 → 2</div><div class="d">a partir dos contatos</div></div>
+      <div class="stat"><div class="l">Candidaturas certas</div><div class="n">3–5</div><div class="d">com referência</div></div>
+    </div>
+  </section>
+
+  <!-- 06 PIPELINE -->
+  <section>
+    <div class="snum">06 · Seu pipeline · vagas, relações &amp; abordagem</div>
+    <h2 class="serif">Onde a conversão <em>acontece.</em></h2>
+    <p>O conteúdo aquece; a conversa converte; a indicação abre a porta. Suas prioridades da quinzena:</p>
+    <div class="cards">
+      <div class="c"><div class="s">em processo</div><div class="t">Processos vivos</div><div class="d">Honrar com preparo. Tenha o seu VVP à mão como diferencial na próxima etapa.</div></div>
+      <div class="c"><div class="s">candidatar c/ referência</div><div class="t">Vagas de MSL onco/raras/vacinas</div><div class="d">Conecte com 1 MSL + 1 gestor antes de aplicar.</div></div>
+      <div class="c"><div class="s">nova frente</div><div class="t">Kit de Abordagem</div><div class="d">30+ novos alvos (MSLs, diretores, gerentes e recrutadores) com mensagem pronta — no documento à parte. Meta: enviar todos nesta quinzena.</div></div>
+      <div class="c"><div class="s">nutrir</div><div class="t">Contatos quentes</div><div class="d">Amplificar o conteúdo certo com eles até virar conversa.</div></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div class="k">Karen <b>Montagner</b> · Programa de Evolução Contínua · Ciclo 15 dias</div>
+    <div style="margin-top:6px"><em>referência não se candidata — é procurada.</em> · 20 jul → 03 ago</div>
+  </div>
+
+  </div>
+
+  <div class="panel" id="tab-kit">
+<div class="hero">
+    <div class="eyebrow">Novos alvos · 32 contatos · mensagens prontas</div>
+    <h1 class="serif">A rede que abre <em>portas.</em></h1>
+    <p class="lead">Cada mensagem abaixo já vem escrita no seu tom — com o gancho pessoal na trajetória da pessoa, o seu paralelo e o convite para trocar uma ideia. É só revisar, ajustar uma palavra ou outra e enviar. Distribua ao longo da quinzena: <b>4 a 6 convites por dia</b>, nunca todos de uma vez.</p>
+    <div class="principle"><b>O objetivo de toda mensagem.</b> Não é pedir vaga — é abrir uma conversa. Quando a pessoa responde, você agenda uma call de 20 minutos e sai de lá com insights, nomes novos e, muitas vezes, uma indicação.</div>
+  </div>
+
+  <section>
+    <div class="snum">Como usar</div>
+    <h2 class="serif">Da mensagem até a <em>call.</em></h2>
+    <ul>
+      <li><b>1. Envie o convite com nota.</b> Sempre com mensagem — sem nota, o aceite despenca. Se o LinkedIn cortar por limite de caracteres, mande só o primeiro e o último parágrafo, e envie a versão completa assim que a pessoa aceitar.</li>
+      <li><b>2. Aqueça antes, quando der.</b> Dois minutos comentando um post da pessoa antes de enviar aumentam muito a chance de resposta.</li>
+      <li><b>3. Quando responder, chame para a call.</b> Esse é o ponto de toda a abordagem — é na conversa que os insights aparecem.</li>
+    </ul>
+    <div class="callout warn"><b>O tom muda conforme o nível.</b> Com <b>pares de MSL</b>, você é próxima e direta. Com <b>diretores e C-level</b>, é concisa e admirativa — e nunca pede vaga, pede troca. Com <b>recrutadores</b>, é objetiva: quem você é, seu foco, e a oferta do currículo.</div>
+  </section>
+
+  <!-- TIER 1 -->
+  <div class="gbar">
+    <div class="row"><span>Progresso geral · <b id="gall">0 de 32</b> contatos</span><button class="btn" onclick="resetAll()">Resetar tudo</button></div>
+    <div class="track"><div class="fill" id="gallf"></div></div>
+  </div>
+
+  <section>
+    <div class="snum">Grupo 1 · Pares de MSL</div>
+    <h2 class="serif">Os que <em>já trilharam</em> o seu caminho.</h2>
+    <p>A maior taxa de resposta está aqui. São pessoas que fizeram a mesma travessia e costumam ajudar de coração.</p>
+
+    <div class="barwrap" data-g="g1">
+      <div class="row"><span><b id="gt1">0</b> de <span id="gn1">0</span> contatados</span><button class="btn" onclick="resetG(1)">Limpar grupo</button></div>
+      <div class="track"><div class="fill" id="gf1"></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p1"><div class="pbody">
+      <div class="nm">Suzieni De Bortoli</div>
+      <div class="rl">Rare Diseases MSL Manager · Johnson &amp; Johnson Innovative Medicine</div>
+      <a class="lk" href="https://linkedin.com/in/suzienidebortoli/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: gestora de MSL em doenças raras — e você tem experiência real em raras e neurologia pela ABN.</div>
+      <div class="msg">
+        <p>Oi, Suzieni, tudo bem? Seu perfil me chamou atenção por você liderar um time de MSL em doenças raras — uma área que eu conheço de perto.</p>
+        <p>Coordenei uma plataforma nacional de ensaios clínicos em neurologia e doenças raras na Academia Brasileira de Neurologia. Sou PhD em biologia molecular e estou migrando para Medical Affairs, com bastante interesse em raras.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e o universo das doenças raras.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p2"><div class="pbody">
+      <div class="nm">Vagner Gonçalves Jr., PhD</div>
+      <div class="rl">Senior MSL Oncologia &amp; Hematologia · BeOne Medicines</div>
+      <a class="lk" href="https://linkedin.com/in/vagner-gonçalves-jr-phd-27547123/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: PhD que fez exatamente a ponte pesquisa → MSL, em onco-hematologia. É o espelho da sua transição.</div>
+      <div class="msg">
+        <p>Oi, Vagner, tudo bem? O que me chamou atenção na sua trajetória foi ver um PhD que fez exatamente a ponte da pesquisa para o MSL, e hoje atua como sênior em onco-hematologia.</p>
+        <p>É mais ou menos o caminho que estou construindo: sou PhD em biologia molecular, venho da pesquisa clínica e da genômica, e estou migrando para Medical Affairs, com bastante interesse em oncologia de precisão.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e o universo da oncologia.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+  </section>
+
+  <!-- TIER 2 -->
+  <section>
+    <div class="snum">Grupo 2 · Diretores e executivos</div>
+    <h2 class="serif">Troca, <em>nunca</em> pedido de vaga.</h2>
+    <p>Aqui a moeda é o respeito pelo tempo. Mensagem curta, admiração genuína e um convite leve. Quando um diretor responde, ele costuma abrir portas que ninguém mais abre.</p>
+
+    <div class="barwrap" data-g="g2">
+      <div class="row"><span><b id="gt2">0</b> de <span id="gn2">0</span> contatados</span><button class="btn" onclick="resetG(2)">Limpar grupo</button></div>
+      <div class="track"><div class="fill" id="gf2"></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p3"><div class="pbody">
+      <div class="nm">Luis Boechat</div>
+      <div class="rl">Global Executive Director, Medical &amp; Regulatory Affairs · Eurofarma</div>
+      <a class="lk" href="https://linkedin.com/in/luis-boechat-a2400b11/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: lidera medical + regulatório globalmente — e você tem vivência de interface regulatória.</div>
+      <div class="msg">
+        <p>Olá, Luis, tudo bem? O que me chamou atenção na sua trajetória foi ver alguém que lidera medical e regulatório em nível global — duas frentes que se cruzam bastante no meu caminho.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e da interface regulatória (CEP, TCLE, ANVISA), e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre como a área médica se estrutura.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p4"><div class="pbody">
+      <div class="nm">André Abrahao</div>
+      <div class="rl">Country Medical Director / Medical Affairs Director · Gilead Sciences</div>
+      <a class="lk" href="https://linkedin.com/in/andre-abrahao/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: Gilead é referência em infecciosas — exatamente a origem científica dela.</div>
+      <div class="msg">
+        <p>Olá, André, tudo bem? Seu perfil me chamou atenção porque a Gilead é referência em doenças infecciosas — que é exatamente a minha origem científica.</p>
+        <p>Sou PhD em biologia molecular e minha pesquisa em Hepatite C, sobre resistência a antivirais, contribuiu para diretrizes do Ministério da Saúde. Hoje estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e o universo das doenças infecciosas.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p5"><div class="pbody">
+      <div class="nm">Lenio Alvarenga</div>
+      <div class="rl">Diretor Médico, Innovative Medicines · Novartis Brasil</div>
+      <a class="lk" href="https://linkedin.com/in/lenio-alvarenga-a2402620a/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: lidera a área médica de inovação — dialoga com oncologia e medicina de precisão.</div>
+      <div class="msg">
+        <p>Olá, Lenio, tudo bem? O que me chamou atenção foi ver alguém liderando a área médica de medicamentos inovadores — um terreno que conversa muito com a minha origem.</p>
+        <p>Sou PhD em biologia molecular, com base em genômica e interpretação de variantes, migrando da pesquisa para Medical Affairs, com bastante interesse em oncologia e medicina de precisão.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e o futuro da área médica.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p6"><div class="pbody">
+      <div class="nm">Fernando Brandão Serra</div>
+      <div class="rl">Executive Director, Global Medical Affairs Capabilities · LATAM Lead · MSD</div>
+      <a class="lk" href="https://linkedin.com/in/fernando-brandão-serra-0ab8134/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: trabalha com capacitação de Medical Affairs — tema perfeito para quem está entrando.</div>
+      <div class="msg">
+        <p>Olá, Fernando, tudo bem? Seu trabalho com capacidades de Medical Affairs na LATAM me chamou muita atenção, porque é exatamente o que estou construindo agora.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e da evidência de mundo real, e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre o que faz um bom profissional médico-científico hoje.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p7"><div class="pbody">
+      <div class="nm">Marília Fonseca</div>
+      <div class="rl">Medical Affairs Director · Novo Nordisk</div>
+      <a class="lk" href="https://linkedin.com/in/marília-fonseca-37339a76/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: referência de trajetória — ótima interlocutora sobre construção de carreira.</div>
+      <div class="msg">
+        <p>Olá, Marília, tudo bem? O que me chamou atenção na sua trajetória foi ver uma mulher liderando Medical Affairs — um caminho que me inspira bastante.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para a área médica na indústria.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre como se constrói uma carreira sólida em Medical Affairs.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p8"><div class="pbody">
+      <div class="nm">Márcio Pineli</div>
+      <div class="rl">Diretor de Medical Affairs · Dr. Reddy's Laboratories</div>
+      <a class="lk" href="https://linkedin.com/in/márcio-pineli-40b35310/pt/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: a Dr. Reddy's está montando time médico e tem vaga de MSL aberta. Contato de altíssimo valor.</div>
+      <div class="msg">
+        <p>Olá, Márcio, tudo bem? Acompanho a construção da área médica da Dr. Reddy's e seu perfil me chamou atenção.</p>
+        <p>Sou PhD em biologia molecular, venho da coordenação de pesquisa clínica e do engajamento com KOLs, e estou migrando para Medical Affairs, com bastante interesse em atuar como MSL.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre a visão de vocês para a área médica.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p9"><div class="pbody">
+      <div class="nm">Caroline Demacq</div>
+      <div class="rl">Global Medical Affairs Director (Cardiovascular &amp; Global Health) · Novartis</div>
+      <a class="lk" href="https://linkedin.com/in/carolinedemacq/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: une Medical Affairs global e saúde global — conversa com o impacto em saúde pública dela.</div>
+      <div class="msg">
+        <p>Olá, Caroline, tudo bem? O que me chamou atenção na sua trajetória foi ver alguém unindo Medical Affairs global e saúde global — algo que conversa muito com a minha origem.</p>
+        <p>Sou PhD em biologia molecular e minha pesquisa em Hepatite C contribuiu para diretrizes de saúde pública no Brasil. Hoje estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre ciência aplicada ao impacto em saúde.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p10"><div class="pbody">
+      <div class="nm">Luís Carbone</div>
+      <div class="rl">Medical Affairs Director LATAM · Glenmark Pharmaceuticals</div>
+      <a class="lk" href="https://linkedin.com/in/luisfbcarbone/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: constrói área médica em nível LATAM — bom interlocutor sobre estruturação da função.</div>
+      <div class="msg">
+        <p>Olá, Luís, tudo bem? Seu perfil me chamou atenção por você construir a área médica em nível LATAM.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e da evidência de mundo real, e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre como uma área médica se estrutura na região.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p11"><div class="pbody">
+      <div class="nm">Luiz Steffen</div>
+      <div class="rl">Medical Affairs, Regulatory &amp; Training Director · Besins Healthcare Brasil</div>
+      <a class="lk" href="https://linkedin.com/in/luiz-steffen-84574711/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: reúne médico + regulatório + treinamento; treinamento é a porta de quem forma gente nova.</div>
+      <div class="msg">
+        <p>Olá, Luiz, tudo bem? O que me chamou atenção na sua trajetória foi ver alguém que reúne área médica, regulatório e treinamento — três frentes que passam pela minha experiência.</p>
+        <p>Sou PhD em biologia molecular, com vivência em interface regulatória e em treinamento de equipes de pesquisa, migrando agora para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre a formação de novos profissionais na área.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p12"><div class="pbody">
+      <div class="nm">Eduardo Chicarelli</div>
+      <div class="rl">Chief Medical Officer / Diretor Médico Executivo · Rennova</div>
+      <a class="lk" href="https://linkedin.com/in/eduardo-chicarelli-973b15100/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: C-level médico — visão ampla de como a função médica gera valor.</div>
+      <div class="msg">
+        <p>Olá, Eduardo, tudo bem? Seu perfil de liderança médica executiva me chamou atenção.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para Medical Affairs, buscando entender como a função médica gera valor dentro da companhia.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre os caminhos na indústria.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p13"><div class="pbody">
+      <div class="nm">João Carlos Elias Rio, MD, MBA</div>
+      <div class="rl">Medical Director, Medical Affairs &amp; Pharmacovigilance (Oncologia, Doenças Raras)</div>
+      <a class="lk" href="https://linkedin.com/in/joão-carlos-elias-rio-md-mba-2a1b3716/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: oncologia + doenças raras — as duas áreas onde ela tem mais repertório.</div>
+      <div class="msg">
+        <p>Olá, João Carlos, tudo bem? O que me chamou atenção na sua trajetória foi a atuação em oncologia e doenças raras — as duas áreas em que mais tenho repertório.</p>
+        <p>Coordenei uma plataforma nacional de ensaios clínicos em neurologia e raras, e venho me aprofundando em oncologia de precisão. Sou PhD em biologia molecular, migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e o universo de onco e raras.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+  </section>
+
+  <!-- TIER 3 -->
+  <section>
+    <div class="snum">Grupo 3 · Gerentes e líderes de time</div>
+    <h2 class="serif">A melhor aposta para uma <em>vaga júnior.</em></h2>
+    <p>São eles que abrem posições de MSL e montam times. Tom próximo, admiração pela área e interesse genuíno no dia a dia.</p>
+
+    <div class="barwrap" data-g="g3">
+      <div class="row"><span><b id="gt3">0</b> de <span id="gn3">0</span> contatados</span><button class="btn" onclick="resetG(3)">Limpar grupo</button></div>
+      <div class="track"><div class="fill" id="gf3"></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p14"><div class="pbody">
+      <div class="nm">Mauricio Aguiar</div>
+      <div class="rl">Medical Head / Gerente de Assuntos Médicos (Imunologia, Doenças Raras)</div>
+      <a class="lk" href="https://linkedin.com/in/mauricio-aguiar-354a4359/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: raras + imunologia conversam direto com a base dela.</div>
+      <div class="msg">
+        <p>Oi, Mauricio, tudo bem? Seu perfil me chamou atenção pela atuação em imunologia e doenças raras — uma área que conheço de perto.</p>
+        <p>Coordenei uma plataforma nacional de ensaios clínicos em neurologia e raras na ABN. Sou PhD em biologia molecular e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e o universo das doenças raras.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p15"><div class="pbody">
+      <div class="nm">Mateus Rossato</div>
+      <div class="rl">Gerente Médico · Ipsen</div>
+      <a class="lk" href="https://linkedin.com/in/mateus-f-rossato/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: gerente médico em empresa com agenda forte em oncologia e raras.</div>
+      <div class="msg">
+        <p>Oi, Mateus, tudo bem? Acompanho a área médica da Ipsen e seu perfil me chamou atenção.</p>
+        <p>Sou PhD em biologia molecular, venho da coordenação de pesquisa clínica e estou migrando para Medical Affairs, com bastante interesse em oncologia e evidência de mundo real.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre o dia a dia de um time médico.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p16"><div class="pbody">
+      <div class="nm">Simone Miranda</div>
+      <div class="rl">Medical Affairs · Diretora / Gerente Médica</div>
+      <a class="lk" href="https://linkedin.com/in/simone-miranda1/pt/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: trajetória consolidada em assuntos médicos — boa mentora informal.</div>
+      <div class="msg">
+        <p>Oi, Simone, tudo bem? O que me chamou atenção na sua trajetória foi a solidez do seu caminho em assuntos médicos.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre o caminho até o MSL.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p17"><div class="pbody">
+      <div class="nm">Camila Munemassa</div>
+      <div class="rl">Medical Affairs · MSL Senior / MSL Lead / MSL Manager</div>
+      <a class="lk" href="https://linkedin.com/in/camila-munemassa-2a3b5b92/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: lidera MSLs — é quem contrata e forma. Contato de alto valor.</div>
+      <div class="msg">
+        <p>Oi, Camila, tudo bem? Seu perfil me chamou atenção por você liderar times de MSL — que é exatamente o caminho que estou construindo.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e da genômica, e estou migrando para Medical Affairs, com bastante interesse em oncologia.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre o que se espera de um MSL hoje.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p18"><div class="pbody">
+      <div class="nm">Silvia Yashiro Deszo</div>
+      <div class="rl">Gerente de Operações Médicas / Assuntos Médicos</div>
+      <a class="lk" href="https://linkedin.com/in/silvia-yashiro-deszo/pt/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: operações médicas conversa direto com a coordenação de pesquisa dela.</div>
+      <div class="msg">
+        <p>Oi, Silvia, tudo bem? Sua atuação em operações médicas me chamou atenção, porque dialoga muito com a minha experiência.</p>
+        <p>Coordenei uma plataforma nacional de ensaios clínicos, com toda a interface regulatória envolvida. Sou PhD em biologia molecular e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre a área médica.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p19"><div class="pbody">
+      <div class="nm">Linelly Morellato</div>
+      <div class="rl">Diretora Médica · Médica Executiva · Conselheira</div>
+      <a class="lk" href="https://linkedin.com/in/linellymorellato/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: perfil de conselho e liderança — visão estratégica sobre carreiras médicas.</div>
+      <div class="msg">
+        <p>Olá, Linelly, tudo bem? O que me chamou atenção na sua trajetória foi o alcance dela — liderança médica e conselho.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre os caminhos possíveis na área médica.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p20"><div class="pbody">
+      <div class="nm">Thiago Chadid</div>
+      <div class="rl">Diretor Médico / Líder Médico de Área Terapêutica e Regional</div>
+      <a class="lk" href="https://linkedin.com/in/thiago-chadid/pt/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: lidera área terapêutica e time regional — sabe o perfil que procura em campo.</div>
+      <div class="msg">
+        <p>Olá, Thiago, tudo bem? Seu perfil de liderança médica por área terapêutica me chamou atenção.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e da evidência de mundo real, e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre o que você valoriza num profissional de campo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p21"><div class="pbody">
+      <div class="nm">Camila Cazerta</div>
+      <div class="rl">Medical Affairs · LATAM Strategic Leadership (Dermatologia/Estética)</div>
+      <a class="lk" href="https://linkedin.com/in/camila-cazerta-b5898a3a/" target="_blank">Ver perfil →</a>
+      <div class="why">Por quê: liderança estratégica em LATAM — boa referência de construção de carreira.</div>
+      <div class="msg">
+        <p>Oi, Camila, tudo bem? Sua liderança estratégica em Medical Affairs na LATAM me chamou atenção.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para a área médica na indústria.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre essa transição e sobre construção de carreira em Medical Affairs.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+  </section>
+
+  <!-- TIER 4 -->
+  <section>
+    <div class="snum">Grupo 4 · Talent Acquisition / RH</div>
+    <h2 class="serif">Entrar no <em>radar</em> de quem recruta.</h2>
+    <p>Com recrutador o jogo é outro: quem você é em uma linha, qual o seu foco, e a oferta do currículo. Eles precisam saber que você existe e o que procura.</p>
+
+    <div class="barwrap" data-g="g4">
+      <div class="row"><span><b id="gt4">0</b> de <span id="gn4">0</span> contatados</span><button class="btn" onclick="resetG(4)">Limpar grupo</button></div>
+      <div class="track"><div class="fill" id="gf4"></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p22"><div class="pbody">
+      <div class="nm">Marcella Sesso Garcia · Eurofarma</div>
+      <div class="rl">Talent Acquisition · Recrutamento e Seleção</div>
+      <a class="lk" href="https://linkedin.com/in/marcella-sesso-garcia/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Marcella, tudo bem? Vi que você cuida da atração de talentos na Eurofarma e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para Medical Affairs, com foco em atuar como MSL.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades da área médica na Eurofarma — posso te enviar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p23"><div class="pbody">
+      <div class="nm">Laís Teixeira · Eurofarma</div>
+      <div class="rl">Analista de RH · Business Partner</div>
+      <a class="lk" href="https://linkedin.com/in/laís-teixeira-080764187/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Laís, tudo bem? Vi que você atua como business partner de RH na Eurofarma e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e estou migrando para Medical Affairs, com foco em MSL.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades na área médica — posso compartilhar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p24"><div class="pbody">
+      <div class="nm">Nivea W. · MSD Brasil</div>
+      <div class="rl">Talent Acquisition Manager · RPO</div>
+      <a class="lk" href="https://linkedin.com/in/nivea-w-196792a/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Nivea, tudo bem? Vi que você lidera a atração de talentos na MSD e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e da genômica, e estou migrando para Medical Affairs, com foco em oncologia.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades de Medical Affairs na MSD — posso te enviar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p25"><div class="pbody">
+      <div class="nm">Beatriz Santos de Almeida · MSD Brasil</div>
+      <div class="rl">Talent Acquisition Analyst · LATAM</div>
+      <a class="lk" href="https://linkedin.com/in/beatriz-santos-de-almeida-7ab650152/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Beatriz, tudo bem? Vi que você atua com atração de talentos na MSD LATAM e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e estou migrando para Medical Affairs, com foco em oncologia.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades na área médica — posso compartilhar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p26"><div class="pbody">
+      <div class="nm">Gabriela Fonzar Franco · Novartis Brasil</div>
+      <div class="rl">Sr Talent Acquisition Business Partner</div>
+      <a class="lk" href="https://linkedin.com/in/gabriela-fonzar-franco-798a211b4/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Gabriela, tudo bem? Vi que você atua como Talent Acquisition BP na Novartis e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, com base em genômica e interpretação de variantes, migrando da pesquisa para Medical Affairs, com foco em oncologia.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades de Medical Affairs na Novartis — posso te enviar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p27"><div class="pbody">
+      <div class="nm">Maryna Napolitano S. Leite · Johnson &amp; Johnson</div>
+      <div class="rl">LATAM Senior Talent Acquisition Partner · Pharma &amp; Life Sciences</div>
+      <a class="lk" href="https://linkedin.com/in/maryna-napolitano/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Maryna, tudo bem? Vi que você atua com talentos de Pharma e Life Sciences na J&amp;J e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, coordenei uma plataforma nacional de ensaios clínicos em neurologia e doenças raras, e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades de Medical Affairs na J&amp;J — posso compartilhar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p28"><div class="pbody">
+      <div class="nm">Beatriz Juhrs · Novo Nordisk</div>
+      <div class="rl">Talent Acquisition Coordinator · Brasil e LATAM</div>
+      <a class="lk" href="https://linkedin.com/in/beatrizjuhrs/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Beatriz, tudo bem? Vi que você cuida da atração de talentos da Novo Nordisk no Brasil e na LATAM e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para Medical Affairs, com foco em MSL.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades na área médica — posso te enviar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p29"><div class="pbody">
+      <div class="nm">Victoria Bonfante · Novo Nordisk</div>
+      <div class="rl">Sr Talent Acquisition Partner · LATAM</div>
+      <a class="lk" href="https://linkedin.com/in/victoriabonfante/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Victoria, tudo bem? Vi que você atua como Talent Acquisition Partner na Novo Nordisk e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e da evidência de mundo real, e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades na área médica — posso compartilhar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p30"><div class="pbody">
+      <div class="nm">Andrea Suarez Paez · Sanofi</div>
+      <div class="rl">Head of Talent Management Brazil</div>
+      <a class="lk" href="https://linkedin.com/in/andrea-suarez-paez/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Olá, Andrea, tudo bem? Vi que você lidera a gestão de talentos da Sanofi no Brasil e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho de anos de pesquisa clínica e estou migrando para Medical Affairs, com foco em atuar como MSL.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades da área médica na Sanofi — posso te enviar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p31"><div class="pbody">
+      <div class="nm">Paula Bustos · Sanofi</div>
+      <div class="rl">HR Business Partner Manager · Talent Acquisition &amp; People Excellence</div>
+      <a class="lk" href="https://linkedin.com/in/-paula-bustos-/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Paula, tudo bem? Vi que você atua como HR Business Partner na Sanofi, com Talent Acquisition, e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular, venho da pesquisa clínica e estou migrando para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades na área médica — posso compartilhar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+
+    <div class="person"><div class="phead"><input type="checkbox" data-p="p32"><div class="pbody">
+      <div class="nm">Aline Rocha · AstraZeneca do Brasil</div>
+      <div class="rl">Talent Acquisition Lead</div>
+      <a class="lk" href="https://linkedin.com/in/aline-rocha-32ab6795/" target="_blank">Ver perfil →</a>
+      <div class="msg">
+        <p>Oi, Aline, tudo bem? Vi que você lidera a atração de talentos da AstraZeneca e quis me apresentar.</p>
+        <p>Sou PhD em biologia molecular e venho me aprofundando em oncologia de precisão, biomarcadores e evidência de mundo real, migrando da pesquisa para Medical Affairs.</p>
+        <p>Ia adorar me conectar e, quando fizer sentido pra você, trocar uma ideia sobre as oportunidades de Medical Affairs na AstraZeneca — posso te enviar meu currículo.</p>
+        <p>Um abraço!</p>
+      </div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="snum">O passo mais importante</div>
+    <h2 class="serif">Quando responder, chame para a <em>call.</em></h2>
+    <div class="callout good">Assim que a pessoa responder, mande em até 24h: <em>"Que bom te ler, [nome]! Se fizer sentido pra você, toparia uma conversa de 20 minutinhos? Estou construindo essa transição para Medical Affairs e ouvir alguém com a sua experiência valeria muito pra mim. Prometo respeitar o seu tempo — me diz um horário que te sirva."</em></div>
+    <div class="callout info"><b>Na call, três movimentos:</b> escute mais do que fala · apresente-se em uma frase (PhD, anos de pesquisa, transição, foco) · e feche sempre com as duas perguntas de ouro: <em>"Quem mais você acha que eu deveria procurar?"</em> e <em>"O que eu deveria ter perguntado?"</em></div>
+    <div class="callout warn"><b>Depois da call:</b> agradeça no mesmo dia, registre os insights e, se a conversa fluiu, é aí que entra o pedido de indicação — nunca antes.</div>
+  </section>
+
+  <div class="foot">
+    <div class="k">Karen <b>Montagner</b> · Programa de Evolução Contínua</div>
+    <div style="margin-top:6px"><em>você não pede vaga — abre conversa. A porta vem depois.</em></div>
+  </div>
+
+  </div>
+</div>
+
+<script>
+  (function(){
+    var TK="luciana-aba-ativa";
+    var tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('.panel');
+    function go(name){
+      tabs.forEach(function(t){t.classList.toggle('active', t.dataset.t===name);});
+      panels.forEach(function(p){p.classList.toggle('active', p.id==='tab-'+name);});
+      try{localStorage.setItem(TK,name);}catch(e){}
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.t);});});
+    var saved=null; try{saved=localStorage.getItem(TK);}catch(e){}
+    if(saved) go(saved);
+  })();
+</script>
+<script>(function(){
+
+  var K="luciana-semana08";
+  var days=document.querySelectorAll('.day-item input');
+  var amp=document.querySelectorAll('.check input');
+  function save(){var s={d:{},a:{}};days.forEach(function(b){s.d[b.dataset.d]=b.checked;});amp.forEach(function(b){s.a[b.dataset.a]=b.checked;});try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}}
+  function load(){try{var s=JSON.parse(localStorage.getItem(K)||'{}');if(s.d)days.forEach(function(b){if(s.d[b.dataset.d])b.checked=true;});if(s.a)amp.forEach(function(b){if(s.a[b.dataset.a])b.checked=true;});}catch(e){}}
+  function rd(){var n=0;days.forEach(function(b){var it=b.closest('.day-item');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/days.length*100);document.getElementById('dfill').style.width=p+'%';document.getElementById('dtxt').textContent=n+' de '+days.length+' dias · '+p+'%';}
+  function ra(){var n=0;amp.forEach(function(b){var it=b.closest('.check');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/amp.length*100);document.getElementById('afill').style.width=p+'%';document.getElementById('atxt').textContent=n+' de '+amp.length+' · '+p+'%';}
+  days.forEach(function(b){b.addEventListener('change',function(){save();rd();});});
+  amp.forEach(function(b){b.addEventListener('change',function(){save();ra();});});
+  function resetD(){days.forEach(function(b){b.checked=false;});save();rd();}
+  function resetA(){amp.forEach(function(b){b.checked=false;});save();ra();}
+  load();rd();ra();
+
+  try{window.resetD=resetD;}catch(e){}
+  try{window.resetA=resetA;}catch(e){}
+})();</script>
+<script>(function(){
+
+  var KEY="luciana-kit-abordagem";
+  var boxes=document.querySelectorAll('.person input[type=checkbox]');
+  function save(){var o={};boxes.forEach(function(b){o[b.dataset.p]=b.checked;});try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+  function load(){try{var o=JSON.parse(localStorage.getItem(KEY)||'{}');boxes.forEach(function(b){if(o[b.dataset.p])b.checked=true;});}catch(e){}}
+  function render(){
+    var t=0;
+    boxes.forEach(function(b){var c=b.closest('.person');if(b.checked){t++;c.classList.add('done');}else c.classList.remove('done');});
+    document.getElementById('gall').textContent=t+' de '+boxes.length;
+    document.getElementById('gallf').style.width=Math.round(t/boxes.length*100)+'%';
+    document.querySelectorAll('.barwrap[data-g]').forEach(function(bar){
+      var g=bar.dataset.g.replace('g','');
+      var sec=bar.closest('section');
+      var ins=sec.querySelectorAll('.person input[type=checkbox]');
+      var d=0;ins.forEach(function(b){if(b.checked)d++;});
+      document.getElementById('gt'+g).textContent=d;
+      document.getElementById('gn'+g).textContent=ins.length;
+      document.getElementById('gf'+g).style.width=(ins.length?Math.round(d/ins.length*100):0)+'%';
+    });
+  }
+  boxes.forEach(function(b){b.addEventListener('change',function(){save();render();});});
+  function resetG(g){
+    var bar=document.querySelector('.barwrap[data-g="g'+g+'"]');
+    bar.closest('section').querySelectorAll('.person input[type=checkbox]').forEach(function(b){b.checked=false;});
+    save();render();
+  }
+  function resetAll(){boxes.forEach(function(b){b.checked=false;});save();render();}
+  load();render();
+
+  try{window.resetG=resetG;}catch(e){}
+  try{window.resetAll=resetAll;}catch(e){}
+})();</script>
+</body>
+</html>
