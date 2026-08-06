@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Evolução Contínua · 15 dias · Semana 09 · Luciana Bonome · Mentoria Karen Montagner</title>
+<style>
+  :root{--ink:#1b2230;--ink2:#3a4456;--muted:#6b7686;--line:#e7e3da;--paper:#faf8f4;--card:#fff;
+    --navy:#1F3559;--blue:#2E6FB0;--gold:#B08328;--green:#2E7D46;--amber:#B7791F;--red:#B0402A;--sky:#eef3fa;--cream:#f3efe6;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:Georgia,"Times New Roman",serif;}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 80px;}
+  em{font-style:italic;} a{color:var(--blue);}
+  .brand{display:flex;justify-content:space-between;align-items:center;padding:20px 0 14px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:6px;}
+  .brand .k{font-family:Georgia,serif;font-size:15px;color:var(--navy);} .brand .k b{font-weight:700;}
+  .brand .tag{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;}
+  .hero{padding:40px 0 10px;}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  h1.display{font-family:Georgia,serif;font-weight:700;font-size:44px;line-height:1.08;color:var(--navy);margin:0 0 18px;}
+  h1.display em{color:var(--gold);}
+  .lead{font-size:17px;color:var(--ink2);max-width:780px;}
+  .meta{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 8px;}
+  .meta .m{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .meta .m .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .meta .m .v{font-family:Georgia,serif;font-size:19px;color:var(--navy);margin-top:3px;} .meta .m .v em{color:var(--gold);}
+  .principle{background:var(--navy);color:#fff;border-radius:12px;padding:16px 20px;margin:22px 0 6px;font-size:15px;} .principle b{color:#f0d79a;}
+  section{margin-top:44px;}
+  .snum{font-family:Georgia,serif;font-size:13px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;}
+  h2{font-family:Georgia,serif;font-size:27px;color:var(--navy);margin:6px 0 6px;line-height:1.15;} h2 em{color:var(--gold);}
+  h3{font-size:16px;color:var(--blue);margin:20px 0 8px;}
+  p{margin:10px 0;}
+  .cards{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0;}
+  .c{flex:1 1 210px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .c .ico{font-size:20px;} .c .t{font-weight:700;color:var(--navy);margin:6px 0 2px;font-size:15px;}
+  .c .s{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .c .d{font-size:13.5px;color:var(--ink2);} .c b{color:var(--ink);}
+  .stat{flex:1 1 130px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .stat .n{font-family:Georgia,serif;font-size:26px;color:var(--navy);} .stat .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);} .stat .d{font-size:12px;color:var(--ink2);margin-top:3px;}
+  .up{color:var(--green);} .down{color:var(--red);}
+  .callout{border-radius:12px;padding:16px 18px;margin:16px 0;font-size:14.5px;}
+  .callout.good{background:#eaf5ee;border-left:4px solid var(--green);}
+  .callout.info{background:var(--sky);border-left:4px solid var(--blue);}
+  .callout.warn{background:#fbf1e3;border-left:4px solid var(--amber);}
+  .callout.hot{background:#fbeae6;border-left:4px solid var(--red);}
+  .chart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;}
+  .bar-row{display:grid;grid-template-columns:150px 1fr 96px;align-items:center;gap:10px;margin:8px 0;font-size:13px;}
+  .bar-track{background:#eee7da;border-radius:5px;height:16px;overflow:hidden;}
+  .bar-fill{height:100%;background:linear-gradient(90deg,#2E6FB0,#7fb0e0);border-radius:5px;}
+  .bar-val{color:var(--muted);font-size:12px;text-align:right;}
+  .pill{display:inline-block;font-size:12px;background:var(--sky);color:var(--navy);border-radius:20px;padding:3px 11px;margin:2px 4px 2px 0;}
+  .pill.hot{background:#fbeae6;color:var(--red);}
+  ul{margin:8px 0;padding-left:20px;} li{margin:6px 0;}
+  .postbox{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;margin:12px 0;}
+  .postbox .tag{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+  .postbox p{margin:8px 0;font-size:14.5px;color:var(--ink2);}
+  .postbox .q{color:var(--navy);font-weight:600;}
+  .barwrap{position:sticky;top:0;background:var(--paper);padding:9px 0;border-bottom:1px solid var(--line);z-index:6;margin-bottom:6px;}
+  .barwrap .row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:5px;gap:8px;flex-wrap:wrap;}
+  .track{background:#eee7da;height:10px;border-radius:6px;overflow:hidden;} .fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#d9b25e);transition:width .3s;}
+  .btn{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:20px;padding:4px 12px;cursor:pointer;color:var(--ink2);} .btn:hover{background:var(--cream);}
+  .day-item{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;}
+  .day-item input{margin-top:4px;width:17px;height:17px;accent-color:var(--gold);cursor:pointer;flex:0 0 auto;}
+  .day-item .dd{font-weight:700;color:var(--navy);} .day-item.done{opacity:.55;} .day-item.done .body{text-decoration:line-through;}
+  .day-item.nl{border-left:4px solid var(--gold);} .day-item.th{border-left:4px solid var(--red);}
+  .chips span{display:inline-block;font-size:11px;background:var(--cream);color:var(--ink2);border-radius:4px;padding:1px 7px;margin:4px 4px 0 0;}
+  .check{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin:7px 0;}
+  .check input{margin-top:3px;width:17px;height:17px;accent-color:var(--gold);cursor:pointer;flex:0 0 auto;}
+  .check.done{opacity:.5;} .check.done .body{text-decoration:line-through;}
+  .foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;}
+  .foot .k{font-family:Georgia,serif;color:var(--navy);font-size:15px;} .foot em{color:var(--gold);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="k">Karen <b>Montagner</b> · Programa de Evolução Contínua</div>
+    <div class="tag">Mentorada · Luciana Bonome · Ciclo de 15 dias</div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Semana 09 · 06 ago → 20 ago</div>
+    <h1 class="display serif">Recuperar o alcance — e transformar audiência em <em>conversa.</em></h1>
+    <p class="lead">Os últimos 14 dias trouxeram um recado honesto: o seu <b>alcance caiu cerca de 35%</b> em relação ao ciclo anterior. Não foi a audiência — ela segue certa e no alvo. Foi a falta de um <b>post-âncora</b>, aquele que viralizou no ciclo passado. Nesta quinzena a gente faz duas coisas ao mesmo tempo: <b>volta a produzir o conteúdo-tese que dá grande alcance</b> e <b>transforma quem já te vê em conversa real</b> — com foco cirúrgico nas empresas que mais aparecem no seu público. Máxima visibilidade e networking, de mãos dadas.</p>
+    <div class="meta">
+      <div class="m"><div class="l">Início</div><div class="v serif">Qui · <em>06 agosto</em></div></div>
+      <div class="m"><div class="l">Encerramento</div><div class="v serif">Qui · <em>20 agosto</em></div></div>
+      <div class="m"><div class="l">Cadência</div><div class="v serif">diária · <em>news seg/qua/qui</em></div></div>
+      <div class="m"><div class="l">Foco central</div><div class="v serif">Alcance + <em>conversa</em></div></div>
+    </div>
+    <div class="principle"><b>Princípio do ciclo.</b> Audiência certa sem post-âncora vira eco baixo. Uma tese forte por semana + conversa com quem já te vê = alcance que volta e porta que abre.</div>
+  </div>
+
+  <!-- ONDE ESTAMOS -->
+  <section>
+    <div class="snum">Onde você está · leitura honesta</div>
+    <h2 class="serif">O que travou — e o que <em>está pronto.</em></h2>
+    <p>Nada aqui é motivo de alarme. É ajuste fino de quem já tem o motor certo funcionando.</p>
+    <div class="cards">
+      <div class="c"><div class="ico">📉</div><div class="t">O alcance recuou</div><div class="s">-35% no ciclo</div><div class="d">De ~301 para <b>~195 pessoas/dia</b>. Faltou o post-tese que puxa o resto. É o primeiro alvo desta quinzena.</div></div>
+      <div class="c"><div class="ico">🎯</div><div class="t">Sua audiência é ouro</div><div class="s">os certos te veem</div><div class="d"><b>AstraZeneca, GSK, J&J, AbbVie, IQVIA, Novartis, Pfizer, Sanofi, Lilly</b> · 12% MSLs · 51% sênior · 37% SP.</div></div>
+      <div class="c"><div class="ico">🎬</div><div class="t">O "Bastidores" funcionou</div><div class="s">autenticidade puxa</div><div class="d">O post de bastidor (31/07) foi um dos mais engajados. <b>Pessoal + honesto</b> é veia forte — vamos repetir.</div></div>
+      <div class="c"><div class="ico">🎤</div><div class="t">Processos e calls vivos</div><div class="s">conversão em curso</div><div class="d">Takeda (entrevista Vacinas), AbbVie (Amaro, por dentro), Sanofi Raras (Marcela). <b>A porta já está entreaberta.</b></div></div>
+      <div class="c"><div class="ico">🆕</div><div class="t">Vaga nova de peso</div><div class="s">a empresa nº1 que te vê</div><div class="d"><b>AstraZeneca — MSL Pleno Oncologia GI (SP)</b>. AZ é quem mais te olha e o seu conteúdo de onco é forte. Alvo da quinzena.</div></div>
+      <div class="c"><div class="ico">📚</div><div class="t">Newsletter consolidada</div><div class="s">Medical Insights</div><div class="d">A série virou marca. É o seu ativo de autoridade — mantemos Seg/Qua/Qui, densa.</div></div>
+    </div>
+  </section>
+
+  <!-- DADOS -->
+  <section>
+    <div class="snum">Leitura dos seus dados · LinkedIn · 22/07 a 04/08 (14 dias)</div>
+    <h2 class="serif">Os seus números <em>do ciclo.</em></h2>
+    <p>A audiência segue certa e estável. O ponto de atenção é só um: sem um post de grande alcance, a média caiu. Os quadros abaixo mostram exatamente onde recuperar.</p>
+    <div class="cards">
+      <div class="stat"><div class="l">Impressões · 14 dias</div><div class="n">6.535</div><div class="d">2.735 pessoas alcançadas</div></div>
+      <div class="stat"><div class="l">Seu melhor post</div><div class="n">1.095</div><div class="d">MSL + pesquisa clínica · 24/07</div></div>
+      <div class="stat"><div class="l">Seguidores</div><div class="n">1.677</div><div class="d"><span class="up">+80</span> no ciclo (→ estável)</div></div>
+      <div class="stat"><div class="l">Público sênior+</div><div class="n">51%</div><div class="d">12% MSL · decisores</div></div>
+    </div>
+    <div class="chart">
+      <h3>Alcance por dia — o recuo a recuperar</h3>
+      <div class="bar-row"><span>Ciclo anterior</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">~301/dia</span></div>
+      <div class="bar-row"><span>Este ciclo</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:linear-gradient(90deg,#B0402A,#e0a08f)"></div></div><span class="bar-val">~195/dia</span></div>
+      <div class="bar-row"><span>Meta Semana 09</span><div class="bar-track"><div class="bar-fill" style="width:150%;background:linear-gradient(90deg,#2E7D46,#8fd0a5)"></div></div><span class="bar-val">≥450/dia</span></div>
+    </div>
+    <div class="chart">
+      <h3>Quem te vê — top empresas (seu público)</h3>
+      <div class="bar-row"><span>AstraZeneca</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">4%</span></div>
+      <div class="bar-row"><span>GSK</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="bar-val">3%</span></div>
+      <div class="bar-row"><span>J&J · AbbVie</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span class="bar-val">2%</span></div>
+      <div class="bar-row"><span>IQVIA·Novartis·Pfizer·Sanofi·Lilly</span><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><span class="bar-val">1%</span></div>
+    </div>
+    <div class="callout info"><b>A leitura:</b> as empresas que mais te veem são exatamente as que você quer. Isso muda a estratégia de networking desta quinzena — <b>vamos direto atrás de MSLs e gestores dessas empresas</b>, porque você já não é uma estranha para o algoritmo delas.</div>
+  </section>
+
+  <!-- 01 CONTEÚDO -->
+  <section>
+    <div class="snum">01 · Seu plano de conteúdo · 06 → 20 ago</div>
+    <h2 class="serif">Calendário da <em>quinzena.</em></h2>
+    <p>Regras de ouro: <b>1 post-tese por semana</b> (o que dá alcance), <b>Bastidores</b> toda sexta (o que engaja), <b>newsletter densa Seg/Qua/Qui</b>, e tudo entre <b>09h30 e 13h</b>. Os temas quentes casam com as suas frentes de vaga.</p>
+    <div class="barwrap">
+      <div class="row"><span>Progresso do plano · <b id="dtxt">0 de 15 dias</b></span><button class="btn" onclick="resetD()">limpar</button></div>
+      <div class="track"><div class="fill" id="dfill"></div></div>
+    </div>
+    <div class="day-item th"><input type="checkbox" data-d="d06"><div class="body"><span class="dd">Qui 06/08 · 9h30 — POST-TESE (abertura do ciclo):</span> uma opinião forte sobre o futuro do MSL — "o próximo MSL não será medido por número de visitas, mas por..." (o formato que viralizou). Começa o ciclo destravando o alcance.<div class="chips"><span>tese</span><span>alcance</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d07"><div class="body"><span class="dd">Sex 07/08 · 10h — Post BASTIDORES:</span> o que aprendi me preparando para uma entrevista de MSL (autêntico, pessoal).<div class="chips"><span>bastidores</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d08"><div class="body"><span class="dd">Sáb 08/08 · 11h — Post PERGUNTA:</span> uma pergunta aberta à comunidade de transição (gera comentários).<div class="chips"><span>pergunta</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d09"><div class="body"><span class="dd">Dom 09/08:</span> descanso real. Sem LinkedIn.<div class="chips"><span>pausa</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d10"><div class="body"><span class="dd">Seg 10/08 · 10h — Newsletter ed. 29 (densa):</span> Doenças raras — por que o diagnóstico genético virou o novo gargalo (casa com Sanofi).<div class="chips"><span>newsletter</span><span>raras</span></div></div></div>
+    <div class="day-item th"><input type="checkbox" data-d="d11"><div class="body"><span class="dd">Ter 11/08 · 9h30 — POST-TESE (âncora da semana):</span> leitura de mercado — para onde o field medical está indo (visão + provocação).<div class="chips"><span>tese</span><span>alcance</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d12"><div class="body"><span class="dd">Qua 12/08 · 11h — Newsletter ed. 30 (densa):</span> Vacinas ao longo da vida — dengue, Qdenga × Butantan e o dilema 2 doses × dose única.<div class="chips"><span>newsletter</span><span>vacinas</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d13"><div class="body"><span class="dd">Qui 13/08 · 12h — Newsletter ed. 31 (densa):</span> RWE — de diferencial a requisito no Medical Affairs.<div class="chips"><span>newsletter</span><span>RWE</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d14"><div class="body"><span class="dd">Sex 14/08 · 10h — Post BASTIDORES:</span> uma conversa de networking que mudou como enxergo a área (transforma call em conteúdo).<div class="chips"><span>bastidores</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d15"><div class="body"><span class="dd">Sáb 15/08 · 11h — Post CARROSSEL:</span> formato visual para alcance (ex.: 5 sinais de que a evidência mudou a prática).<div class="chips"><span>carrossel</span></div></div></div>
+    <div class="day-item"><input type="checkbox" data-d="d16"><div class="body"><span class="dd">Dom 16/08:</span> descanso real. Sem LinkedIn.<div class="chips"><span>pausa</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d17"><div class="body"><span class="dd">Seg 17/08 · 10h — Newsletter ed. 32 (densa):</span> Oncologia de precisão — biomarcadores e a decisão clínica.<div class="chips"><span>newsletter</span><span>onco</span></div></div></div>
+    <div class="day-item th"><input type="checkbox" data-d="d18"><div class="body"><span class="dd">Ter 18/08 · 9h30 — POST-TESE (âncora da semana):</span> o valor científico do MSL — por que profundidade vence volume (tese + trajetória).<div class="chips"><span>tese</span><span>alcance</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d19"><div class="body"><span class="dd">Qua 19/08 · 11h — Newsletter ed. 33 (densa):</span> Biespecíficos e ADCs — a nova onda que o MSL precisa explicar.<div class="chips"><span>newsletter</span></div></div></div>
+    <div class="day-item nl"><input type="checkbox" data-d="d20"><div class="body"><span class="dd">Qui 20/08 · 12h — Newsletter ed. 34 (densa) + FECHAMENTO:</span> revisar métricas do ciclo e status de processos.<div class="chips"><span>newsletter</span><span>fechamento</span></div></div></div>
+    <div class="callout hot"><b>O post-âncora é inegociável.</b> Foi ele que fez 5.219 impressões no ciclo passado. Qui 06, Ter 11 e Ter 18 são os dias de tese — capriche no primeiro parágrafo (o gancho) e defenda um ponto de vista. É o que o algoritmo e os decisores premiam.</div>
+  </section>
+
+  <!-- 02 AMPLIFICAÇÃO -->
+  <section>
+    <div class="snum">02 · Rotina de amplificação · a cada post</div>
+    <h2 class="serif">Publicar não é o fim — é o <em>começo.</em></h2>
+    <p>Todo post importante segue este ritual nas primeiras horas. É o que separa alcance morno de alcance real.</p>
+    <div class="barwrap">
+      <div class="row"><span>Rotina de amplificação · <b id="atxt">0 de 7</b></span><button class="btn" onclick="resetA()">limpar</button></div>
+      <div class="track"><div class="fill" id="afill"></div></div>
+    </div>
+    <div class="check"><input type="checkbox" data-a="a1"><div class="body"><b>Postar entre 09h30 e 13h</b> e responder qualquer comentário nos primeiros 5 min.</div></div>
+    <div class="check"><input type="checkbox" data-a="a2"><div class="body"><b>Compartilhar o link em 3 grupos</b> (MSL, Medical Affairs e a área do post: onco, raras, vacinas).</div></div>
+    <div class="check"><input type="checkbox" data-a="a3"><div class="body"><b>Enviar por DM/WhatsApp a 3–5 contatos quentes</b>, com uma linha pessoal — casando o tema com a pessoa.</div></div>
+    <div class="check"><input type="checkbox" data-a="a4"><div class="body"><b>Pedir a 2–3 pessoas de confiança que comentem</b> (não só curtam) nos primeiros 30 min.</div></div>
+    <div class="check"><input type="checkbox" data-a="a5"><div class="body"><b>Retribuir todas as visitas de perfil</b> da semana com um convite + linha pessoal.</div></div>
+    <div class="check"><input type="checkbox" data-a="a6"><div class="body"><b>Responder todos os comentários</b> na primeira meia hora e de novo no fim do dia.</div></div>
+    <div class="check"><input type="checkbox" data-a="a7"><div class="body"><b>Registrar na planilha</b> quem respondeu e comentou — vira contato para nutrir.</div></div>
+    <div class="callout warn"><b>O cuidado:</b> não mande o mesmo post para todo mundo toda vez. Case o tema com a pessoa e vá alternando os nomes — contato quente se cuida com parcimônia.</div>
+  </section>
+
+  <!-- 03 NETWORKING -->
+  <section>
+    <div class="snum">03 · Networking cirúrgico · quem já te vê</div>
+    <h2 class="serif">Ir atrás de quem <em>já te olha.</em></h2>
+    <p>A sua audiência entregou o mapa: as empresas abaixo são as que mais aparecem no seu público. Não é hora de conexão aleatória — é hora de mirar MSLs e gestores <b>dessas</b> empresas, onde o seu nome já circula.</p>
+    <div class="cards">
+      <div class="c"><div class="s">prioridade máxima</div><div class="t">AstraZeneca</div><div class="d">Nº1 do seu público. Conecte com <b>2 MSLs de Oncologia</b> + o gestor da vaga <b>MSL Onco GI</b> + 1 recrutador de Medical. Depois, candidatar com referência.</div></div>
+      <div class="c"><div class="s">vacinas</div><div class="t">GSK</div><div class="d"><b>Karina Fernandes</b> (MSL Vacinas) já mapeada — puxar a call. Somar +1 MSL de vacinas.</div></div>
+      <div class="c"><div class="s">expandir</div><div class="t">Novartis · Lilly · Pfizer</div><div class="d">1 MSL de cada, na sua área de afinidade (onco, imuno, raras). Comentar 1 post deles antes de conectar.</div></div>
+      <div class="c"><div class="s">threads vivas</div><div class="t">Sanofi · AbbVie · Takeda</div><div class="d"><b>Marcela</b> (Sanofi/raras), <b>Amaro</b> (AbbVie), <b>Fernando</b> (Takeda). Avançar cada conversa até a call.</div></div>
+    </div>
+    <div class="barwrap">
+      <div class="row"><span>Metas de networking · <b id="ntxt">0 de 7</b></span><button class="btn" onclick="resetN()">limpar</button></div>
+      <div class="track"><div class="fill" id="nfill"></div></div>
+    </div>
+    <div class="check n"><input type="checkbox" data-n="n1"><div class="body"><b>AstraZeneca:</b> conectar com 2 MSLs de Oncologia (mensagem personalizada + tema comum).</div></div>
+    <div class="check n"><input type="checkbox" data-n="n2"><div class="body"><b>AstraZeneca:</b> conectar com o gestor/recrutador da vaga MSL Onco GI e candidatar-se com referência.</div></div>
+    <div class="check n"><input type="checkbox" data-n="n3"><div class="body"><b>GSK:</b> enviar a mensagem para a Karina e marcar a call de vacinas.</div></div>
+    <div class="check n"><input type="checkbox" data-n="n4"><div class="body"><b>Novartis / Lilly / Pfizer:</b> 1 conexão qualificada em cada (3 no total).</div></div>
+    <div class="check n"><input type="checkbox" data-n="n5"><div class="body"><b>Threads vivas:</b> avançar Marcela (Sanofi), Amaro (AbbVie) e Fernando (Takeda) para call.</div></div>
+    <div class="check n"><input type="checkbox" data-n="n6"><div class="body"><b>Lista da planilha:</b> trabalhar a aba Networking (55 contatos) — enviar 3–4 convites/dia dos "a conectar".</div></div>
+    <div class="check n"><input type="checkbox" data-n="n7"><div class="body"><b>Retribuir 100% das visitas</b> de perfil da quinzena com convite + linha pessoal.</div></div>
+    <div class="callout good"><b>Por que isso funciona agora:</b> quando você conecta com alguém de uma empresa que já te vê, o seu perfil não chega frio — o seu conteúdo já passou por ali. A taxa de aceite e de resposta sobe.</div>
+  </section>
+
+  <!-- 04 VAGAS -->
+  <section>
+    <div class="snum">04 · Novas oportunidades · frentes da quinzena</div>
+    <h2 class="serif">Onde a conversão <em>acontece.</em></h2>
+    <p>Busca nova rodada nesta semana. A prioridade é clara — candidatar-se sempre com uma conexão feita antes.</p>
+    <div class="cards">
+      <div class="c"><div class="s">⭐ prioridade · nova</div><div class="t">AstraZeneca — MSL Pleno Oncologia GI · SP</div><div class="d">A empresa que mais te vê + seu conteúdo de onco é forte + nível "pleno" (não sênior). <b>Conectar antes, depois candidatar.</b></div></div>
+      <div class="c"><div class="s">avaliar · localização</div><div class="t">Takeda — MSL Imunologia (BH) · MSL Onco (Brasília)</div><div class="d">Boas por serem Takeda (já tem a Fernando por dentro), mas fora de SP. Avaliar disposição a mudar/remoto.</div></div>
+      <div class="c"><div class="s">em andamento</div><div class="t">Sanofi Raras · Takeda Vacinas · AbbVie Onco</div><div class="d">Threads com referência (Marcela, Fernando, Amaro). Honrar com preparo — CVs já prontos.</div></div>
+      <div class="c"><div class="s">no radar</div><div class="t">Devos (MSL) · Gilead · Guerbet · MSD onco</div><div class="d">Já na planilha. Devos: responder o recrutador e perguntar a empresa-cliente.</div></div>
+    </div>
+    <div class="callout info"><b>Na planilha:</b> todas as vagas e contatos estão em <b>Candidaturas_Luciana_Painel.xlsx</b> — abas Candidaturas, Networking e Vagas–Análise, com painel e gráficos. A AstraZeneca Onco GI entra como nova frente.</div>
+  </section>
+
+  <!-- 05 METAS -->
+  <section>
+    <div class="snum">05 · Suas metas · mensuráveis</div>
+    <h2 class="serif">Alvos da <em>quinzena.</em></h2>
+    <div class="cards">
+      <div class="stat"><div class="l">Impressões/quinzena</div><div class="n">≥12k</div><div class="d">recuperar + crescer</div></div>
+      <div class="stat"><div class="l">Post-âncora</div><div class="n">≥2.000</div><div class="d">1 tese viral</div></div>
+      <div class="stat"><div class="l">Engajamento</div><div class="n">3%+</div><div class="d">média</div></div>
+      <div class="stat"><div class="l">Seguidores</div><div class="n">+100</div><div class="d">→ ~1.780</div></div>
+      <div class="stat"><div class="l">Conteúdos</div><div class="n">12 + 6</div><div class="d">posts + newsletters</div></div>
+      <div class="stat"><div class="l">Novas conexões</div><div class="n">30+</div><div class="d">empresas-alvo</div></div>
+      <div class="stat"><div class="l">Calls</div><div class="n">4</div><div class="d">Marcela·Amaro·Fernando·Karina</div></div>
+      <div class="stat"><div class="l">Candidaturas c/ referência</div><div class="n">3</div><div class="d">AZ Onco GI + 2</div></div>
+    </div>
+    <div class="callout good"><b>O placar do ciclo:</b> se o alcance voltar para ≥450/dia e 2 calls virarem etapa de processo, a Semana 09 cumpriu o papel — visibilidade recuperada e conversa convertendo.</div>
+  </section>
+
+  <div class="foot">
+    <div class="k">Karen <b>Montagner</b> · Programa de Evolução Contínua · Ciclo 15 dias</div>
+    <div style="margin-top:6px"><em>audiência certa merece conversa de verdade.</em> · 06 ago → 20 ago</div>
+  </div>
+</div>
+
+<script>
+  var K="luciana-semana09";
+  var days=document.querySelectorAll('.day-item input');
+  var amp=document.querySelectorAll('.check:not(.n) input');
+  var net=document.querySelectorAll('.check.n input');
+  function save(){var s={d:{},a:{},n:{}};days.forEach(function(b){s.d[b.dataset.d]=b.checked;});amp.forEach(function(b){s.a[b.dataset.a]=b.checked;});net.forEach(function(b){s.n[b.dataset.n]=b.checked;});try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}}
+  function load(){try{var s=JSON.parse(localStorage.getItem(K)||'{}');if(s.d)days.forEach(function(b){if(s.d[b.dataset.d])b.checked=true;});if(s.a)amp.forEach(function(b){if(s.a[b.dataset.a])b.checked=true;});if(s.n)net.forEach(function(b){if(s.n[b.dataset.n])b.checked=true;});}catch(e){}}
+  function rd(){var n=0;days.forEach(function(b){var it=b.closest('.day-item');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/days.length*100);document.getElementById('dfill').style.width=p+'%';document.getElementById('dtxt').textContent=n+' de '+days.length+' dias · '+p+'%';}
+  function ra(){var n=0;amp.forEach(function(b){var it=b.closest('.check');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/amp.length*100);document.getElementById('afill').style.width=p+'%';document.getElementById('atxt').textContent=n+' de '+amp.length+' · '+p+'%';}
+  function rn(){var n=0;net.forEach(function(b){var it=b.closest('.check');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/net.length*100);document.getElementById('nfill').style.width=p+'%';document.getElementById('ntxt').textContent=n+' de '+net.length+' · '+p+'%';}
+  days.forEach(function(b){b.addEventListener('change',function(){save();rd();});});
+  amp.forEach(function(b){b.addEventListener('change',function(){save();ra();});});
+  net.forEach(function(b){b.addEventListener('change',function(){save();rn();});});
+  function resetD(){days.forEach(function(b){b.checked=false;});save();rd();}
+  function resetA(){amp.forEach(function(b){b.checked=false;});save();ra();}
+  function resetN(){net.forEach(function(b){b.checked=false;});save();rn();}
+  load();rd();ra();rn();
+</script>
+</body>
+</html>
