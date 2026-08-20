@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano Semana 10 · Conteúdo & Calls · Luciana Bonome · Mentoria Karen Montagner</title>
+<style>
+  :root{--ink:#1b2230;--ink2:#3a4456;--muted:#6b7686;--line:#e7e3da;--paper:#faf8f4;--card:#fff;
+    --navy:#1F3559;--blue:#2E6FB0;--gold:#B08328;--green:#2E7D46;--amber:#B7791F;--red:#B0402A;--sky:#eef3fa;--cream:#f3efe6;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:Georgia,"Times New Roman",serif;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px 80px;}
+  em{font-style:italic;} a{color:var(--blue);word-break:break-word;}
+  .brand{display:flex;justify-content:space-between;align-items:center;padding:20px 0 14px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:6px;}
+  .brand .k{font-family:Georgia,serif;font-size:15px;color:var(--navy);} .brand .k b{font-weight:700;}
+  .brand .tag{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;}
+  .hero{padding:40px 0 10px;}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  h1.display{font-family:Georgia,serif;font-weight:700;font-size:44px;line-height:1.08;color:var(--navy);margin:0 0 18px;}
+  h1.display em{color:var(--gold);}
+  .lead{font-size:17px;color:var(--ink2);max-width:800px;}
+  .meta{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 8px;}
+  .meta .m{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .meta .m .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .meta .m .v{font-family:Georgia,serif;font-size:19px;color:var(--navy);margin-top:3px;} .meta .m .v em{color:var(--gold);}
+  .principle{background:var(--navy);color:#fff;border-radius:12px;padding:16px 20px;margin:22px 0 6px;font-size:15px;} .principle b{color:#f0d79a;}
+  section{margin-top:46px;}
+  .snum{font-family:Georgia,serif;font-size:13px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;}
+  h2{font-family:Georgia,serif;font-size:27px;color:var(--navy);margin:6px 0 6px;line-height:1.15;} h2 em{color:var(--gold);}
+  h3{font-size:16px;color:var(--blue);margin:22px 0 8px;}
+  h4{font-size:14px;color:var(--navy);margin:16px 0 4px;}
+  p{margin:10px 0;}
+  .cards{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0;}
+  .c{flex:1 1 210px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .c .t{font-weight:700;color:var(--navy);margin:6px 0 2px;font-size:15px;}
+  .c .s{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .c .d{font-size:13.5px;color:var(--ink2);} .c b{color:var(--ink);}
+  .stat{flex:1 1 130px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .stat .n{font-family:Georgia,serif;font-size:26px;color:var(--navy);} .stat .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);} .stat .d{font-size:12px;color:var(--ink2);margin-top:3px;}
+  .callout{border-radius:12px;padding:16px 18px;margin:16px 0;font-size:14.5px;}
+  .callout.good{background:#eaf5ee;border-left:4px solid var(--green);}
+  .callout.info{background:var(--sky);border-left:4px solid var(--blue);}
+  .callout.warn{background:#fbf1e3;border-left:4px solid var(--amber);}
+  .callout.hot{background:#fbeae6;border-left:4px solid var(--red);}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px;font-size:12px;letter-spacing:.04em;}
+  td{padding:9px 11px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2);}
+  td b{color:var(--ink);}
+  .win{background:#eaf5ee;} .lose{background:#fbeae6;}
+  ul{margin:8px 0;padding-left:20px;} li{margin:6px 0;font-size:14.5px;color:var(--ink2);}
+  .idea{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin:12px 0;}
+  .idea .n{font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-weight:700;}
+  .idea .t{font-weight:700;color:var(--navy);font-size:15.5px;margin:3px 0 5px;}
+  .idea .d{font-size:14px;color:var(--ink2);}
+  .idea .src{font-size:12.5px;color:var(--muted);margin-top:7px;}
+  .barwrap{position:sticky;top:0;background:var(--paper);padding:9px 0;border-bottom:1px solid var(--line);z-index:6;margin-bottom:6px;}
+  .barwrap .row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:5px;gap:8px;flex-wrap:wrap;}
+  .track{background:#eee7da;height:10px;border-radius:6px;overflow:hidden;} .fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#d9b25e);transition:width .3s;}
+  .btn{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:20px;padding:4px 12px;cursor:pointer;color:var(--ink2);} .btn:hover{background:var(--cream);}
+  .item{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;}
+  .item input{margin-top:4px;width:17px;height:17px;accent-color:var(--gold);cursor:pointer;flex:0 0 auto;}
+  .item .dd{font-weight:700;color:var(--navy);} .item.done{opacity:.55;} .item.done .body{text-decoration:line-through;}
+  .item.hot{border-left:4px solid var(--red);} .item.gold{border-left:4px solid var(--gold);} .item.blue{border-left:4px solid var(--blue);} .item.green{border-left:4px solid var(--green);}
+  .chips span{display:inline-block;font-size:11px;background:var(--cream);color:var(--ink2);border-radius:4px;padding:1px 7px;margin:4px 4px 0 0;}
+  .foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;}
+  .foot .k{font-family:Georgia,serif;color:var(--navy);font-size:15px;} .foot em{color:var(--gold);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="k">Karen <b>Montagner</b> · Programa de Evolução Contínua</div>
+    <div class="tag">Mentorada · Luciana Bonome · Semana 10</div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Semana 10 · 20 ago → 31 ago</div>
+    <h1 class="display serif">Conteúdo com <em>tese.</em> Conversa com <em>quem decide.</em></h1>
+    <p class="lead">Olhamos os seus últimos 90 dias com calma: <b>58 publicações, quase 5 por semana, com constância que pouca gente sustenta</b>. E essa consistência já deu frutos — o seu maior post do período fez 175 reações. Agora que existe volume e existe base, dá para fazer algo que antes não daria: <b>direcionar essa mesma energia para onde ela rende mais</b>. Os dados são seus e apontam um caminho bem específico — mais texto nativo com tese, a newsletter mais espaçada e com fôlego, e área terapêutica contada pela decisão clínica. Em paralelo, seguimos com as calls.</p>
+    <div class="meta">
+      <div class="m"><div class="l">Posts no feed</div><div class="v serif">seg · ter · <em>qua · qui</em></div></div>
+      <div class="m"><div class="l">Newsletter</div><div class="v serif">1x por <em>semana</em></div></div>
+      <div class="m"><div class="l">Calls</div><div class="v serif">3 marcadas · <em>+20 alvos</em></div></div>
+      <div class="m"><div class="l">Novidade</div><div class="v serif">1º <em>carrossel</em></div></div>
+    </div>
+    <div class="principle"><b>Princípio da quinzena.</b> Os seus três maiores posts abrem discordando de algo que a área repete. Nenhum abre explicando um conceito. A sua voz não é a de quem ensina — é a de quem discorda com fundamento.</div>
+  </div>
+
+  <!-- DIAGNÓSTICO -->
+  <section>
+    <div class="snum">O que os seus 90 dias revelaram</div>
+    <h2 class="serif">O mapa do que <em>funciona.</em></h2>
+    <div class="cards">
+      <div class="stat"><div class="l">Publicações</div><div class="n">58</div><div class="d">em 90 dias · 4,5/semana</div></div>
+      <div class="stat"><div class="l">Seu maior post</div><div class="n">175</div><div class="d">"Não largue a pesquisa clínica"</div></div>
+      <div class="stat"><div class="l">Queda da mediana</div><div class="n">-40%</div><div class="d">de junho para agosto</div></div>
+      <div class="stat"><div class="l">Carrosséis</div><div class="n">0</div><div class="d">o formato mais distribuído</div></div>
+    </div>
+
+    <h3>Por tema — onde a sua voz pega mais</h3>
+    <table>
+      <tr><th>Cluster</th><th>Posts</th><th>Média</th><th>Leitura</th></tr>
+      <tr class="win"><td><b>Pessoal / transição</b></td><td>16</td><td><b>21,4</b></td><td>O seu ativo mais forte. É onde está o post de 175.</td></tr>
+      <tr class="win"><td><b>RWE e evidência</b></td><td>7</td><td><b>15,4</b></td><td>Maior mediana do perfil (13). Pouco explorado.</td></tr>
+      <tr><td>Papel do MSL / opinião</td><td>17</td><td>12,5</td><td>Ganha força quando traz um ponto de vista claro. É o seu terreno de opinião.</td></tr>
+      <tr><td>Área terapêutica</td><td>18</td><td>8,4</td><td>São os seus textos mais densos e ainda não encontraram o público certo. Muda pouco: entrar pela decisão clínica em vez da molécula.</td></tr>
+    </table>
+    <div class="callout info"><b>O que é "cluster" e o que é essa média.</b> Cluster é só um nome para grupo de assunto. Pegamos as 58 publicações dos últimos 90 dias e separamos por tema. Depois somamos as reações de cada grupo e dividimos pelo número de posts daquele grupo — isso é a média.<br><br>O grupo <b>Pessoal / transição</b> tem 16 posts que somam 342 reações. Média 21,4. O grupo <b>Área terapêutica</b> tem 18 posts e média 8,4.<br><br>Traduzindo: quando a Luciana fala da própria travessia, cada post rende cerca de <b>duas vezes e meia mais</b> do que quando ela fala de molécula. Não é que o conteúdo técnico seja pior. É que o público que ela construiu até agora veio pela história dela, e responde a ela. Por isso a segunda-feira fica com bastidores.</div>
+
+    <h3>Por dia — e aqui há um conflito a resolver</h3>
+    <table>
+      <tr><th>Dia</th><th>Mediana</th><th>Decisão deste plano</th></tr>
+      <tr class="win"><td><b>Terça</b></td><td><b>17</b></td><td>Dia sagrado. Post-âncora de tese, sempre nativo.</td></tr>
+      <tr><td>Segunda</td><td>10</td><td>Segundo melhor. Fica com transição/bastidores.</td></tr>
+      <tr><td>Quarta</td><td>6</td><td>Post-pergunta — o objetivo é comentário, não alcance.</td></tr>
+      <tr><td>Quinta</td><td>5</td><td>Dia mais tranquilo no feed. Fica com a newsletter, que já tem 347 assinantes próprios e chega por notificação.</td></tr>
+    </table>
+    <div class="callout info"><b>Sobre os dias:</b> mantivemos os quatro dias de post no feed, como combinado. O que ajustamos foi <b>o que vai em cada um</b> — o conteúdo de maior fôlego fica nos dias de maior audiência, e o formato que já tem público cativo ocupa o dia mais tranquilo. Mesmo esforço, resultado melhor distribuído.</div>
+    <div class="callout good"><b>Dois ajustes simples e de efeito rápido:</b> equilibrar a proporção entre post nativo e link de newsletter (a referência é 3 para 1), e voltar à cadência quinzenal da newsletter, como o perfil promete. Em agosto saíram cinco edições em dez dias — espaçar dá mais fôlego a cada uma e valoriza a leitura de quem assina.</div>
+  </section>
+
+  <!-- CALENDÁRIO -->
+  <section>
+    <div class="snum">01 · Calendário · 20 a 31 de agosto</div>
+    <h2 class="serif">Os seis <em>dias.</em></h2>
+    <p>Cada dia agora tem <b>duas publicações</b>: o repost às <b>9h</b> e o conteúdo principal às <b>11h</b>. As duas dentro da janela combinada, com o maior intervalo possível entre elas. São 12 publicações no ciclo, contra 6 do plano anterior.</p>
+    <div class="callout info"><b>Uma exceção proposital:</b> a terça fica com um post só. É o dia de maior mediana do perfil (17) e o post-âncora não divide audiência com ninguém. Todo o resto dobra.</div>
+    <div class="barwrap">
+      <div class="row"><span>Conteúdo publicado · <b id="dtxt">0 de 6</b></span><button class="btn" onclick="resetD()">limpar</button></div>
+      <div class="track"><div class="fill" id="dfill"></div></div>
+    </div>
+    <div class="item blue"><input type="checkbox" data-d="d1"><div class="body"><span class="dd">Qui 20/08</span><br><b>9h</b> — CARROSSEL, o primeiro da vida dela. "Não largue a pesquisa clínica" em 7 telas.<br><b>11h</b> — NEWSLETTER ed. 38.<div class="chips"><span>carrossel</span><span>newsletter</span></div></div></div>
+    <div class="item"><input type="checkbox" data-d="d2"><div class="body"><span class="dd">Seg 24/08</span><br><b>9h</b> — REPOST "O próximo MSL não será medido pelo número de visitas".<br><b>11h</b> — BASTIDORES / transição, o grupo de maior média (21,4).<div class="chips"><span>pessoal</span><span>repost</span></div></div></div>
+    <div class="item gold"><input type="checkbox" data-d="d3"><div class="body"><span class="dd">Ter 25/08 · 9h30 — POST-ÂNCORA</span> — tese, nativo, abrindo contra o senso comum. Sozinho no dia. Inegociável.<div class="chips"><span>tese</span><span>alcance</span><span>dia limpo</span></div></div></div>
+    <div class="item"><input type="checkbox" data-d="d4"><div class="body"><span class="dd">Qua 26/08</span><br><b>9h</b> — REPOST "Biomarcadores e a nova geração de terapias", agora como texto nativo.<br><b>11h</b> — POST-PERGUNTA, curto, 4 a 6 linhas, feito para gerar comentário.<div class="chips"><span>conversa</span><span>repost</span></div></div></div>
+    <div class="item blue"><input type="checkbox" data-d="d5"><div class="body"><span class="dd">Qui 27/08</span><br><b>9h</b> — REPOST "A transição começa muito antes", em formato de linha do tempo.<br><b>11h</b> — NEWSLETTER ed. 39, a única da semana.<div class="chips"><span>newsletter</span><span>repost</span></div></div></div>
+    <div class="item green"><input type="checkbox" data-d="d6"><div class="body"><span class="dd">Seg 31/08 · dia de fechamento do ciclo</span><br><b>9h</b> — REPOST "Da pesquisa à indústria" como texto nativo.<br><b>11h</b> — REPOST "RWE: de diferencial a requisito", terceira tentativa em formato novo.<div class="chips"><span>ciclo 21 dias</span><span>só repost</span></div></div></div>
+    <div class="callout good"><b>Como ler o resultado:</b> se algum dia duplo entregar o post principal bem abaixo da média dele, o segundo post está roubando audiência do primeiro. Nesse caso, na Semana 11 os reposts passam a ocupar dias alternados em vez de dobrar. É o tipo de coisa que só se descobre testando.</div>
+  </section>
+
+  <!-- CARROSSEL -->
+  <section>
+    <div class="snum">02 · Quinta 20/08 · 9h</div>
+    <h2 class="serif">O primeiro carrossel <em>da vida dela.</em></h2>
+    <p>São <b>zero carrosséis em 90 dias</b> e é o formato que o LinkedIn mais distribui, porque prende o leitor por mais tempo dentro da própria plataforma. A regra do formato é simples e quase todo mundo erra: <b>uma ideia por tela</b>, frase curta, nada de parágrafo. A tela existe para ser lida em dois segundos.</p>
+
+    <div class="idea"><div class="n">Opção A · a recomendada</div><div class="t">"Não largue a pesquisa clínica para migrar" — em 7 telas</div>
+      <div class="d">É o maior conteúdo dela: <b>175 reações</b>, quase cinco vezes o segundo colocado. O texto já provou que funciona, então o único risco aqui é o formato — que é exatamente o que a gente quer medir. Melhor conteúdo dela, no formato mais distribuído, no primeiro teste. Se der certo, carrossel vira rotina.</div>
+      <div class="src">Original: <a href="https://www.linkedin.com/posts/lucianabonome_n%C3%A3o-largue-a-pesquisa-cl%C3%ADnica-para-migrar-share-7467361601822711809-RqYU">02/06 · 175 reações</a></div></div>
+
+    <div class="idea"><div class="n">Opção B</div><div class="t">"4 competências da pesquisa que servem no primeiro dia de Medical Affairs"</div>
+      <div class="d">Formato de lista, que é o mais natural em carrossel. Cada tela é uma competência com um exemplo concreto da rotina dela. Serve bem, mas é conteúdo novo — e conteúdo novo em formato novo dobra o risco do teste.</div></div>
+
+    <div class="idea"><div class="n">Opção C</div><div class="t">"A odisseia diagnóstica em números"</div>
+      <div class="d">Carrossel de dados sobre doenças raras: quantos anos até o diagnóstico, quantos médicos até o nome certo. Visualmente o mais bonito dos três e o mais alinhado com as vagas dela. Mas é o grupo de menor média no perfil (área terapêutica, 8,4) — melhor guardar para quando o formato já estiver validado.</div></div>
+
+    <h3>As 7 telas da opção A</h3>
+    <table>
+      <tr><th>Tela</th><th>O que vai nela</th></tr>
+      <tr class="win"><td><b>1 · capa</b></td><td><b>"Não largue a pesquisa clínica para migrar."</b><br>Linha de apoio: <em>o que 9 anos de bancada me deram e nenhum curso dá.</em></td></tr>
+      <tr><td><b>2</b></td><td>"A frase que eu mais ouvi quando decidi migrar: <em>esquece o doutorado, ele não conta lá fora</em>."</td></tr>
+      <tr><td><b>3</b></td><td>"Conta. Só não do jeito que você imagina."</td></tr>
+      <tr><td><b>4</b></td><td><b>Ler evidência com desconfiança.</b> Quem passou anos desenhando estudo sabe onde um resultado costuma escorregar. Isso não se aprende em treinamento.</td></tr>
+      <tr><td><b>5</b></td><td><b>Falar de igual para igual com investigador.</b> Sentar com um pesquisador e discutir método é rotina para quem vem da bancada. Para muita gente da indústria, é a parte mais difícil da função.</td></tr>
+      <tr><td><b>6</b></td><td><b>Traduzir complexidade sem perder precisão.</b> Toda tese é um exercício de explicar algo difícil para quem não estava lá. É o núcleo do trabalho em Medical Affairs.</td></tr>
+      <tr class="win"><td><b>7 · fecho</b></td><td>"Você não está começando do zero. Está mudando de aplicação."<br>Fecha com a pergunta: <em>o que da sua formação você achou que não serviria e serviu?</em></td></tr>
+    </table>
+    <div class="callout info"><b>Como montar sem designer:</b> Canva, formato quadrado 1080×1080, fundo claro e uniforme nas sete telas, uma única fonte, texto grande o suficiente para ler no celular sem apertar os olhos. Sem logo, sem rodapé, sem numeração. O legendado do post repete a frase da capa e nada mais — a curiosidade tem que morar dentro do carrossel.</div>
+    <div class="callout good"><b>E o mais importante:</b> a tela 7 termina em pergunta. Comentário nas primeiras horas é o que faz o LinkedIn distribuir, e os posts dela com 4 ou mais comentários têm média de 35,4 reações contra 8,5 dos demais.</div>
+  </section>
+
+  <!-- POST-ÂNCORA -->
+  <section>
+    <div class="snum">03 · Terça 25/08 · o post mais importante</div>
+    <h2 class="serif">Post-âncora — <em>3 opções.</em></h2>
+    <p>Regra do formato, extraída dos seus três maiores posts: <b>a primeira linha discorda de algo que a área repete</b>. "Não largue…", "não será definido por…", "não vai desaparecer, mas…". Nunca abrir explicando um conceito.</p>
+
+    <div class="idea"><div class="n">Opção A · a mais quente</div><div class="t">"A IA não vai substituir o MSL. Vai expor quem só reproduzia informação."</div>
+      <div class="d">Pauta do momento no mundo inteiro. A tese: a IA resolve o que o MSL fazia de mais mecânico — resumir literatura, preparar material, mapear KOL. O que sobra é justamente o que não se automatiza: escutar a dúvida real do médico e traduzir incerteza. Feche com a provocação de que a IA vai separar o MSL que <em>entrega dado</em> do que <em>constrói conversa</em>.</div>
+      <div class="src">Para embasar: <a href="https://www.cureus.com/articles/479107-perceptions-utilization-and-impact-of-artificial-intelligence-on-medical-science-liaisons-a-global-cross-sectional-survey-of-medical-affairs-professionals">Cureus — survey global sobre IA e MSLs</a> · <a href="https://thejournalofmhealth.com/from-support-to-strategy-will-2026-be-the-year-of-the-ai-augmented-medical-affairs-team/">The Journal of mHealth — AI-augmented Medical Affairs 2026</a> · <a href="https://medicalaffairs.org/">MAPS — Medical Affairs Professional Society</a></div></div>
+
+    <div class="idea"><div class="n">Opção B · a mais autoral</div><div class="t">"Passei anos gerando evidência. Só na transição entendi que gerar não é o difícil."</div>
+      <div class="d">Une os dois clusters que mais rendem no seu perfil: história pessoal e RWE. A tese: a ciência brasileira produz muita evidência que não chega à decisão clínica, e você viu isso da bancada. O gargalo não é produzir, é traduzir e fazer chegar. É exatamente o que Medical Affairs existe para resolver — e por isso você migrou.</div>
+      <div class="src">Para embasar: <a href="https://www.nature.com/nm/">Nature Medicine</a> · <a href="https://www.thelancet.com/">The Lancet</a> · <a href="https://www.iqvia.com/insights/the-iqvia-institute">IQVIA Institute — relatórios de acesso e evidência</a></div></div>
+
+    <div class="idea"><div class="n">Opção C · a mais provocativa</div><div class="t">"A pergunta errada é 'como entro em Medical Affairs'. A certa é 'que problema eu resolvo lá dentro'."</div>
+      <div class="d">Falar diretamente com o maior cluster da sua audiência (gente em transição) sem cair no lugar-comum do desabafo. A tese: quem entra perguntando "como" fica esperando permissão; quem entra perguntando "que problema resolvo" já chega com proposta. Amarre com competências concretas que vêm da pesquisa e servem no primeiro dia.</div>
+      <div class="src">Para embasar: sua própria experiência + <a href="https://medicalaffairs.org/">MAPS competency framework</a></div></div>
+  </section>
+
+  <!-- BASTIDORES -->
+  <section>
+    <div class="snum">04 · Segunda 24/08</div>
+    <h2 class="serif">Bastidores — <em>3 opções.</em></h2>
+    <p>A série já é sua e funciona bem quando fecha com um aprendizado que o leitor pode levar para a própria rotina. É o que transforma um relato em algo útil para quem lê.</p>
+
+    <div class="idea"><div class="n">Opção A</div><div class="t">"O que eu faria diferente se recomeçasse a transição hoje"</div>
+      <div class="d">Ângulo: no começo, a energia foi para as candidaturas; hoje ela sabe que a conversa vem antes. Contar essa virada com números reais e o que mudou na prática. Honestidade com dado concreto é um dos formatos que mais aproxima quem lê.</div></div>
+
+    <div class="idea"><div class="n">Opção B</div><div class="t">"Conversei com quatro MSLs em duas semanas. Três disseram a mesma coisa."</div>
+      <div class="d">Ela realmente teve calls (Caroline/Novartis, Thiago/GSK, e as desta semana). Compilar o padrão que apareceu nas conversas, sem citar nomes nem empresas. É conteúdo que só quem faz o movimento consegue produzir — e sinaliza, sem dizer, que ela está circulando na área.</div></div>
+
+    <div class="idea"><div class="n">Opção C</div><div class="t">"Da bancada ao campo: o que da citometria eu uso numa conversa científica"</div>
+      <div class="d">Bastidor técnico. Pegar uma técnica concreta do doutorado (imunofenotipagem) e mostrar como o raciocínio dela aparece numa discussão de hematologia. Prova de repertório sem soar como currículo, e reforça a autoridade científica que a diferencia.</div></div>
+  </section>
+
+  <!-- PERGUNTA -->
+  <section>
+    <div class="snum">05 · Quarta 26/08</div>
+    <h2 class="serif">Post-pergunta — <em>3 opções.</em></h2>
+    <p>Formato curto, 4 a 6 linhas. O objetivo não é alcance, é <b>comentário</b> — e comentário nas primeiras horas é o que faz o LinkedIn distribuir. Seus posts com 4+ comentários têm média de 35,4 reações contra 8,5 dos demais.</p>
+    <div class="idea"><div class="n">Opção A</div><div class="t">"Qual métrica seria digna de medir um MSL?"</div>
+      <div class="d">Você já fez essa pergunta em 18/08 e não respondeu. Devolva ao feed sozinha, curta, e responda cada comentário no mesmo dia. As respostas viram a newsletter seguinte.</div></div>
+    <div class="idea"><div class="n">Opção B</div><div class="t">"O que você gostaria de ter sabido antes do seu primeiro dia em Medical Affairs?"</div>
+      <div class="d">Pergunta que MSL sênior adora responder. Gera comentário longo e de gente relevante — exatamente o público que ela quer atrair para o perfil.</div></div>
+    <div class="idea"><div class="n">Opção C</div><div class="t">"Evidência robusta que não muda prática: culpa do dado ou do processo?"</div>
+      <div class="d">Provocação dentro do cluster de RWE, que tem a maior mediana do perfil dela. Divide opinião com elegância, que é o que faz gente comentar.</div></div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section>
+    <div class="snum">06 · Quintas 20/08 e 27/08</div>
+    <h2 class="serif">Newsletter — <em>3 opções.</em></h2>
+    <p>Só uma por semana. E a regra nova: <b>a newsletter é para densidade, não para tema de feed</b>. Assunto que já foi post não volta como link.</p>
+    <div class="idea"><div class="n">Opção A · a que os dados pedem</div><div class="t">Edição-manifesto: "O que da pesquisa clínica se transfere para Medical Affairs"</div>
+      <div class="d">O post de 175 reações ("Não largue a pesquisa clínica") é o maior sucesso do período e ainda tem muito a render em profundidade. Formato: competência por competência (comunicação científica, relação com investigador, leitura crítica, gestão de projeto), com um exemplo concreto em cada. Tem tudo para ser a edição mais forte do semestre.</div></div>
+    <div class="idea"><div class="n">Opção B · doenças raras</div><div class="t">"O diagnóstico genético virou o novo gargalo das doenças raras"</div>
+      <div class="d">Tema forte e conectado com as vagas dela (Sanofi, AZ, Ipsen). Ângulo: a odisseia diagnóstica — anos até o paciente ter um nome para o que sente. Entrar pela <b>decisão clínica e pela jornada do paciente</b> costuma alcançar bem mais do que entrar pela molécula.</div>
+      <div class="src">Para embasar: <a href="https://www.orpha.net/">Orphanet</a> · <a href="https://www.nature.com/subjects/rare-diseases">Nature — Rare diseases</a> · <a href="https://rarediseases.info.nih.gov/">NIH GARD</a> · <a href="https://www.gov.br/anvisa/pt-br">ANVISA</a> e <a href="https://www.gov.br/conitec/pt-br">CONITEC</a> para o recorte Brasil</div></div>
+    <div class="idea"><div class="n">Opção C · leitura coletiva</div><div class="t">"O que 11 profissionais responderam sobre o futuro do MSL"</div>
+      <div class="d">O post de 11/07 gerou 11 comentários. Compilar as respostas com <b>crédito nominal</b> a quem comentou. Isso faz três coisas: entrega conteúdo, homenageia gente da área e praticamente garante que essas pessoas compartilhem a edição.</div></div>
+  </section>
+
+  <!-- REPOSTS -->
+  <section>
+    <div class="snum">07 · Reposts · integrados ao calendário</div>
+    <h2 class="serif">O que <em>repostar.</em></h2>
+    <p>Menos de 10% dos seus seguidores vê qualquer publicação. Republicar um bom conteúdo dá a ele uma segunda chance de encontrar quem ainda não viu. Os seis agora entram <b>dentro da própria janela de 20 a 31 de agosto</b>, nos mesmos dias do calendário principal: <b>repost às 9h, conteúdo principal às 11h</b>.</p>
+    <div class="callout info"><b>Como funciona o teste:</b> regra única, <b>nunca copiar e colar</b> — muda a primeira linha e muda o formato. Ao fim do ciclo, comparamos o desempenho de cada repost com o do post original e decidimos se a reciclagem vira rotina fixa.</div>
+
+    <div class="barwrap">
+      <div class="row"><span>Reposts publicados · <b id="rtxt">0 de 6</b></span><button class="btn" onclick="resetR()">limpar</button></div>
+      <div class="track"><div class="fill" id="rfill"></div></div>
+    </div>
+
+    <div class="item gold"><input type="checkbox" data-r="r1"><div class="body">
+      <span class="dd">Seg 24/08 · 9h — "O próximo MSL não será medido pelo número de visitas"</span><br>
+      <b>Original:</b> 07/08 · 21 reações · 1.229 impressões · <a href="https://www.linkedin.com/posts/lucianabonome_medicalaffairs-medicalscienceliaison-fieldmedical-share-7491472249791668225-lEmu">ver post</a><br>
+      <b>Como voltar:</b> texto nativo com abertura nova, entrando pela pergunta "se não é visita, o que a gente mede?". É recente e performou bem — bom teste de baixo risco.
+      <div class="chips"><span>texto nativo</span><span>abertura nova</span></div></div></div>
+
+    <div class="item gold"><input type="checkbox" data-r="r2"><div class="body">
+      <span class="dd">Qua 26/08 · 9h — "Biomarcadores e a nova geração de terapias"</span><br>
+      <b>Original:</b> 20/07 · newsletter · 24 reações e <b>9 comentários</b> (o recorde de comentários das edições) · <a href="https://www.linkedin.com/posts/lucianabonome_medicalinsights-medicalaffairs-medicalscienceliaison-ugcPost-7484764856634630144-irgo">ver post</a><br>
+      <b>Como voltar:</b> agora como <b>texto nativo, sem link</b>, abrindo já na primeira linha com a pergunta que gerou os 9 comentários.
+      <div class="chips"><span>de newsletter para nativo</span></div></div></div>
+
+    <div class="item gold"><input type="checkbox" data-r="r3"><div class="body">
+      <span class="dd">Seg 31/08 · 9h — "Da pesquisa à indústria: uma transição possível"</span><br>
+      <b>Original:</b> 08/06 · newsletter · 33 reações (2º melhor conteúdo do período) · <a href="https://www.linkedin.com/posts/lucianabonome_medical-insights-edi%C3%A7%C3%A3o-18-a-transi%C3%A7%C3%A3o-ugcPost-7469735208716726272-fQ-X">ver post</a><br>
+      <b>Como voltar:</b> texto nativo abrindo pela própria experiência em vez do conselho. É par direto do post de 175 reações e está no cluster de maior média do perfil.
+      <div class="chips"><span>cluster mais forte</span></div></div></div>
+
+    <div class="item gold"><input type="checkbox" data-r="r4"><div class="body">
+      <span class="dd">Qui 27/08 · 9h — "A transição começa muito antes da primeira oportunidade"</span><br>
+      <b>Original:</b> 17/06 · newsletter · 25 reações · <a href="https://www.linkedin.com/posts/lucianabonome_e-se-eu-te-dissesse-que-a-parte-mais-importante-ugcPost-7473060334526844928-FaTj">ver post</a><br>
+      <b>Como voltar:</b> em formato de <b>linha do tempo</b> — o que ela fez nos 12 meses antes de aplicar para a primeira vaga. Formato novo para um tema que já provou funcionar.
+      <div class="chips"><span>linha do tempo</span></div></div></div>
+
+    <div class="item green"><input type="checkbox" data-r="r5"><div class="body">
+      <span class="dd">Qui 20/08 · 9h — "Não largue a pesquisa clínica para migrar" · <b>como carrossel</b></span><br>
+      <b>Original:</b> 02/06 · <b>175 reações</b>, o maior do período · <a href="https://www.linkedin.com/posts/lucianabonome_n%C3%A3o-largue-a-pesquisa-cl%C3%ADnica-para-migrar-share-7467361601822711809-RqYU">ver post</a><br>
+      <b>Como voltar:</b> o mesmo argumento em <b>7 telas de carrossel</b>. São zero carrosséis em 90 dias, aplicados ao melhor conteúdo dela, no formato que o LinkedIn mais distribui. É a maior aposta do ciclo, e abre a Semana 10. As sete telas estão detalhadas na seção 02.
+      <div class="chips"><span>1º carrossel</span><span>maior aposta</span></div></div></div>
+
+    <div class="item blue"><input type="checkbox" data-r="r6"><div class="body">
+      <span class="dd">Seg 31/08 · 11h — "RWE: de diferencial a requisito"</span><br>
+      <b>Originais:</b> 23/07 (13 reações · <a href="https://www.linkedin.com/posts/lucianabonome_medicalinsights-medicalaffairs-realworldevidence-ugcPost-7486056352797216768-ZBlB">ver</a>) e 12/08 (2 reações · <a href="https://www.linkedin.com/posts/lucianabonome_medicalinsights-medicalaffairs-rwe-ugcPost-7493300403833405440-nFRc">ver</a>)<br>
+      <b>Como voltar:</b> o tema já saiu duas vezes como link de newsletter. Desta vez, <b>só texto nativo</b>: "RWE virou requisito e quase ninguém mudou o processo por causa disso". RWE é o cluster de maior mediana do perfil e merece uma chance no formato certo.
+      <div class="chips"><span>terceira tentativa</span><span>formato novo</span></div></div></div>
+
+    <div class="callout good"><b>O que observar ao fim do ciclo:</b> anote as reações de cada repost ao lado do número do original. Se a média dos reposts ficar acima de 60% do original, a reciclagem vira rotina fixa e passa a liberar dias de criação. Se ficar abaixo, ajustamos o formato antes de repetir.</div>
+  </section>
+
+  <!-- PAUTAS QUENTES -->
+  <section>
+    <div class="snum">08 · Pautas quentes · para comentar e para criar</div>
+    <h2 class="serif">O que está <em>em pauta agora.</em></h2>
+    <p>Use para comentar em posts de líderes e para alimentar as teses. Comentar com substância em post de gestor rende mais visibilidade qualificada do que post próprio.</p>
+    <div class="cards">
+      <div class="c"><div class="s">a mais quente</div><div class="t">IA em Medical Affairs</div><div class="d">Saiu de pauta de inovação para realidade operacional: síntese de literatura, mapeamento de KOL, personalização do intercâmbio científico. Debate central: muda a função, mas não substitui.</div></div>
+      <div class="c"><div class="s">regulatório BR</div><div class="t">RWE e decisão de acesso</div><div class="d">Evidência de mundo real ganhando peso em avaliação de tecnologias. Ângulo Brasil: CONITEC e ANVISA.</div></div>
+      <div class="c"><div class="s">raras</div><div class="t">Odisseia diagnóstica</div><div class="d">Tempo até o diagnóstico como o verdadeiro gargalo — mais que o tratamento. Conversa direta com as vagas dela.</div></div>
+      <div class="c"><div class="s">field medical</div><div class="t">Métricas de MSL</div><div class="d">A insatisfação com métricas de volume (número de visitas) e a busca por medir qualidade de insight. Tema em que ela já plantou uma pergunta sem resposta.</div></div>
+    </div>
+    <h3>Fontes para acompanhar toda semana</h3>
+    <ul>
+      <li><b>Profissão e mercado:</b> <a href="https://medicalaffairs.org/">MAPS</a> · <a href="https://www.pharmexec.com/">Pharmaceutical Executive</a> · <a href="https://endpts.com/">Endpoints News</a> · <a href="https://www.statnews.com/">STAT News</a></li>
+      <li><b>Ciência primária:</b> <a href="https://www.nejm.org/">NEJM</a> · <a href="https://www.thelancet.com/">The Lancet</a> · <a href="https://www.nature.com/nm/">Nature Medicine</a> · <a href="https://jamanetwork.com/">JAMA</a></li>
+      <li><b>Congressos:</b> <a href="https://www.asco.org/">ASCO</a> · <a href="https://www.esmo.org/">ESMO</a> · <a href="https://ehaweb.org/">EHA</a> · <a href="https://www.aan.com/">AAN</a> · <a href="https://www.easl.eu/">EASL</a> (fígado — casa com a Ipsen)</li>
+      <li><b>Brasil:</b> <a href="https://www.gov.br/anvisa/pt-br">ANVISA</a> · <a href="https://www.gov.br/conitec/pt-br">CONITEC</a> · <a href="https://www.interfarma.org.br/">Interfarma</a> · <a href="https://www.iqvia.com/insights/the-iqvia-institute">IQVIA Institute</a></li>
+    </ul>
+    <div class="callout info"><b>Rotina de leitura sugerida:</b> 20 minutos, três vezes por semana. Ler não é para virar especialista — é para ter <b>uma frase original por semana</b> que ninguém mais está dizendo. É disso que nasce o post-âncora.</div>
+  </section>
+
+  <!-- CALLS -->
+  <section>
+    <div class="snum">09 · Calls · o outro eixo da semana</div>
+    <h2 class="serif">Confirmadas e a <em>abrir.</em></h2>
+    <div class="barwrap">
+      <div class="row"><span>Calls e mensagens · <b id="ctxt">0 de 29</b></span><button class="btn" onclick="resetC()">limpar</button></div>
+      <div class="track"><div class="fill" id="cfill"></div></div>
+    </div>
+    <h3>Já agendadas — preparar antes</h3>
+    <div class="item gold"><input type="checkbox" data-c="k1"><div class="body"><span class="dd">Karina Ponsoni, PhD · AstraZeneca (Gerente de MSL, Doenças Raras) — amanhã, 15h30.</span> Ponte: raras são genéticas e ela tem certificação em variantes. A AZ tem duas vagas abertas.<div class="chips"><span>preparar hoje</span></div></div></div>
+    <div class="item gold"><input type="checkbox" data-c="k2"><div class="body"><span class="dd">Iuri Ventura · Ipsen (MSL Doenças Raras) — quinta, 17h.</span> Briefing pronto. A ponte é a hepatologia: raras da Ipsen é fígado raro.<div class="chips"><span>briefing pronto</span></div></div></div>
+    <div class="item gold"><input type="checkbox" data-c="k3"><div class="body"><span class="dd">Camila M. Santos — sexta, 9h30.</span> Perfil de Medical Affairs com estudo em IA — conversa que alimenta direto o post-âncora da terça.<div class="chips"><span>vira conteúdo</span></div></div></div>
+
+    <h3>Novos alvos — Doenças Raras (o eixo mais forte dela)</h3>
+    <div class="item hot"><input type="checkbox" data-c="n1"><div class="body"><span class="dd">Bruna Lanzillotta, PhD · Ipsen</span> — Senior Medical Manager, Rare Diseases. <b>É gestora da área da vaga que ela aplicou.</b> <a href="https://www.linkedin.com/in/bruna-lanzillotta">perfil</a><div class="chips"><span>vaga viva</span></div></div></div>
+    <div class="item hot"><input type="checkbox" data-c="n2"><div class="body"><span class="dd">Marcelo Formigoni, PhD · Ipsen</span> — Senior Medical Manager, Rare Diseases. Mesma área. <a href="https://www.linkedin.com/in/marcelo-formigoni-phd-22200a2a">perfil</a><div class="chips"><span>vaga viva</span></div></div></div>
+    <div class="item blue"><input type="checkbox" data-c="n3"><div class="body"><span class="dd">Estela Busanello, PhD · AstraZeneca</span> — MSL Doenças Raras e Neurologia. Par direto, mesmas duas áreas dela. <a href="https://www.linkedin.com/in/estela-busanello">perfil</a></div></div>
+    <div class="item blue"><input type="checkbox" data-c="n4"><div class="body"><span class="dd">Suzieni De Bortoli · Johnson &amp; Johnson</span> — MSL Manager, Rare Diseases. <a href="https://www.linkedin.com/in/suzienidebortoli">perfil</a></div></div>
+    <div class="item blue"><input type="checkbox" data-c="n5"><div class="body"><span class="dd">Camila Duela · CSL</span> — Gerente Médica, Rare Diseases e Imunologia. <a href="https://www.linkedin.com/in/camila-duela">perfil</a></div></div>
+    <div class="item blue"><input type="checkbox" data-c="n6"><div class="body"><span class="dd">Marilia Kanegae · Amgen</span> — Medical Manager, Rare Diseases. <a href="https://www.linkedin.com/in/marilia-kanegae-a9905442">perfil</a></div></div>
+    <div class="item blue"><input type="checkbox" data-c="n7"><div class="body"><span class="dd">Patricia Marques Leite · Novo Nordisk</span> — Senior Rare Diseases Medical Manager. <a href="https://www.linkedin.com/in/patricia-marques-leite-a91561176">perfil</a></div></div>
+    <div class="item blue"><input type="checkbox" data-c="n8"><div class="body"><span class="dd">Michelle Agostinho · Merck</span> — Medical Manager, Rare Tumors. <b>Merck é a empresa da vaga de neuroimunologia.</b> <a href="https://www.linkedin.com/in/michelle-agostinho-90b768b0">perfil</a><div class="chips"><span>vaga viva</span></div></div></div>
+
+    <h3>Novos alvos — Hematologia, Neuro e Onco</h3>
+    <div class="item"><input type="checkbox" data-c="n9"><div class="body"><span class="dd">Franco Vizzotto · J&amp;J</span> — Sr. Medical Manager, Hematology. <a href="https://www.linkedin.com/in/franco-vizzotto-78949bb5">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n10"><div class="body"><span class="dd">Mariana Postal · AstraZeneca</span> — MSL Manager, Neurology e Metabolics. <a href="https://www.linkedin.com/in/marianapostal">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n11"><div class="body"><span class="dd">André Wolter · J&amp;J</span> — Regional Medical Affairs Manager, Neuroscience LATAM. <a href="https://www.linkedin.com/in/andr%C3%A9-wolter-159bb442">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n12"><div class="body"><span class="dd">Valesca Montibeller, PhD · Knight</span> — MSL Infectologia e Onco-hematologia. <b>Única contato dela na Knight.</b> <a href="https://www.linkedin.com/in/valescamedicalaffairs">perfil</a><div class="chips"><span>porta na Knight</span></div></div></div>
+    <div class="item"><input type="checkbox" data-c="n13"><div class="body"><span class="dd">Fernando Sá, PhD · AstraZeneca</span> — MSL Onco-Hematologia. Par PhD. <a href="https://www.linkedin.com/in/fernando-pires-de-sa">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n14"><div class="body"><span class="dd">Andréia Andrade · Ipsen</span> — Senior Medical Manager, Oncology. Terceira porta na Ipsen. <a href="https://www.linkedin.com/in/andr%C3%A9ia-andrade-257aa314">perfil</a></div></div>
+
+    <h3>Novos alvos — GSK, Onco e Imunologia (todos já 1º grau)</h3>
+    <div class="item"><input type="checkbox" data-c="n15"><div class="body"><span class="dd">Isabella Tanus, PhD · GSK</span> — Gerente Médico Científico Oncologia Sr, Pipeline. <a href="https://www.linkedin.com/in/isabella-tanus-phd-0380754b">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n16"><div class="body"><span class="dd">Franciele Faccio Busatto, PhD · GSK</span> — Gerente Médico Científico (MSL Pl), Pipeline Oncology. Par PhD. <a href="https://www.linkedin.com/in/franciele-faccio-busatto-phd-6aaa70130">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n17"><div class="body"><span class="dd">Paulo Raeder, PhD · GSK</span> — Gerente Médico Científico, MSL Imunologia. <a href="https://www.linkedin.com/in/paulo-raeder-phd-627a2b163">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n18"><div class="body"><span class="dd">Juliana Souza, PhD · GSK</span> — Gerente Médico Científico Jr, MSL Respiratory e Immunology. <b>Entrou júnior — é quem melhor sabe como é a porta de entrada.</b> <a href="https://www.linkedin.com/in/juliana-souza-phd">perfil</a><div class="chips"><span>porta de entrada</span></div></div></div>
+    <div class="item"><input type="checkbox" data-c="n19"><div class="body"><span class="dd">Amanda Lopes, PhD · AstraZeneca</span> — MSL Oncologia de Mama. <a href="https://www.linkedin.com/in/amanda-lopes-phd-9621521a6">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n20"><div class="body"><span class="dd">Luciana Rahal Abrahão, MD PhD · AbbVie</span> — Gerente Médica, Neurociências. <a href="https://www.linkedin.com/in/lucianarahalabrahao">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n21"><div class="body"><span class="dd">Larissa Martins Novaes · Novartis</span> — MSL Lead, Immunology STA. <a href="https://www.linkedin.com/in/larissa-martins-novaes-de-lima-04a70ab1">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n22"><div class="body"><span class="dd">Sara Jung · Johnson &amp; Johnson</span> — Senior Medical Manager, Immunology. <a href="https://www.linkedin.com/in/sarafonsecajung">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n23"><div class="body"><span class="dd">Patricia Fassina · Bayer</span> — MSL Manager, Oncology. <a href="https://www.linkedin.com/in/patriciafassina">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n24"><div class="body"><span class="dd">Rafael Paletta da Silva · Daiichi Sankyo Brasil</span> — Gerente Médico de Oncologia Sênior. <a href="https://www.linkedin.com/in/rafael-paletta-da-silva-8850aa71">perfil</a></div></div>
+    <div class="item"><input type="checkbox" data-c="n25"><div class="body"><span class="dd">Rodrigo Martins Abreu, PhD · Takeda</span> — Senior Medical Manager. <b>Takeda é o processo mais avançado dela.</b> <a href="https://www.linkedin.com/in/rodrigo-martins-abreu-pharm-msc-phd-26b53321">perfil</a><div class="chips"><span>processo vivo</span></div></div></div>
+    <div class="item"><input type="checkbox" data-c="n26"><div class="body"><span class="dd">Ferdinando Oriolo, PhD · Daiichi Sankyo Itália</span> — Medical Advisor / MSL Oncology. <b>Fica na Itália</b> — serve para visão internacional, não para vaga no Brasil. Deixe por último. <a href="https://www.linkedin.com/in/ferdinando-oriolo-phd-8b0600123">perfil</a><div class="chips"><span>internacional</span></div></div></div>
+
+    <div class="callout good"><b>São 26 nomes, todos conexão de 1º grau e nenhum abordado até hoje.</b> Todos gestores ou MSLs em empresas-alvo, filtrados por aderência às áreas dela. Use o texto padrão do Kit de Abordagem, trocando só o tema e o cargo — e sempre fechando com a linha da flexibilidade de agenda.</div>
+    <div class="callout info"><b>Ritmo sugerido:</b> 3 mensagens por dia útil, começando pelos que têm vaga viva ou processo em andamento. Em 9 dias úteis os 26 estão feitos, sem que nenhum dia vire maratona.</div>
+  </section>
+
+  <!-- METAS -->
+  <section>
+    <div class="snum">10 · Metas do ciclo</div>
+    <h2 class="serif">O <em>placar.</em></h2>
+    <div class="cards">
+      <div class="stat"><div class="l">Publicações no ciclo</div><div class="n">12</div><div class="d">6 principais + 6 reposts</div></div>
+      <div class="stat"><div class="l">Post-âncora</div><div class="n">≥40</div><div class="d">reações · patamar dos grandes</div></div>
+      <div class="stat"><div class="l">Primeiro carrossel</div><div class="n">20/08</div><div class="d">7 telas · a maior aposta</div></div>
+      <div class="stat"><div class="l">Comentários no post-pergunta</div><div class="n">≥6</div><div class="d">todos respondidos no dia</div></div>
+      <div class="stat"><div class="l">Mensagens novas</div><div class="n">26</div><div class="d">gestores e pares · 3 por dia</div></div>
+      <div class="stat"><div class="l">Calls</div><div class="n">3 + 2</div><div class="d">marcadas + novas</div></div>
+    </div>
+    <div class="callout good"><b>O detalhe que mais rende:</b> responder <b>todo comentário no mesmo dia</b>, sempre devolvendo uma pergunta. Os seus posts com 4 ou mais comentários têm média de 35,4 reações, contra 8,5 dos demais. Conversa nas primeiras horas é o que faz o LinkedIn distribuir — e é a parte mais gostosa do processo.</div>
+  </section>
+
+  <div class="foot">
+    <div class="k">Karen <b>Montagner</b> · Programa de Evolução Contínua</div>
+    <div style="margin-top:6px"><em>a sua voz não é a de quem ensina — é a de quem discorda com fundamento.</em> · 20 ago → 31 ago</div>
+  </div>
+</div>
+
+<script>
+  var K="luciana-semana10-conteudo";
+  var days=document.querySelectorAll('[data-d]');
+  var calls=document.querySelectorAll('[data-c]');
+  var reps=document.querySelectorAll('[data-r]');
+  function save(){var s={d:{},c:{},r:{}};days.forEach(function(b){s.d[b.dataset.d]=b.checked;});calls.forEach(function(b){s.c[b.dataset.c]=b.checked;});reps.forEach(function(b){s.r[b.dataset.r]=b.checked;});try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}}
+  function load(){try{var s=JSON.parse(localStorage.getItem(K)||'{}');if(s.d)days.forEach(function(b){if(s.d[b.dataset.d])b.checked=true;});if(s.c)calls.forEach(function(b){if(s.c[b.dataset.c])b.checked=true;});if(s.r)reps.forEach(function(b){if(s.r[b.dataset.r])b.checked=true;});}catch(e){}}
+  function rd(){var n=0;days.forEach(function(b){var it=b.closest('.item');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/days.length*100);document.getElementById('dfill').style.width=p+'%';document.getElementById('dtxt').textContent=n+' de '+days.length+' · '+p+'%';}
+  function rc(){var n=0;calls.forEach(function(b){var it=b.closest('.item');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/calls.length*100);document.getElementById('cfill').style.width=p+'%';document.getElementById('ctxt').textContent=n+' de '+calls.length+' · '+p+'%';}
+  function rr(){var n=0;reps.forEach(function(b){var it=b.closest('.item');if(b.checked){n++;it.classList.add('done');}else it.classList.remove('done');});var p=Math.round(n/reps.length*100);document.getElementById('rfill').style.width=p+'%';document.getElementById('rtxt').textContent=n+' de '+reps.length+' · '+p+'%';}
+  reps.forEach(function(b){b.addEventListener('change',function(){save();rr();});});
+  function resetR(){reps.forEach(function(b){b.checked=false;});save();rr();}
+  days.forEach(function(b){b.addEventListener('change',function(){save();rd();});});
+  calls.forEach(function(b){b.addEventListener('change',function(){save();rc();});});
+  function resetD(){days.forEach(function(b){b.checked=false;});save();rd();}
+  function resetC(){calls.forEach(function(b){b.checked=false;});save();rc();}
+  load();rd();rc();rr();
+</script>
+</body>
+</html>
